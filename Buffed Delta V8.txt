@@ -1,0 +1,819 @@
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Buffed Delta v8";
+    Text = "Tester Version";
+    Duration = 5;
+})
+
+game.Workspace.ServerEffects.ServerCooldown:Destroy()
+
+
+
+
+
+
+local UIS = game:GetService("UserInputService")
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+
+local SIndicator = game:GetService("Players").LocalPlayer.PlayerGui.SansIndicator.Indicator
+
+
+
+local function getchar()
+local protection = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+return protection
+end        
+
+
+
+
+local ccd1 = false
+task.spawn(function()
+function attackone()
+local protection = getchar()
+if protection == nil then
+print("lock onto someone idiot")
+else
+if not ccd1 then
+
+spawn(function()
+    
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "1";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+
+ccd1 = true 
+cd(1, true);
+cd(1,false,5)
+wait(5)
+ccd1 = false
+end)
+
+
+local CameraShaker = require(game.ReplicatedStorage.ClientModules.CameraShaker)
+
+local camera = game.Workspace.CurrentCamera
+
+local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+    camera.CFrame = camera.CFrame * shakeCf
+end)
+
+camShake:Start()
+
+local DreamIsCool = getrenv()._G.Pass
+local lockonval = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local hurtanim = game:GetService("ReplicatedStorage").Animations.HurtAnimations
+local hurtsound = game:GetService("ReplicatedStorage").Sounds
+local lookvec = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector
+
+
+function Floating()
+local bv = Instance.new("BodyVelocity")
+bv.Name = "Client"
+bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+task.spawn(function()
+    while task.wait() do 
+        bv.Velocity = Vector3.new(0,15,0) + lookvec * 5
+    end
+end)
+bv.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+return bv 
+end
+
+function Down()
+local bv = Instance.new("BodyVelocity")
+bv.Name = "Client"
+bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+task.spawn(function()
+    while task.wait() do 
+        bv.Velocity = Vector3.new(0,-15,0)
+    end
+end)
+bv.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+return bv 
+end
+
+function customanim(animation)
+local Anim = Instance.new("Animation") Anim.AnimationId = animation local k = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Humanoid:LoadAnimation(Anim) k:Play()
+end
+
+function slasheffect()
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({[1] = DreamIsCool,[2] = "SlashEffect",[3] = game:GetService("Players").LocalPlayer.Backpack.Main.DeltaSansMoves.ModuleScript.Animations.Slash.Swing1,[4] = Color3.fromRGB(255, 255, 255),[5] = CFrame.Angles(0, -12, 0)})
+end
+
+
+function attackremote(htime, atype, heffect, hanim, sounde, vel, dmg)
+local f1 = DreamIsCool local f2 = lockonval local f3 = { ["HitTime"] = htime,["Type"] = atype,["HitEffect"] = heffect,["HurtAnimation"] = hanim,["Velocity"] = vel,["CombatInv"] = true,["Effect"] = "SussyDmg",["BlockAble"] = false,["Sound"] = sounde, ["Damage"] = dmg}local Event = game:GetService("ReplicatedStorage").Remotes.Damage Event:InvokeServer(f1,f2,f3)
+end
+
+local Combat1 = {game:GetService("ReplicatedStorage").Sounds.SwordSlash, game:GetService("ReplicatedStorage").Sounds.Knockback}
+
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.DamageShower.HitAmount.Visible = false
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.DamageShower.DamageAmount.Visible = false
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5858687214"
+local idk = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+idk:Play();
+wait(0.2)
+camShake:Shake(CameraShaker.Presets.Explosion)
+attackremote(1,"Normal","HeavyHitEffect",hurtanim.Knockback3,Combat1,lookvec * 5 + Vector3.new(0,15,0),5)
+game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Head.DamageShower:Destroy()
+customanim("rbxassetid://5861068167")
+wait(0.3)
+local Float = Floating()
+wait(0.4)
+camShake:Shake(CameraShaker.Presets.Explosion)
+attackremote(1,"Normal","HeavyHitEffect",hurtanim.Hurt2,Combat1,lookvec * -1 + Vector3.new(-3,-20,0),5)
+game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Head.DamageShower:Destroy()
+customanim("rbxassetid://5861083925")
+slasheffect()
+wait(0.2)
+Float:Destroy()
+local Down = Down()
+wait(0.5)
+Down:Destroy()
+camShake:Shake(CameraShaker.Presets.Explosion)
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.DamageShower.Damage.Value = 10
+attackremote(1,"Normal","HeavyHitEffect",hurtanim.Hurt3,Combat1,lookvec * 0.001 + Vector3.new(3,0,0),10)
+customanim("rbxassetid://5861078576")
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.DamageShower.HitAmount.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.DamageShower.DamageAmount.Visible = true
+end
+end
+end
+end)
+
+game:GetService("ReplicatedStorage").Effects.WarningSans.Parent = game.Players.LocalPlayer.Character.Head
+
+game.Players.LocalPlayer.Character.Head.WarningSans.ImageLabel.Visible = false
+
+local ccd2 = false
+
+task.spawn(function()
+function attacktwo()
+local protection = getchar()
+if protection == nil then
+print("lock onto someone idiot")
+else
+if not ccd2 then
+
+
+
+spawn(function()
+    
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "1";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+
+ccd2 = true
+cd(2, true);
+cd(2,false,6)
+wait(5)
+ccd2 = false
+end)
+
+
+local urcframe = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame
+
+function Effect(part1, part2, location, timed, effectname, timelength)
+if timed == false then
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do v:Fire({part1, part2, location}) end
+else
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do v:Fire({part1, part2, location}) end
+wait(timelength)
+game.Players.LocalPlayer.Character.Effects[effectname]:Destroy()
+end
+end
+
+function SpecialEffect(part1, part2, location)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do v:Fire({part1, part2, location}) end
+end
+
+function EffectFade(TheEffect, waittime, pe)
+if pe == false then
+for _,v in pairs(game.Players.LocalPlayer.Character.Effects:GetDescendants()) do
+if v.Name == TheEffect then
+v.Transparency = 0.1
+wait(waittime)
+v.Transparency = 0.2
+wait(waittime)
+v.Transparency = 0.3
+wait(waittime)
+v.Transparency = 0.4
+wait(waittime)
+v.Transparency = 0.5
+wait(waittime)
+v.Transparency = 0.6
+wait(waittime)
+v.Transparency = 0.7
+wait(waittime)
+v.Transparency = 0.8
+wait(waittime)
+v.Transparency = 0.9
+wait(waittime)
+v.Transparency = 1
+end
+end
+elseif TheEffect == "DustSmoke" then
+for _,v in pairs(game.Players.LocalPlayer.Character.Effects:GetDescendants()) do
+if v.Name == TheEffect then
+v.Transparency = 0.1
+v.ParticleEmitter.Drag = 900
+v.ParticleEmitter.Rate = 900
+wait(waittime)
+v.Transparency = 0.2
+v.ParticleEmitter.Drag = 800
+v.ParticleEmitter.Rate = 800
+wait(waittime)
+v.Transparency = 0.3
+v.ParticleEmitter.Drag = 700
+v.ParticleEmitter.Rate = 700
+wait(waittime)
+v.Transparency = 0.4
+v.ParticleEmitter.Drag = 600
+v.ParticleEmitter.Rate = 600
+wait(waittime)
+v.Transparency = 0.5
+v.ParticleEmitter.Drag = 500
+v.ParticleEmitter.Rate = 500
+wait(waittime)
+v.Transparency = 0.6
+v.ParticleEmitter.Drag = 400
+v.ParticleEmitter.Rate = 400
+wait(waittime)
+v.Transparency = 0.7
+v.ParticleEmitter.Drag = 300
+v.ParticleEmitter.Rate = 300
+wait(waittime)
+v.Transparency = 0.8
+v.ParticleEmitter.Drag = 200
+v.ParticleEmitter.Rate = 200
+wait(waittime)
+v.Transparency = 0.9
+v.ParticleEmitter.Drag = 100
+v.ParticleEmitter.Rate = 100
+wait(waittime)
+v.Transparency = 1
+v.ParticleEmitter.Drag = 0
+v.ParticleEmitter.Rate = 0
+elseif TheEffect == "BeamSmoke" then
+for _,v in pairs(game.Players.LocalPlayer.Character.Effects:GetDescendants()) do
+if v.Name == TheEffect then
+v.Transparency = 0.1
+v.ParticleEmitter.Drag = 4.5
+v.ParticleEmitter.Rate = 270
+wait(waittime)
+v.Transparency = 0.2
+v.ParticleEmitter.Drag = 4
+v.ParticleEmitter.Rate = 240
+wait(waittime)
+v.Transparency = 0.3
+v.ParticleEmitter.Drag = 3.5
+v.ParticleEmitter.Rate = 210
+wait(waittime)
+v.Transparency = 0.4
+v.ParticleEmitter.Drag = 3
+v.ParticleEmitter.Rate = 180
+wait(waittime)
+v.Transparency = 0.5
+v.ParticleEmitter.Drag = 2.5
+v.ParticleEmitter.Rate = 150
+wait(waittime)
+v.Transparency = 0.6
+v.ParticleEmitter.Drag = 2
+v.ParticleEmitter.Rate = 120
+wait(waittime)
+v.Transparency = 0.7
+v.ParticleEmitter.Drag = 1.5
+v.ParticleEmitter.Rate = 90
+wait(waittime)
+v.Transparency = 0.8
+v.ParticleEmitter.Drag = 1
+v.ParticleEmitter.Rate = 60
+wait(waittime)
+v.Transparency = 0.9
+v.ParticleEmitter.Drag = 0.5
+v.ParticleEmitter.Rate = 30
+wait(waittime)
+v.Transparency = 1
+v.ParticleEmitter.Drag = 0
+v.ParticleEmitter.Rate = 0
+end
+end
+end
+end
+
+end
+end
+function EffectClear(TheEffect)
+for _,v in pairs(game.Players.LocalPlayer.Character.Effects:GetDescendants()) do
+if v.Name == TheEffect then
+v:Destroy()
+end
+end
+end
+function SansWarning(waittime)
+for i = 1,6 do
+wait()
+game.Players.LocalPlayer.Character.Head.WarningSans.ImageLabel.Visible = true
+wait(waittime)
+game.Players.LocalPlayer.Character.Head.WarningSans.ImageLabel.Visible = false
+end
+end
+
+local CameraShaker = require(game.ReplicatedStorage.ClientModules.CameraShaker)
+
+local camera = game.Workspace.CurrentCamera
+
+local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+    camera.CFrame = camera.CFrame * shakeCf
+end)
+
+camShake:Start()
+
+local DreamIsCool = getrenv()._G.Pass
+local lockonval = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local hurtanim = game:GetService("ReplicatedStorage").Animations.HurtAnimations
+local hurtsound = game:GetService("ReplicatedStorage").Sounds
+local lookvec = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector
+
+
+function Down()
+local bv = Instance.new("BodyVelocity")
+bv.Name = "Client"
+bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+task.spawn(function()
+    while task.wait() do 
+        bv.Velocity = Vector3.new(0,-5,0)
+    end
+end)
+bv.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+return bv 
+end
+
+function customanim(animation)
+local Anim = Instance.new("Animation") Anim.AnimationId = animation local k = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Humanoid:LoadAnimation(Anim) k:Play()
+end
+
+
+function attackremote(htime, atype, heffect, hanim, sounde, vel, dmg)
+local f1 = DreamIsCool local f2 = lockonval local f3 = { ["HitTime"] = htime,["Type"] = atype,["HitEffect"] = heffect,["HurtAnimation"] = hanim,["Velocity"] = vel,["CombatInv"] = true,["Effect"] = "SussyDmg",["BlockAble"] = false,["Sound"] = sounde, ["Damage"] = dmg}local Event = game:GetService("ReplicatedStorage").Remotes.Damage Event:InvokeServer(f1,f2,f3)
+end
+
+local hitground = game:GetService("ReplicatedStorage").Sounds.GroundHit
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame * CFrame.new(0,5,-2)
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5861141100"
+local punch = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+punch:Play();
+local Falling = Down()
+SansWarning(0.1)
+Falling:Destroy()
+camShake:Shake(CameraShaker.Presets.BigExplosion)
+attackremote(1,"Knockback","HeavyHitEffect",hurtanim.LayingDown,hitground,lookvec * 0.001 + Vector3.new(0,-15,0),40)
+customanim("rbxassetid://5861164674")
+Effect("Model", "BigSlam", urcframe, false, "DreamIsCool", 0)
+Effect("Model", "Wind", urcframe * CFrame.new(0,0,0) * CFrame.Angles(-1.5,0,0), false, "DreamIsCool", 0)
+Effect("Model", "DashSmokeStart", urcframe, false, "DreamIsCool", 0)
+SpecialEffect("Particle", "BeamSmoke", urcframe * CFrame.new(0,-1,0) * CFrame.Angles(0,5,1.7))
+SpecialEffect("Particle", "BeamSmoke", urcframe * CFrame.new(0,-1,0) * CFrame.Angles(0,1.5,1.7))
+SpecialEffect("Particle", "BeamSmoke", urcframe * CFrame.new(0,-1,0) * CFrame.Angles(0,3,1.7))
+SpecialEffect("Particle", "BeamSmoke", urcframe * CFrame.new(0,-1,0) * CFrame.Angles(0,0,1.7))
+EffectFade("BeamSmoke", 0.3, true)
+EffectClear("BeamSmoke")
+end
+end
+end
+end)
+
+
+
+
+
+local ccd4 = false
+
+task.spawn(function()
+function attackfour()
+if not ccd4 then
+
+
+spawn(function()
+    
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "1";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+
+ccd4 = true
+cd(4, true);
+cd(4,false,3)
+wait(3)
+ccd4 = false
+end)
+
+local Player = game.Players.LocalPlayer
+
+function BodyVelocity(MaxForce, Velocity, Parent, boolean, duration)
+    local bv = Instance.new("BodyVelocity")
+    bv.Name = "Client"
+    bv.MaxForce = MaxForce
+    bv.Velocity = Velocity
+    bv.Parent = Parent
+    if boolean == true then
+        game:GetService("Debris"):AddItem(bv, duration)
+    else
+        return bv
+    end
+end
+
+local DashProperties = {
+
+    MaxForce = Vector3.new(math.huge,math.huge,math.huge),
+    Velocity = Player.Character.HumanoidRootPart.CFrame.lookVector * 200,
+    Parent = Player.Character.HumanoidRootPart
+
+}
+
+function SansWarning(waittime)
+for i = 1,3 do
+wait()
+game.Players.LocalPlayer.Character.Head.WarningSans.ImageLabel.Visible = true
+wait(waittime)
+game.Players.LocalPlayer.Character.Head.WarningSans.ImageLabel.Visible = false
+end
+end
+
+
+local DreamIsCool = getrenv()._G.Pass
+local lockonval = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local hurtanim = game:GetService("ReplicatedStorage").Animations.HurtAnimations
+local hurtsound = game:GetService("ReplicatedStorage").Sounds
+local lookvec = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector
+
+
+function attackremote(htime, atype, heffect, hanim, sounde, vel, dmg)
+   for i,v in pairs(game.Workspace:GetChildren()) do 
+        if v ~= game.Players.LocalPlayer.Character and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Data") then
+            local vector = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position)
+            if vector.Magnitude <= 20 then
+local f1 = DreamIsCool local f2 = v local f3 = { ["HitTime"] = htime,["Type"] = atype,["HitEffect"] = heffect,["HurtAnimation"] = hanim,["Velocity"] = vel,["CombatInv"] = true,["Effect"] = "SussyDmg",["BlockAble"] = false,["Sound"] = sounde, ["Damage"] = dmg}local Event = game:GetService("ReplicatedStorage").Remotes.Damage Event:InvokeServer(f1,f2,f3)
+end
+end
+end
+end
+
+
+local Combat1 = {game:GetService("ReplicatedStorage").Sounds.SwordSlash, game:GetService("ReplicatedStorage").Sounds.Knockback}
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5863754307"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+SansWarning(0.1)
+local Dashing = BodyVelocity(DashProperties.MaxForce, DashProperties.Velocity, DashProperties.Parent, false, 0)
+for i = 1,30 do
+wait(0.01)
+attackremote(1,"Normal","HeavyHitEffect",hurtanim.Knockback2,Combat1,lookvec * 199,5)
+end
+Dashing:Destroy()
+end
+end
+end)
+
+local sharedWait = false
+
+
+local cb1cd = false
+
+function cb1()
+if not sharedWait then
+if not cb1cd then
+
+local DreamIsCool = getrenv()._G.Pass
+
+spawn(function()
+local cdl = 15
+local button = 1
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "2";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+sharedWait = true
+cb1cd = true
+cd(button, true);
+cd(button,false,cdl)
+wait(cdl)
+cb1cd = true
+end)
+    
+local args = {
+    [1] = {
+        [1] = DreamIsCool,
+        [2] = "Blasters1"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.DeltaSansMoves:InvokeServer(unpack(args))
+sharedWait = false
+else
+return end
+end
+end
+local cb2cd = false
+
+function cb2()
+if not sharedWait then
+if not cb2cd then
+
+local DreamIsCool = getrenv()._G.Pass
+
+spawn(function()
+local cdl = 20
+local button = 2
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "2";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+sharedWait = true
+cb2cd = true
+cd(button, true);
+cd(button,false,cdl)
+wait(cdl)
+cb2cd = false
+end)
+    
+local args = {
+    [1] = {
+        [1] = DreamIsCool,
+        [2] = "Blasters2"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.DeltaSansMoves:InvokeServer(unpack(args))
+sharedWait = false
+else
+return end
+end
+end
+
+local cb3cd = false
+
+function cb3()
+if not sharedWait then
+if not cb3cd then
+
+local DreamIsCool = getrenv()._G.Pass
+
+spawn(function()
+local cdl = 25
+local button = 3
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "2";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+sharedWait = true
+cb3cd = true
+cd(button, true);
+cd(button,false,cdl)
+wait(cdl)
+cb3cd = false
+end)
+    
+local args = {
+    [1] = {
+        [1] = DreamIsCool,
+        [2] = "Blasters3"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.DeltaSansMoves:InvokeServer(unpack(args))
+sharedWait = false
+else
+return end
+end
+end
+
+local cb4cd = false
+
+function cb4()
+if not sharedWait then
+if not cb4cd then
+
+
+local DreamIsCool = getrenv()._G.Pass
+
+spawn(function()
+local cdl = 25
+local button = 4
+local l__LocalPlayer__1 = game.Players.LocalPlayer;
+    local l__MoveDebounceShower__35 = game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower;
+        l__MoveDebounceShower__35.Parent = l__LocalPlayer__1.PlayerGui.UI.Ui;
+        l__MoveDebounceShower__35.LocalScript.Disabled = false;
+        local u3 = "2";
+        local function cd(p10, p11, p12)
+            if p11 then
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = true;
+                l__MoveDebounceShower__35["Moves" .. u3][p10].Start.Value = false;
+                return;
+            end;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Time.Value = p12;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = true;
+            l__MoveDebounceShower__35["Moves" .. u3][p10].Activated.Value = false;
+        end;
+        
+sharedWait = true
+cb4cd = true
+cd(button, true);
+cd(button,false,cdl)
+wait(cdl)
+cb4cd = false
+end)
+    
+local args = {
+    [1] = {
+        [1] = DreamIsCool,
+        [2] = "Blasters4"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.DeltaSansMoves:InvokeServer(unpack(args))
+sharedWait = false
+else
+return end
+end
+end
+
+
+function tele()
+local protection = getchar()
+if protection == nil then
+print("lock onto someone idiot")
+else
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "Teleport",
+        [3] = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.DeltaSansMoves:InvokeServer(unpack(args))
+end
+end
+
+
+UIS.InputBegan:Connect(function(input, IsTyping)
+    if IsTyping then return end 
+    if input.KeyCode == Enum.KeyCode.R then
+        tele()
+    end
+end)
+
+
+UIS.InputBegan:Connect(function(input, IsTyping)
+    if IsTyping then return end 
+    if input.KeyCode == Enum.KeyCode.One then
+        if SIndicator.Text == "Combat Activated" then
+            attackone()
+        end
+        if SIndicator.Text == "Combat" then
+            attackone()
+        end
+        if SIndicator.Text == "Blasters" then
+            cb1()
+        end
+        if SIndicator.Text == "Bones" then
+            test3()
+        end
+        if SIndicator.Text == "Final" then
+            test4()
+        end
+    end
+end)
+
+UIS.InputBegan:Connect(function(input, IsTyping)
+    if IsTyping then return end 
+    if input.KeyCode == Enum.KeyCode.Two then
+        if SIndicator.Text == "Combat Activated" then
+            attacktwo()
+        end
+        if SIndicator.Text == "Combat" then
+            attacktwo()
+        end
+        if SIndicator.Text == "Blasters" then
+            cb2()
+        end
+        if SIndicator.Text == "Bones" then
+            test3()
+        end
+        if SIndicator.Text == "Final" then
+            test4()
+        end
+    end
+end)
+
+UIS.InputBegan:Connect(function(input, IsTyping)
+    if IsTyping then return end 
+    if input.KeyCode == Enum.KeyCode.Four then
+        if SIndicator.Text == "Combat Activated" then
+            attackfour()
+        end
+        if SIndicator.Text == "Combat" then
+            attackfour()
+        end
+        if SIndicator.Text == "Blasters" then
+            cb4()
+        end
+        if SIndicator.Text == "Bones" then
+            test3()
+        end
+        if SIndicator.Text == "Final" then
+            test4()
+        end
+    end
+end)
+
+
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Buffed Delta v8";
+    Text = "Fully loaded.";
+    Duration = 10;
+})
