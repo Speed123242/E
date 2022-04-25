@@ -1,0 +1,2564 @@
+--// IDK Edited Project v2 (Remastered) by Og maker Lord.#9999. King Dream#9746 Edit maker.
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+
+local plrs = game:GetService("Players")
+local rep = game:GetService("ReplicatedStorage")
+local uis = game:GetService("UserInputService")
+local runS = game:GetService("RunService")
+local tweenS = game:GetService("TweenService")
+
+local remotes = rep:WaitForChild("Remotes")
+local damage = remotes:WaitForChild("Damage")
+local functions = remotes:WaitForChild("Functions")
+local events = remotes:WaitForChild("Events")
+local charaMoves = remotes:WaitForChild("CharaMoves")
+
+local pass = getrenv()._G.Pass
+local plr = plrs.LocalPlayer
+local plrGui = plr:WaitForChild("PlayerGui")
+local mouse = plr:GetMouse()
+local v4 = require(rep.CameraShaker)
+local v41 = require(rep.ClientModules.MainModule)
+local floorEDelay = 0.07
+local unstress = false
+local second = false
+local setWings = false
+local attack
+local adjust = 9
+local main
+local currentScript
+local animationsFolder
+local module
+local moduleRequire
+local wings
+local destroy = {StayGrounded = true,StunEffect=true,BlurEffect=true,DrainStamina=true,DrainSprint=true,Debounce=true,Hit=true,InvDeleting=true,PerfectBlockCD=true,Inv=true}
+local attack1 = false
+local function swait(a)
+	if a then
+		local s = 0
+		while true do
+			if s >= a then
+				break
+			end
+			s = s + runS.RenderStepped:Wait()
+		end
+	else
+		runS.RenderStepped:Wait()
+	end
+end
+rep.DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
+--// IDK thing
+local v40 = {}
+
+local v6 = v4.new(Enum.RenderPriority.Camera.Value, function(p1)
+	workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame * p1;
+end);
+v6:Start();
+local v11 = {};
+local function playSound(sound,times)
+	pcall(function()
+		for i=1,(times or 20) do
+			coroutine.resume(coroutine.create(function()
+				functions:InvokeServer({pass,"PlaySound",sound})
+			end))
+		end
+	end)
+end
+
+function v11.HoverForwardEffect()
+	local root = plr.Character.HumanoidRootPart
+	spawn(function()
+		local v28 = {};
+		for v29, v30 in pairs(workspace:GetChildren()) do
+			if v30:FindFirstChild("Humanoid") then
+				table.insert(v28, v30);
+			end;
+		end;
+		local v31, v32 = workspace:FindPartOnRayWithIgnoreList(Ray.new(root.Position, Vector3.new(0, -1, 0).unit * 10), v28);
+		if v31 then
+
+		end;
+	end);
+end;
+local function moveForward(p7, p8)
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	local v36, v37
+	if p8 then
+		v36, v37 = workspace:FindPartOnRay(Ray.new(root.Position, p8), char);
+		if v36 then
+
+		else
+			return;
+		end;
+	else
+		local v38, v39 = workspace:FindPartOnRay(Ray.new(root.Position, root.CFrame.lookVector.unit * 6), char);
+		if v38 then
+			p7.Position = v39 - root.CFrame.lookVector * 1;
+		end;
+		return;
+	end;
+	if v37 then
+		p7.Position = v37 - root.CFrame.lookVector * 1 + Vector3.new(0, 1, 0);
+	end
+end;
+function v11.shakeScreen(p3)
+	v6:Shake(v4.Presets[p3]);
+end;
+v11.Damage = function(p33, p34)
+	local l__HumanoidRootPart__50 = p33:WaitForChild("HumanoidRootPart");
+	local l__Humanoid__51 = p33:WaitForChild("Humanoid");
+	if not plr.Backpack.Main.LockOnScript.LockOn.Value then
+		for v52, v53 in pairs(workspace:GetChildren()) do
+			if v53:FindFirstChild("HumanoidRootPart") and v53 ~= p33 and (l__HumanoidRootPart__50.Position + l__HumanoidRootPart__50.CFrame.lookVector * 4 - v53.HumanoidRootPart.Position).magnitude <= 5 then
+				local data = v53:FindFirstChild("Data")
+				if not data then return end
+				if data.Blocking.Value then
+					p34 = {HitEffect = "HeavyHitEffect", 
+						Sound = rep.Sounds.Knockback, 
+						Velocity = Vector3.new(0,0,0), 
+						Type = "Knockback", 
+						HitTime = 2.4, 
+						HurtAnimation = rep.Animations.HurtAnimations.Hurt1, 
+						VictimCFrame = v53.HumanoidRootPart.CFrame, 
+						Damage = 10,
+						CameraShake = "Bump"}
+				end
+				if remotes.Damage:InvokeServer(pass, v53, p34,"Lord") then
+					return v53;
+				else
+					break;
+				end;
+			end;
+		end;
+		return nil;
+	else
+		local data = plr.Backpack.Main.LockOnScript.LockOn.Value:FindFirstChild("Data")
+		if not data then return end
+		if data.Blocking.Value then
+			p34 = {HitEffect = "HeavyHitEffect", 
+				Sound = rep.Sounds.Knockback, 
+				Velocity = Vector3.new(0,0,0), 
+				Type = "Knockback", 
+				HitTime = 2.4, 
+				HurtAnimation = rep.Animations.HurtAnimations.Hurt1, 
+				VictimCFrame = plr.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame, 
+				Damage = 10,
+				CameraShake = "Bump"}
+		end
+		if remotes.Damage:InvokeServer(pass, plr.Backpack.Main.LockOnScript.LockOn.Value, p34,"Lord") then
+			return plr.Backpack.Main.LockOnScript.LockOn.Value;
+		end;
+	end;
+end
+function v40.Combat(p11, p12, anims)
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	local l__Humanoid__41 = plr.Character.Humanoid;
+	local v42 = anims.Combat
+	if p12 then
+		v42 = anims.SecondCombat
+	end
+	if v42:FindFirstChild(p11) then
+		local v43 = l__Humanoid__41:LoadAnimation(v42[p11]);
+		if v43.Length <= 0 then
+			while true do
+				game:GetService("RunService").RenderStepped:wait();
+				if v43.Length > 0 then
+					break;
+				end;			
+			end;
+		end;
+		v43:Play(0.05);
+		if not p12 then
+			v43:AdjustSpeed(1.6);
+		else
+			v43:AdjustSpeed(1)
+		end;
+		if p11 == "Heavy6" or p11 == "Light9" then
+			v43:AdjustSpeed(0.4);
+		end;
+		for v44, v45 in pairs(root:GetChildren()) do
+			if v45.Name == "Client" then
+				v45:Destroy();
+			end;
+		end;
+		local v46 = Instance.new("BodyPosition");
+		v46.Name = "Client";
+		v43.KeyframeReached:Connect(function(p14)
+			if p14 == "BurstEffect1" then
+				remotes.Effects:FireServer({ pass, "Model", "BurstEffect1", root.CFrame * CFrame.Angles(math.rad(0), math.rad(180), 0) * CFrame.new(0, 0, 4) });
+			end;
+			if p14 == "BurstEffect2" then
+				remotes.Effects:FireServer({ pass, "Model", "BurstEffect2", root.CFrame * CFrame.Angles(math.rad(0), math.rad(180), 0) * CFrame.new(0, 0, 4) });
+			end;
+			if p14 == "BurstEffect3" then
+				remotes.Effects:FireServer({ pass, "Model", "BurstEffect2", root.CFrame * CFrame.Angles(math.rad(-45), math.rad(180), 0) * CFrame.new(0, 0, 4) });
+			end;
+			if p14 == "1" then
+				char.Head:FindFirstChild("Swing2"):Play();
+				moveForward(v46);
+				if v11.Damage(char, {
+					HitEffect = "LightHitEffect", 
+					Sound = rep.Sounds.Punch, 
+					Position = root.CFrame.Position + root.CFrame.lookVector * 10, 
+					Type = "Normal", 
+					HitTime = 1, 
+					HurtAnimation = rep.Animations.HurtAnimations["Hurt" .. math.random(1, 3)], 
+					VictimCFrame = root.CFrame * CFrame.Angles(0, math.rad(180), 0) + root.CFrame.lookVector * 6, 
+					Damage = 5
+					}) then
+					v11.shakeScreen("Bump");
+					return;
+				end;
+			elseif p14 == "2" then
+				char.Head:FindFirstChild("Swing2"):Play();
+				moveForward(v46);
+				if v11.Damage(char, {
+					HitEffect = "HeavyHitEffect", 
+					Sound = { rep.Sounds.Punch, rep.Sounds.Kick }, 
+					Position = root.CFrame.Position + root.CFrame.lookVector * 10, 
+					Type = "Normal", 
+					HitTime = 1, 
+					HurtAnimation = rep.Animations.HurtAnimations["Hurt" .. math.random(1, 3)], 
+					VictimCFrame = root.CFrame * CFrame.Angles(0, math.rad(180), 0) + root.CFrame.lookVector * 6, 
+					Damage = 3
+					}) then
+					v11.shakeScreen("Explosion");
+					return;
+				end;
+			elseif p14 == "3" then
+				moveForward(v46);
+				v43:AdjustSpeed(0.2);
+				local v47 = v11.Damage(char, {
+					HitEffect = "HeavyHitEffect", 
+					Sound = { rep.Sounds.Knockback, rep.Sounds.Kick }, 
+					Velocity = root.CFrame.lookVector * 90, 
+					Type = "Knockback", 
+					HitTime = 1, 
+					HurtAnimation = rep.Animations.HurtAnimations.Knockback2, 
+					VictimCFrame = root.CFrame * CFrame.Angles(0, math.rad(180), 0) + root.CFrame.lookVector * 6, 
+					Damage = 9
+				});
+				v43:AdjustSpeed(1);
+				if v47 then
+					v11.shakeScreen("BigExplosion");
+					return;
+				end;
+			elseif p14 == "4" then
+				char.Head:FindFirstChild("Swing2"):Play();
+				moveForward(v46);
+				if v11.Damage(char, {
+					HitEffect = "HeavyHitEffect", 
+					Sound = { rep.Sounds.Punch, rep.Sounds.Kick }, 
+					Position = root.CFrame.Position + root.CFrame.lookVector * 15 + Vector3.new(0, 15, 0), 
+					Type = "Normal", 
+					HitTime = 1, 
+					HurtAnimation = rep.Animations.HurtAnimations["Hurt" .. math.random(1, 3)], 
+					VictimCFrame = root.CFrame * CFrame.Angles(0, math.rad(180), 0) + root.CFrame.lookVector * 6, 
+					Damage = 3
+					}) then
+					v11.shakeScreen("Explosion");
+					return;
+				end;
+			elseif p14 == "5" then
+				char.Head:FindFirstChild("Swing2"):Play();
+				moveForward(v46);
+				if v11.Damage(char, {
+					HitEffect = "HeavyHitEffect", 
+					Sound = { rep.Sounds.Punch, rep.Sounds.Kick }, 
+					Velocity = Vector3.new(0, -60, 0), 
+					Type = "Knockback", 
+					HitTime = 0.1, 
+					HurtAnimation = rep.Animations.HurtAnimations.Knockback2, 
+					VictimCFrame = root.CFrame * CFrame.Angles(0, math.rad(180), 0) + root.CFrame.lookVector * 6, 
+					Damage = 3
+					}) then
+					v11.shakeScreen("Explosion");
+					return;
+				end;
+			elseif p14 == "6" then
+				char.Head:FindFirstChild("Swing2"):Play();
+				moveForward(v46);
+				if v11.Damage(char, {
+					HitEffect = "LightHitEffect", 
+					Sound = rep.Sounds.Punch, 
+					Position = root.CFrame.Position + root.CFrame.lookVector * 10, 
+					Type = "Normal", 
+					HitTime = 1, 
+					HurtAnimation = rep.Animations.HurtAnimations["Hurt" .. math.random(1, 3)], 
+					VictimCFrame = root.CFrame * CFrame.Angles(0, math.rad(180), 0) + root.CFrame.lookVector * 6 + Vector3.new(0, 6, 0), 
+					Damage = 5
+					}) then
+					v11.shakeScreen("Bump");
+				end;
+			end;
+		end);
+		local l__LockOn__48 = plr.Backpack.Main.LockOnScript:WaitForChild("LockOn");
+		if l__LockOn__48.Value then
+			root.CFrame = CFrame.new(root.Position, Vector3.new(l__LockOn__48.Value.HumanoidRootPart.Position.X, root.Position.Y, l__LockOn__48.Value.HumanoidRootPart.Position.Z));
+		end;
+		l__Humanoid__41:ChangeState(Enum.HumanoidStateType.Flying);
+		local v49, v50 = game:GetService("Workspace"):FindPartOnRay(Ray.new(root.CFrame.p, Vector3.new(0, -1, 0).unit * 4), char);
+		if v49 then
+			remotes.Effects:FireServer({ pass, "Particle", "SmallForwardSmokeParticle", CFrame.new(v50, v50 + root.CFrame.lookVector * 10) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(0)), 0.1 });
+		end;
+		v46.MaxForce = Vector3.new(100000, 100000, 100000);
+		v46.P = 100000;
+		v46.Parent = root;
+		local v51 = Instance.new("BodyGyro");
+		v51.Name = "Client";
+		v51.MaxTorque = Vector3.new(10000, 10000, 10000);
+		v51.CFrame = root.CFrame;
+		v51.Parent = root;
+		local v52, v53 = workspace:FindPartOnRay(Ray.new(root.Position, root.CFrame.lookVector.unit * 6), char);
+		if v52 then
+			v46.Position = v53 - root.CFrame.lookVector * 1.5;
+		else
+			v46.Position = root.Position + root.CFrame.lookVector * 5;
+		end;
+		local u2 = 1;
+		if p11 == "Heavy6" or p11 == "Light9" then
+
+			spawn(function()
+				wait(0.25);
+				u2 = 0;
+			end);
+		end;
+		while true do
+			if p11 == "Heavy6" or p11 == "Light9" then
+				moveForward(v46, root.CFrame.lookVector * 40 + Vector3.new(0, 40, 0));
+				moveForward(v46);
+			else
+				moveForward(v46);
+			end;
+			game:GetService("RunService").RenderStepped:wait();
+			if v43.Length - 0.16 < v43.TimePosition and u2 == 0 then
+				break;
+			end;
+			if not v43.isPlaying then
+				break;
+			end;	
+		end;
+		if p11 == "Heavy5" or p11 == "Light8" then
+			wait(0.3);
+		end;
+		v43:AdjustSpeed(0.8);
+		if p12 then
+			remotes.SwordHandler:FireServer({ pass, "SliceEffect", false, "ChaosSaber" });
+		end;
+		game.Debris:AddItem(v46, 0.5);
+		v51:Destroy();
+	end;
+end
+local function castRay(p2)
+	local v7 = nil;
+	v7 = Ray.new(p2.Origin, p2.Direction);
+	if p2.IgnoreList then
+		return workspace:FindPartOnRayWithIgnoreList(v7, p2.IgnoreList);
+	end;
+	return workspace:FindPartOnRay(v7, p2.Model);
+end;
+local function CreateTween(p3, p4, p5, p6)
+	local v8 = tweenS:Create(p3, TweenInfo.new(unpack(p4)), p5);
+	if p6 then
+		v8:Play();
+	end;
+	return v8;
+end;
+local function clonePart(p7, p8, p9)
+	local v9 = p7:Clone();
+	v9.CFrame = p9;
+	v9.Parent = p8;
+	return v9;
+end;
+local function particleColors(p10, p11)
+	local v10, v11, v12 = pairs(p10:GetChildren());
+	while true do
+		local v13, v14 = v10(v11, v12);
+		if v13 then
+
+		else
+			break;
+		end;
+		v12 = v13;
+		if v14:IsA("ParticleEmitter") then
+			v14.Color = ColorSequence.new(p11);
+		end;	
+	end;
+end;
+
+local function beamThing(p1) -- size 6 -- time: 3 secs
+	if p1[1] == "SmallBeam" then
+		local l__Character__1 = plr.Character;
+		local v2 = p1[2]; -- char
+		local v3 = p1[3]; -- Back
+		local v4 = p1[4]; -- Middle
+		local v5 = p1[5]; -- starting CFrame
+		local v6 = p1[6]; -- 4.5
+		local v7 = p1[7]; -- Length
+		local v8 = p1[8]; -- Sizing
+		local v9 = p1[9]; -- Kamehameha 
+		local v10 = p1[10]; -- LookVector?
+		local v11 = p1[12]; -- BurstEffect, CircleEffect
+		if plr.Character then
+			local v12 = v6 / 1.25;
+			local v13 = 0;
+			v3.Parent = l__Character__1;
+			v4.Parent = l__Character__1;
+			for v14, v15 in pairs(v11) do
+				v15.Parent = l__Character__1;
+			end;
+			local v16 = true;
+			local v17 = true;
+			while true do
+				v13 = v13 + 1;
+				local v18 = math.random(-10, 10) / 100;
+				v4.Size = Vector3.new(v7, v12 + v18, v12 + v18);
+				v3.Size = Vector3.new(v12 + v18, v12 + v18, v12 + v18);
+				v4.CFrame = v5 * CFrame.Angles(0, math.rad(90), 0) + v10 * (v7 / 2 + (v3.Size.x / 2 + 3));
+				for v19, v20 in pairs(v11) do
+					if not string.match(v20.Name, "FrontEffect") then
+						if string.match(v20.Name, "BurstEffect") and not v20:FindFirstChild("Effect") and v16 then
+							v16 = false;
+							local u3 = v16;
+							spawn(function()
+								local v21 = v20:Clone();
+								v21.Name = "E";
+								v21.Transparency = 0.5;
+								local v22 = math.random(3, 6);
+								local v23 = math.random(6, 10);
+								v21.Size = v21.Size + Vector3.new(v6 * 2, v6 * 1.5, 1);
+								v21.CFrame = v3.CFrame;
+								v21.Parent = l__Character__1;
+								game.Debris:AddItem(v21, 0.5);
+								local v24 = v41.CreateTween(v21, { 0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 0, false, 0 }, {
+									Size = v21.Size + Vector3.new(-v21.Size.X, -v21.Size.Y, v6 * 5), 
+									CFrame = v3.CFrame * CFrame.Angles(0, math.rad(math.random(-0, 10)), 0) + v10 * v6 * 4, 
+									Transparency = 1
+								}, true);
+								wait(0.1);
+								u3 = true;
+							end);
+						elseif string.match(v20.Name, "CircleEffect") and not v20:FindFirstChild("Effect") and v17 then
+							v17 = false;
+							local u4 = v17;
+							spawn(function()
+								local v25 = v20:Clone();
+								v25.Name = "E";
+								v25.Transparency = 0;
+								v25.CFrame = v3.CFrame * CFrame.Angles(math.rad(math.random(-40, 40)), math.rad(math.random(-20, 20)), math.rad(math.random(0, 360)));
+								v25.Parent = l__Character__1;
+								local v26 = Instance.new("StringValue");
+								v26.Name = "Effect";
+								v26.Parent = v20;
+								game.Debris:AddItem(v26, 0.05);
+								game.Debris:AddItem(v25, 0.2);
+								local v27 = math.random(1, 3);
+								local v28 = math.random(3, 6);
+								local v29 = v41.CreateTween(v25, { 0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 0, false, 0 }, {
+									Size = v25.Size + Vector3.new(v6 * v27, v6 * v27, 0.1), 
+									CFrame = v25.CFrame + v25.CFrame.lookVector * v6 * 1, 
+									Transparency = 1
+								}, true);
+								wait(0.15);
+								u4 = true;
+							end);
+						end;
+					end;
+				end;
+				game:GetService("RunService").RenderStepped:wait();
+				if v8.Value then
+					break;
+				end;
+				if not workspace:FindFirstChild(v2.Name) then
+					break;
+				end;
+				if v13 > 150 then
+					break;
+				end;			
+			end;
+			local v30 = v3.Size / 5;
+			local v31 = v4.Size.Z / 5;
+			local v32 = v4.Size.Y / 5;
+			for v33 = 1, 5 do
+				v4.Size = v4.Size - Vector3.new(0, v32, v31);
+				v3.Size = v3.Size - v30;
+				for v34, v35 in pairs(v11) do
+					if string.match(v35.Name, "MiddleEffect") then
+						v35.Size = v4.Size;
+					end;
+				end;
+				wait();
+			end;
+			for v36, v37 in pairs(v11) do
+				v37:Destroy();
+			end;
+			game.Debris:AddItem(v4, 2);
+			game.Debris:AddItem(v3, 2);
+		else
+			return;
+		end;
+	end;
+end
+local function removeParticles(p12, p13, p14)
+	spawn(function()
+		wait(p12);
+		local v15, v16, v17 = pairs(p13:GetChildren());
+		while true do
+			local v18, v19 = v15(v16, v17);
+			if v18 then
+
+			else
+				break;
+			end;
+			v17 = v18;
+			if v19:IsA("ParticleEmitter") then
+				v19.Enabled = false;
+			end;		
+		end;
+		game.Debris:AddItem(p13, p14);
+	end);
+end;
+local function enableParticles(p15, p16)
+	spawn(function()
+		local v20, v21, v22 = pairs(p15:GetChildren());
+		while true do
+			local v23, v24 = v20(v21, v22);
+			if v23 then
+
+			else
+				break;
+			end;
+			v22 = v23;
+			if v24:IsA("ParticleEmitter") then
+				v24.Enabled = p16;
+			end;		
+		end;
+	end);
+end;
+local function Lerp(p17, p18, p19)
+	return p17 + (p18 - p17) * p19;
+end;
+local function checkIfMoving(p20)
+	if not (0 < p20.MoveDirection.X) then
+		if not (p20.MoveDirection.X < 0) then
+			if not (0 < p20.MoveDirection.Z) then
+				if p20.MoveDirection.Z < 0 then
+
+				else
+					return;
+				end;
+			end;
+		end;
+	end;
+	return true;
+end;
+local function createAnim(id,name,parent)
+	local anim = Instance.new("Animation")
+	if name then
+		anim.Name = name
+	end
+	anim.AnimationId = "rbxassetid://"..id
+	if parent then anim.Parent = parent end
+	return anim
+end
+plr:WaitForChild("PlayerGui").ChildAdded:Connect(function(c)
+	runS.Heartbeat:Wait()
+	if c.Name == "HyperGonerMiniGame" then
+		c:Destroy()
+	end
+end)
+
+local animsIds = {
+	Idle = 4900761581,
+	Walk = 4370512420,
+	Run = 4576074471,
+	Fall = 4690344191,
+	Jump = 4087647775,
+	BigJump = 4521638309,
+	BigLand = 4575983939,
+	Block = 5657245133,
+	Climb = 4903866241,
+	ClimbLedge = 4904344271,
+	DashBack = 5776312470,
+	DashForward = 5776291266,
+	DashLeft = 5776300541,
+	DashRight = 5776309122,
+	DAshRun = 3222477616,
+	DashSlash = 3222536064,
+	FallAnim = 4575939658,
+	Flip = 4575857193,
+	HardLand = 4575983939,
+	Idle2 = 4929570007,
+	LeftWallRun = 4576215936,
+	RightWallRun = 4576224688,
+	Run2 = 4196684102,
+	SmallLand = 4575922541,
+	Uppercut = 4820780935,
+	UppercutSwing = 4924146069,
+	Walk2 = 4929609108,
+	Move1 = 4905914802,
+	Move2Attacker1 = 4910106480,
+	Move2Attacker1Swing = 4910251981,
+	Move2Attacker2 = 4910172271,
+	Move2Attacker3 = 4910232706,
+	Move3Attacker1 = 4911279815,
+	Move3Attacker1Swing = 4912449406,
+	Move4Attacker1 = 4918877276,
+	Move4Attacker1Swing = 4924211799,
+	Move4Attacker2 = 4919502087,
+	Move5Attacker = 4920626240,
+	Move5Attacker1Swing = 4924176970,
+	Move5Attacker1Swing2 = 4924191909,
+	Move5Attacker2 = 4920871999,
+}
+local combatIds = {4906030889,4906045655,4906056809,4906072632,4906092495,4906104364,4906108508}
+local secondCombatIdsHeavy = {4929676573,4929681477,4929684994,4929688526,4929694407,4929696537}
+local secondCombatIdsLight = {4929661098,4929665831,4929669003,4929670790,4929673252,4929700678,4929723918,4929733967,4929737220}
+--
+local function chat(text,color)
+	if second and not color then color = Color3.new(1, 0, 0) end
+	if not color then color = Color3.new(1,0,0) end
+	events:FireServer({pass, "Chatted", text, color });
+end
+plr.Chatted:connect(function(p26)
+	chat(p26)
+end);
+--// Lord.#9999
+local u13 = tick();
+local u14 = true;
+local u15 = tick();
+local u16 = tick();
+local u17 = tick();
+local u18 = true;
+local u19 = 0;
+local u20 = 0;
+local u21 = 0;
+
+if not plr.Character then
+	plr.CharacterAdded:Connect(function(char)
+		game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+		local s,e = pcall(function()
+			local hum = char:WaitForChild("Humanoid")
+			main = plr:WaitForChild("Backpack"):WaitForChild("Main")
+			local lock = main:WaitForChild("LockOnScript"):WaitForChild("LockOn");
+			local function getPos()
+				if not lock.Value then
+					return mouse.Hit.p;
+				end
+				return lock.Value.HumanoidRootPart.Position;
+			end;
+			local debounce = false
+			local charaSc = main:WaitForChild("CharaMoves")
+			charaSc:WaitForChild("Animations")
+			charaSc:WaitForChild("ModuleScript")
+			local fake = Instance.new("Folder")
+			fake.Name = "CharaMoves"
+			fake.Parent = main
+			for i,v in pairs(charaSc:GetChildren()) do
+				v.Parent = fake
+			end
+			charaSc:Destroy()
+			charaSc = fake
+			local animations = charaSc:WaitForChild("Animations")
+			animationsFolder = animations
+			module = charaSc:WaitForChild("ModuleScript")
+			moduleRequire = require(module)
+			coroutine.resume(coroutine.create(function()
+				moduleRequire.SwordCombat = function() return true end
+				moduleRequire.HoverForwardEffect = function() return true end
+			end))
+			local bladeAnims = module:WaitForChild("Animations"):WaitForChild("BladesCombat")
+			bladeAnims:Destroy()
+			local combatAnims = Instance.new("Folder")
+			combatAnims.Name = "Combat"
+			local secondAnims = Instance.new("Folder")
+			secondAnims.Name = "SecondCombat"
+			combatAnims.Parent = module
+			secondAnims.Parent = module
+			for i,v in pairs(animsIds) do
+				local a = animations:FindFirstChild(i)
+				if a then
+					a.AnimationId = "rbxassetid://"..v
+				else
+					createAnim(v,i,animations)
+				end
+			end
+			for i,v in pairs(combatIds) do
+				createAnim(v,"Light"..i,combatAnims)
+			end
+			for i,v in pairs(secondCombatIdsLight) do
+				createAnim(v,"Light"..i,secondAnims)
+			end
+			for i,v in pairs(secondCombatIdsHeavy) do
+				createAnim(v,"Heavy"..i,secondAnims)
+			end
+			hum:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false);
+			hum:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false);
+			char:WaitForChild("HateArm"):Destroy()
+			char:WaitForChild("HeartLocket"):Destroy()
+			char:WaitForChild("RealKnife"):Destroy()
+			local fold = workspace.ServerEffects.ServerCooldown[plr.Name]
+			functions:InvokeServer({pass,"ChangeSetting","DeathScene",false})
+			local p34 = {HitEffect = "HeavyHitEffect", 
+				Sound = rep.Sounds.Knockback, 
+				Type = "Normal", 
+				HitTime = 1, 
+				Damage = 0,
+				CameraShake = "Bump"}
+			remotes.Damage:InvokeServer(pass, char, p34,"Lord")
+			local p34 = {HitEffect = "HeavyHitEffect", 
+				Sound = game.StarterPlayer.StarterPlayerScripts.Music.Music["5Song"], 
+				Type = "Normal", 
+				HitTime = 1, 
+				HurtAnimation = rep.Animations.HurtAnimations.Hurt1, 
+				Damage = 0,
+				CameraShake = "Bump",
+				CombatInv = true}
+			remotes.Damage:InvokeServer(pass, char, p34,"Lord")
+			wait(1)
+			local healthBar = char.Head:WaitForChild("HealthBar")
+			local pn = healthBar:WaitForChild("Frame"):WaitForChild("PName")
+			local stamThing = healthBar.Frame:WaitForChild("StaminaBar")
+			local hp = pn.Parent:WaitForChild("HealthLabel")
+			local h = pn.Parent:WaitForChild("HP")
+			functions:InvokeServer({pass,"Reset"})
+			repeat wait() until hum.Health <= 1
+			pn:Destroy()
+			stamThing:Destroy()
+			hp:Destroy()
+			h:Destroy()
+			repeat wait() until hum.Health > 10
+			local root = char.HumanoidRootPart
+			char.Data.Attack.Value = 10
+			char.Data.Defense.Value = 150
+			for i,v in pairs(char:GetChildren()) do
+				if v.Name == "LockOn" then
+					local weld = v:FindFirstChild("Weld")
+					if weld then weld:Destroy() end
+				end
+			end
+			for i,v in pairs(plr:GetChildren()) do
+				if v.Name:match("Playlist") then
+					v:ClearAllChildren()
+				end
+			end
+			char.ChildAdded:Connect(function(child)
+				child:GetPropertyChangedSignal("Name"):Connect(function()
+					game.Debris:AddItem(child,0.01)
+					child:Destroy()
+				end)
+				if destroy[child.Name] then
+					if child.Name == "Inv" then
+						swait(0.07)
+						child:Destroy()
+					else
+						child:Destroy()
+						game.Debris:AddItem(child,0.01)
+						swait()
+						child:Destroy()
+					end
+				end
+			end)
+			local v43 = hum:LoadAnimation(animations.Flip)
+			local v44 = hum:LoadAnimation(animations.Climb)
+			local v45 = hum:LoadAnimation(animations.ClimbLedge)
+			local v46 = hum:LoadAnimation(animations.SmallLand)
+			local v47 = hum:LoadAnimation(animations.BigLand)
+			local v48 = hum:LoadAnimation(animations.FallAnim)
+			local v49 = hum:LoadAnimation(animations.LeftWallRun)
+			local v50 = hum:LoadAnimation(animations.RightWallRun)
+			local v51 = hum:LoadAnimation(animations.Idle)
+			local v52 = hum:LoadAnimation(animations.Walk)
+			local v53 = hum:LoadAnimation(animations.Run)
+			local v54 = hum:LoadAnimation(animations.Fall)
+			local v55 = hum:LoadAnimation(animations.HardLand)
+			local v56 = hum:LoadAnimation(animations.SmallLand)
+			local v57 = hum:LoadAnimation(animations.Jump)
+			local v58 = hum:LoadAnimation(animations.Block)
+			local v59 = hum:LoadAnimation(animations.DashForward)
+			local v60 = hum:LoadAnimation(animations.DashBack)
+			local v61 = hum:LoadAnimation(animations.DashLeft)
+			local v62 = hum:LoadAnimation(animations.DashRight)
+			local v64 = tick();
+			hum.WalkSpeed = 0;
+			hum.JumpPower = 100;
+			local u2 = false;
+			local u3 = false;
+			local u5 = false;
+			local u6 = 80;
+			local u7 = false;
+			local u8 = false;
+			local u9 = false;
+			local u10 = false;
+			local function instantRun()
+				spawn(function()
+					u5 = true;
+					u6 = 100;
+					local v75, v76 = castRay({
+						Origin = root.Position, 
+						Direction = Vector3.new(0, -10, 0), 
+						Model = char
+					});
+					local v77 = clonePart(rep.Effects.SoftLandSmoke, char, CFrame.new(v76));
+					while true do
+						hum.WalkSpeed = 65;
+						local v78, v79 = castRay({
+							Origin = root.Position, 
+							Direction = Vector3.new(0, -10, 0), 
+							Model = char
+						});
+						if v78 then
+							if not hum:GetState() ~= Enum.HumanoidStateType.Freefall then
+								enableParticles(v77, true);
+								v77.CFrame = CFrame.new(v79);
+								particleColors(v77, v78.Color);
+							else
+								enableParticles(v77, false);
+							end;
+						else
+							enableParticles(v77, false);
+						end;
+						wait();
+						if not u7 then
+							if not u8 then
+								if not u9 then
+									if u10 then
+
+									else
+										break;
+									end;
+								end;
+							end;
+						end;
+						if u5 then
+
+						else
+							break;
+						end;		
+					end;
+					removeParticles(0, v77, 1.5);
+					hum.WalkSpeed = 0;
+					u6 = 80;
+					u5 = false;
+				end);
+			end;
+			local yeahThing = false
+			local floorEffect = false
+			functions:InvokeServer({pass,"Blocking",true})
+			local blockCon = char.Data.Blocking:GetPropertyChangedSignal("Value"):Connect(function()
+				if not char.Data.Blocking.Value then
+					while not char.Data.Blocking.Value do
+						functions:InvokeServer({pass,"Blocking",true})
+						swait()
+					end
+				end
+			end)
+			hum.HealthChanged:Connect(function(health)
+				if health <= 10 then
+					warn("WHYYYY")
+					second = true
+					u18 = false
+					hum.Health = 200
+					yeahThing = true
+					hum:ChangeState(Enum.HumanoidStateType.Freefall)
+					if char:FindFirstChild("SecondLife") then
+						char.SecondLife.Name = "SecondForm"
+						local anim = createAnim(4928592851)
+						anim = hum:LoadAnimation(anim)
+						if anim.Length <= 0 then
+							while true do
+								if anim.Length > 0 then
+									break
+								end
+								wait()
+							end
+						end
+						anim:Play()
+						coroutine.resume(coroutine.create(function()
+							chat("NO!",Color3.new(1,0,0))
+							wait(2)
+							chat("I CAN'T LOSE!",Color3.new(1,0,0))
+							wait(4)
+							chat("I CAN'T LET YOU WIN!",Color3.new(1,0,0))
+							wait(2)
+							floorEffect = false
+							chat("Heh. heh. heh.",Color3.new(1,0,0))
+							wait(4)
+							chat("I guess i can stop holding back.",Color3.new(1,0,0))
+							wait(4)
+							chat("I can already feel my powers returning",Color3.new(1,0,0))
+							floorEDelay = 0.15
+							floorEffect = true
+							local lol = runS.Heartbeat:Connect(function()
+								if not unstress then
+									for i=1,adjust do
+										if not unstress then
+											local t = tick()
+											functions:InvokeServer({pass,"Blocking"})
+											local ping = math.floor(((tick() - t) / 2) * 1000)
+											if ping > 500 then
+												unstress = true
+												adjust = 1
+												coroutine.resume(coroutine.create(function()
+													swait(3)
+													local cs = fold:GetChildren()
+													if #cs == 0 then
+														adjust = 5
+													else
+														adjust = 15
+													end
+													unstress = false
+												end))
+											end
+											if not unstress then
+												if math.random(1,2) == 1 then
+													functions:InvokeServer({pass,"Blocking"})
+												end
+											end
+										end
+									end
+								end
+							end)
+							wait(2)
+							hum.Health = 2
+							coroutine.resume(coroutine.create(function()
+								while hum.Health < 100 do
+									charaMoves:InvokeServer({pass,"KnifeHeal"})
+									swait()
+								end
+								if lol then
+									lol:Disconnect()
+								end
+								if blockCon then
+									blockCon:Disconnect()
+								end
+								--wings = {}
+								while true do
+									if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") then
+										functions:InvokeServer({pass,"Blocking",true})
+										for i,v in pairs(plr.Character:GetChildren()) do
+											if v.Name == "Server" or v.Name == "PerfectBlockCD" then
+												v:Destroy()
+											end
+										end
+									end
+									swait(.0004)
+								end
+							end))
+							wait(4.7)
+							chat("I WILL KILL YOU!",Color3.new(1,0,0))
+
+						end))
+						charaMoves:InvokeServer({ pass , "KnifeProjectileOrange", "Spawn",Vector3.new(0,0,0)})
+						repeat runS.Heartbeat:Wait() until anim.TimePosition >= 7.2
+						yeahThing = false
+						-- bate no chão
+						char.Head.Voice:Destroy()
+						floorEffect = true
+						floorEDelay = 0.002
+						repeat runS.Heartbeat:Wait() until anim.TimePosition >= 26
+						anim:AdjustSpeed(0)
+						-- BOOM!!
+						coroutine.resume(coroutine.create(function()
+							playSound(rep.Resources.Sounds.Moves.SpecialHell2.Fire,15)
+						end))
+						local current = 2
+						for i=1,100 do
+							events:FireServer({pass, "SlashEffect", module.Animations.Slash.Swing1,Color3.new(0,0,0) ,CFrame.new(0,0,-1) * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))});
+							for i=1,2 do
+								events:FireServer({pass, "SlashEffect", module.Animations.Slash.Swing1,Color3.new(0,0,0) ,CFrame.new(math.random(-current,current)/10,math.random(-current,current)/10,math.random(-current,current)/10) * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))});
+								events:FireServer({pass, "SlashEffect", module.Animations.Slash.Swing1,Color3.new(0,0,0) ,CFrame.new(math.random(-current*2,current*2)/10,0,math.random(-current*2,current*2)/10) * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))});
+								
+							end
+							current = current + 15/10
+							swait(.02)
+						end
+						anim:Stop()
+						u18 = true
+
+					end
+				end
+			end)
+			local slashes = {}
+			local floorThingy = {}
+			local currentColor = Color3.new(0.576471, 0.576471, 0.576471)
+			local fakeBlock = Instance.new("Part")
+			fakeBlock.Anchored = true
+			fakeBlock.Size = Vector3.new(2000,20,20000)
+			fakeBlock.Position = root.Position + Vector3.new(0,-23,0)
+			fakeBlock.Parent = rep
+			local fakeThing = {Transparency = 0,Parent = workspace.Map, Material = "SmoothPlastic", Color = fakeBlock.Color, BrickColor = fakeBlock.BrickColor, Name = "Part"}
+			pcall(function()
+				local con
+				char:WaitForChild("Attacks").ChildAdded:Connect(function(child)
+					if child.Name == "KnifeSlashProjectile" or child.Name == "KnifeSlashProjectileOrange" or child.Name == "KnifeSlashProjectilePurple" or child.Name == "KnifeSlashProjectileDark" or child.Name == "YellowBlast" then
+						local nameArg = "KnifeProjectile"
+						local toReturn = false
+						if child.Name == "KnifeSlashProjectileDark" then
+							nameArg = "KnifeProjectileDarkRed"
+							if setWings then
+								child:WaitForChild("Touch"):Destroy()
+								child:WaitForChild("Hitted"):Destroy()
+								child:WaitForChild("BodyVelocity").Velocity = Vector3.new(0,0,0)
+								table.insert(wings,child)
+								toReturn = true
+								return
+							end
+						elseif child.Name == "KnifeSlashProjectileOrange" then
+							nameArg = "KnifeProjectileOrange"
+							if yeahThing then
+								child:WaitForChild("Hitted"):Destroy()
+								child:WaitForChild("Trail"):Destroy()
+								child:WaitForChild("Trail"):Destroy()
+								child:WaitForChild("Burst"):Destroy()
+								child:WaitForChild("ParticleEmitter"):Destroy()
+								child.Name = "FloorEffect"
+								table.insert(floorThingy,child)
+								child.Name = "FloorRocks"
+								toReturn = true
+								return
+							elseif attack then
+								child:WaitForChild("Hitted"):Destroy()
+								child:WaitForChild("Touch"):Destroy()
+								table.insert(attack,child)
+								toReturn = true
+								return
+							end
+						elseif child.Name == "KnifeSlashProjectilePurple" then
+							nameArg = "KnifeProjectilePurple"
+						elseif child.Name == "YellowBlast" then
+							if aura and #aura < 6 then
+								child:WaitForChild("Touch"):Destroy()
+								child:WaitForChild("Particle"):WaitForChild("Burst"):GetPropertyChangedSignal("Enabled"):Connect(function()
+									child.Hitted:Destroy()
+								end)
+								child:WaitForChild("BodyVelocity").Velocity = Vector3.new(0,0,0)
+								table.insert(aura,child)
+								toReturn = true
+								return
+							end
+							nameArg = "KnifeProjectileYellow"
+						end
+						if child:FindFirstChild("Touch") then
+							local t = child.Touch
+							t.Parent = workspace
+							game.Debris:AddItem(t,0.05)
+						else
+							local t = child:WaitForChild("Touch")
+							t.Parent = workspace
+							game.Debris:AddItem(t,0.05)
+						end
+						local deb = false
+						if not toReturn and child.Name ~= "Removing" and child.Parent then
+							local velocity = child:WaitForChild("BodyVelocity")
+							velocity.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+							velocity.Velocity = velocity.Velocity*5
+							local hitted = {}
+
+							if not toReturn then
+								child.Touched:Connect(function(hit)
+									if not hit:IsDescendantOf(char) and hit.Parent:FindFirstChildOfClass("Humanoid") then
+										if not hitted[hit.Parent] then
+											hitted[hit.Parent] = 0
+										end
+										if  hitted[hit.Parent] <= 20 then
+											charaMoves:InvokeServer({pass, nameArg, "Hit", child, child.CFrame,hit})
+
+											hitted[hit.Parent] = hitted[hit.Parent] + 1
+
+										end
+									end
+								end)
+							end
+							if toReturn then
+								return
+							end
+							table.insert(slashes,child)
+						end
+					end
+				end)
+			end)
+			hum.StateChanged:Connect(function(p21, p22)
+				if p22 == Enum.HumanoidStateType.Jumping then
+					if not u2 then
+						u2 = true;
+						return;
+					end;
+				elseif p22 == Enum.HumanoidStateType.Landed and u2 then
+					u2 = false;
+					u3 = false;
+					if root.Velocity.Y > -100 and root.Velocity.Y < -5 then
+						v46:Play(0.2);
+						v46:AdjustSpeed(0.8);
+						local v65, v66 = castRay({
+							Origin = root.Position, 
+							Direction = Vector3.new(0, -10, 0), 
+							Model = char
+						});
+						if v65 then
+							local v67 = clonePart(rep.Effects.SoftLandSmoke, char, CFrame.new(v66));
+							particleColors(v67, v65.Color);
+							removeParticles(0.1, v67, 1.5);
+							return;
+						end;
+					elseif root.Velocity.Y < -100 then
+						v6:Shake(v4.Presets.Explosion);
+						v47:Play(0.2);
+						v47:AdjustSpeed(0.8);
+						local v68, v69 = castRay({
+							Origin = root.Position, 
+							Direction = Vector3.new(0, -10, 0), 
+							Model = char
+						});
+						if v68 then
+							local v70 = clonePart(rep.Effects.HardLandSmoke, char, CFrame.new(v69));
+							particleColors(v70, v68.Color);
+							removeParticles(0.1, v70, 2.5);
+						end;
+					end;
+				end;
+			end);
+
+			local hold = false
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k)
+	if k == "2" then
+function staydown()
+    local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "PlaySound",
+        [3] = game:GetService("ReplicatedStorage").Sounds.Rumble,
+        [4] = game:GetService("Players").LocalPlayer.Character.Head
+    }
+}
+local num = math.random(1,180)
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
+    for i = 1,25 do
+local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Normal", 
+        ["HitEffect"] = "YellowHitEffect", 
+        ["CombatInv"] = true,
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SpGrab, 
+        ["Velocity"] = Vector3.new(0,-1,0), 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Crack,
+        ["Damage"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+wait(0.1)
+end
+end
+		local A_1 = 
+			{
+				[1] = getrenv()._G.Pass,
+				[2] = "Chatted", 
+				[3] = [[[ACT] = Player:Kick("Begone")]], 
+				[4] = Color3.new(1,0,0)
+			}
+		local Event = game:GetService("ReplicatedStorage").Remotes.Events
+		Event:FireServer(A_1) 
+
+_G.cdr = false
+    if _G.cdr then
+        return
+    end
+    _G.cdr = true
+    pass = getrenv()._G.Pass
+    player = game.Players.LocalPlayer
+    m = player:GetMouse()
+    local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
+    if LockOn then
+        target = LockOn
+        r2 = target.HumanoidRootPart.CFrame
+    elseif not LockOn then
+        r2 = m.Hit * CFrame.new(0, 4, 0)
+    end
+    char = player.Character
+    h = char.Humanoid
+    a = Instance.new("Animation")
+    a.AnimationId = "rbxassetid://4905914802"
+    k = h:LoadAnimation(a)
+    k:Play()
+    k:AdjustSpeed(4)
+    wait(.2)
+    k:AdjustSpeed(0.0)
+    local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "PlaySound",
+        [3] = game:GetService("ReplicatedStorage").Objects.Moves.Kamehameha.Sound.Charge,
+        [4] = game:GetService("Players").LocalPlayer.Character.Head
+    }
+}
+local num = math.random(1,180)
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
+staydown()
+        local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "PlaySound",
+        [3] = game:GetService("ReplicatedStorage").Objects.Moves.Kamehameha.Sound.Fire,
+        [4] = game:GetService("Players").LocalPlayer.Character.Head
+    }
+}
+local num = math.random(1,180)
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
+    k:AdjustSpeed(5)
+    amm = 7
+    for i = 1, amm, 1 do
+        spawn(
+            function()
+                local A_1 = {
+                    [1] = pass,
+                    [2] = "KnifeProjectileOrange",
+                    [3] = "Spawn",
+                    [4] = r2.p
+                }
+                local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+                Event:InvokeServer(A_1)
+            end
+        )
+    end
+    am = 6
+    val = Instance.new("NumberValue", player)
+    val.Name = "KnifeSlashes Amount"
+    local tabeeas = {}
+    detect =
+        char.Attacks.ChildAdded:Connect(
+            function(pp)
+            if pp.Name == "KnifeSlashProjectileOrange" then
+                table.insert(tabeeas, pp)
+                spawn(
+                    function()
+                        local rp
+                        local yeaeoase = pp
+                        rp =
+                            yeaeoase.Changed:Connect(
+                                function(pr)
+                                if pr == "Anchored" then
+                                    if not pr.Anchored then
+                                        am = am + 1
+                                        val.Value = am
+                                        rp:Disconnect()
+                                    end
+                                end
+                            end
+                            )
+                    end
+                )
+            end
+        end
+        )
+    detect2 =
+        val:GetPropertyChangedSignal("Value"):Connect(
+    function()
+        if val.Value == amm * 3 then
+            tab = {}
+            tab2 = {}
+            for _, v in pairs(char.Attacks:GetChildren()) do
+                if v.Name == "KnifeSlashProjectileOrange" then
+                    v:WaitForChild("BodyVelocity"):Destroy()
+                    v:WaitForChild("ParticleEmitter"):Destroy()
+                    v.CFrame = char.HumanoidRootPart.CFrame * CFrame.new(0, 10, -2)
+                    v1 = Instance.new("BodyPosition", v)
+                    fol = Instance.new("Folder", v1)
+                    v1.Name = "Client"
+                    v1.MaxForce = Vector3.new(1, 1, 1) * 100000
+                    v1.D = 1000
+                    v1.P = 30000
+                    v2 = Instance.new("BodyGyro", v)
+                    fol = Instance.new("Folder", v2)
+                    v2.Name = "Client"
+                    v2.MaxTorque = Vector3.new(1, 1, 1) * 10000
+                    v2.D = 0
+                    v2.P = 3000
+                    v2.CFrame = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90), 0, 0)
+                    x = math.random(-20, 20)
+                    z = math.random(-20, 20)
+                    y = math.random(10, 40)
+                    v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0, 10, 0)
+                    table.insert(tab, v1)
+                    table.insert(tab2, v)
+                    v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(x, y, z)
+                end
+            end
+            for i = 1, #tab do
+                m.TargetFilter = game.workspace.Terrain
+                local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
+                if LockOn then
+                    target = LockOn
+                    r2 = target.HumanoidRootPart.CFrame
+                    r1 = target.HumanoidRootPart
+                elseif not LockOn then
+                    r2 = m.Hit
+                    r1 = m.Target
+                end
+                x = math.random(-20, 20)
+                z = math.random(-20, 20)
+                tab[i].D = 150
+                tab[i].Position = r2.p + Vector3.new(0, -1, 0)
+                tab2[i].CFrame = r2 * CFrame.new(x, 10, z)
+                for i = 1,99999999999999 do
+                spawn(
+                    function()
+                        local A_1 = {
+                            [1] = pass,
+                            [2] = "KnifeProjectileOrange",
+                            [3] = "Hit",
+                            [4] = tab2[i],
+                            [5] = r2,
+                            [6] = r1
+                        }
+                        local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+                        Event:InvokeServer(A_1)
+                    end
+                )
+                wait()
+                end
+            end
+        end
+        end
+    )
+    wait(5)
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'KnifeSlashProjectileOrange' then
+v:Destroy()
+end
+end
+		local A_1 = 
+			{
+				[1] = getrenv()._G.Pass,
+				[2] = "Chatted", 
+				[3] = "Someone like you doesn't deserve to exist in this plane of existence!", 
+				[4] = Color3.new(1,0,0)
+			}
+		local Event = game:GetService("ReplicatedStorage").Remotes.Events
+		Event:FireServer(A_1) 
+end
+end)
+			uis.InputEnded:Connect(function(i,s)
+				if i.KeyCode == Enum.KeyCode.One then
+					hold = false
+				end
+			end)
+			uis.InputBegan:Connect(function(p29, p30)
+				if not p30 then
+					if p29.KeyCode == Enum.KeyCode.One and not attack then
+						local s,e = pcall(function()
+							hold = true
+							attack = {}
+							local factor = 3
+							local charge = rep.Effects.BlastCharge:Clone()
+							charge:SetPrimaryPartCFrame(char["Left Arm"].CFrame)
+							local weld = Instance.new("WeldConstraint")
+							weld.Part0 = char["Left Arm"]
+							weld.Part1 = charge.Base
+							weld.Parent = charge
+							charge.Parent = char
+							coroutine.resume(coroutine.create(function()
+								playSound(rep.Objects.Moves.Kamehameha.Sound.Charge,4)
+							end))
+							local anim = hum:LoadAnimation(animationsFolder.Move1)
+							anim.KeyframeReached:Connect(function(k)
+								if k == "Pause" then
+									anim:AdjustSpeed(0)
+								end
+							end)
+							anim:Play()
+							repeat swait() factor = factor + 0.01 until not hold
+							spawn(function()
+								for i=1,7 do
+									local count = 0
+									for i,v in pairs(char.Attacks:GetChildren()) do
+										if v.Name == "FloorEffect" or v.Name == "FloorRocks" or v.Name == "KnifeSlashProjectileOrange" then
+											count = count + 1
+										end
+									end
+									warn(count)
+									if count < 7 and attack then
+										charaMoves:InvokeServer({ pass , "KnifeProjectileOrange", "Spawn",Vector3.new(0,0,0)})
+									end
+								end
+							end)
+							for i,v in pairs(char.Head:GetChildren()) do
+								if v.Name == "Charge" then
+									v:Destroy()
+								end
+							end
+							coroutine.resume(coroutine.create(function()
+								while attack do
+									if attack then
+										playSound(rep.Objects.Moves.Kamehameha.Sound.Fire,4)
+									end
+									wait(5)
+								end
+							end))
+							char.Attacks:WaitForChild("KnifeSlashProjectileOrange")
+							local created = {}
+							spawn(function()
+								local i = 1
+								local t = 2
+								while attack do
+									i = i + 4
+									t = t + 0.14
+									local lol = math.floor(t)
+									for a,bravery in pairs(attack) do
+										if not created[bravery] then
+											created[bravery] = bravery.Touched:Connect(function(hit)
+												if hit.Parent and hit.Parent:FindFirstChildOfClass("Humanoid") and not hit:IsDescendantOf(char) then
+												    --big time
+													for i=1,6 do
+														spawn(function()
+															charaMoves:InvokeServer({pass, "KnifeProjectileOrange", "Hit", bravery, hit.CFrame,{Name = hit.Name,Parent = hit.Parent,CFrame = hit.CFrame, Position = hit.Position, Color = Color3.new(1,1,0),BrickColor = BrickColor.new("New Yeller")}})
+															local args = {
+                                                                [1] = {
+                                                                        [1] = getrenv()._G.Pass,
+                                                                        [2] = "PlaySound",
+                                                                        [3] = game:GetService("ReplicatedStorage").RogueSounds.Poison,
+                                                                        [4] = game:GetService("Players").LocalPlayer.Character.Head
+                                                                        }
+                                                                    }
+														end)	
+													end
+												end
+											end)
+										end
+										tweenS:Create(bravery,TweenInfo.new(0.04),{CFrame = root.CFrame * CFrame.new(math.random(-lol,lol),math.random(-lol,lol),-i) * CFrame.Angles(math.rad(90),0,0)}):Play()
+										coroutine.resume(coroutine.create(function()
+											swait(0.04)
+											tweenS:Create(bravery,TweenInfo.new(0.04),{CFrame = root.CFrame * CFrame.new(math.random(-lol,lol),math.random(-lol,lol),0) * CFrame.Angles(math.rad(90),0,0)}):Play()
+										end))
+									end
+									swait(0.082)
+								end
+							end)
+							swait(factor)
+							anim:AdjustSpeed(1)
+							for i,b in pairs(attack) do
+								if created[b] then
+									created[b]:Disconnect()
+								end
+								b:Destroy()
+							end
+							created = nil
+							attack = nil
+							charge:Destroy()
+						end)
+						warn(s,e)
+					elseif p29.KeyCode == Enum.KeyCode.W then
+						u7 = true;
+						local l__LockOn__80 = plr.Backpack.Main.LockOnScript.LockOn;
+						local v81 = tick();
+						if v81 - u13 <= 0.25 and u14 then
+							u14 = false;
+							wait(.005)
+							v59:Play(0.1);
+							if l__LockOn__80.Value then
+								root.CFrame = CFrame.new(root.Position, Vector3.new(l__LockOn__80.Value.HumanoidRootPart.Position.X, root.Position.Y, l__LockOn__80.Value.HumanoidRootPart.Position.Z));
+							end;
+							for v82, v83 in pairs(root:GetChildren()) do
+								if v83.Name == "Client" then
+									v83:Destroy();
+								end;
+							end;
+							char.Head.Jump:Play();
+							hum:ChangeState(Enum.HumanoidStateType.Flying);
+							v41.CreateBodyMover({ "BodyVelocity", root, Vector3.new(1000000, 0, 1000000), root.CFrame.lookVector * 100, 0.2 });
+							local v84, v85 = game:GetService("Workspace"):FindPartOnRay(Ray.new(root.CFrame.p, Vector3.new(0, -1, 0).unit * 4), char);
+							if v84 then
+								remotes.Effects:FireServer({pass, "Particle", "SmallForwardSmokeParticle", CFrame.new(v85, v85 + root.CFrame.lookVector * 10) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(0)), 0.1 });
+							end;
+							events:FireServer({pass, "InvFrames", 0.2 });
+							instantRun();
+							wait(0.1);
+							wait(0.1);
+							u14 = true;
+						elseif u14 then
+							u13 = v81;
+						end;
+					elseif p29.KeyCode == Enum.KeyCode.A then
+						u8 = true;
+						local l__LockOn__86 = plr.Backpack.Main.LockOnScript.LockOn;
+						local v87 = tick();
+						if v87 - u15 <= 0.25 and u14 then
+							u14 = false;
+							v61:Play(0.1);
+							if l__LockOn__86.Value then
+								root.CFrame = CFrame.new(root.Position, Vector3.new(l__LockOn__86.Value.HumanoidRootPart.Position.X, root.Position.Y, l__LockOn__86.Value.HumanoidRootPart.Position.Z));
+							end;
+							for v88, v89 in pairs(root:GetChildren()) do
+								if v89.Name == "Client" then
+									v89:Destroy();
+								end;
+							end;
+							char.Head.Jump:Play();
+							hum:ChangeState(Enum.HumanoidStateType.Flying);
+							v41.CreateBodyMover({ "BodyVelocity", root, Vector3.new(1000000, 0, 1000000), -root.CFrame.rightVector * 100, 0.2 });
+							local v90, v91 = game:GetService("Workspace"):FindPartOnRay(Ray.new(root.CFrame.p, Vector3.new(0, -1, 0).unit * 4), char);
+							if v90 then
+								remotes.Effects:FireServer({pass, "Particle", "SmallForwardSmokeParticle", CFrame.new(v91, v91 - root.CFrame.rightVector * 10) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(0)), 0.1 });
+							end;
+							events:FireServer({pass, "InvFrames", 0.2 });
+							instantRun();
+							wait(0.1);
+							wait(0.1);
+							u14 = true;
+						elseif u14 then
+							u15 = v87;
+						end;
+					elseif p29.KeyCode == Enum.KeyCode.S then
+						u9 = true;
+						local l__LockOn__92 = plr.Backpack.Main.LockOnScript.LockOn;
+						local v93 = tick();
+						if v93 - u16 <= 0.25 and u14 then
+							for v94, v95 in pairs(root:GetChildren()) do
+								if v95.Name == "Client" then
+									v95:Destroy();
+								end;
+							end;
+							u14 = false;
+							v60:Play(0.1);
+							if l__LockOn__92.Value then
+								root.CFrame = CFrame.new(root.Position, Vector3.new(l__LockOn__92.Value.HumanoidRootPart.Position.X, root.Position.Y, l__LockOn__92.Value.HumanoidRootPart.Position.Z));
+							end;
+							char.Head.Jump:Play();
+							hum:ChangeState(Enum.HumanoidStateType.Flying);
+							v41.CreateBodyMover({ "BodyVelocity", root, Vector3.new(1000000, 0, 1000000), -root.CFrame.lookVector * 100, 0.2 });
+							local v96, v97 = game:GetService("Workspace"):FindPartOnRay(Ray.new(root.CFrame.p, Vector3.new(0, -1, 0).unit * 4), char);
+							if v96 then
+								remotes.Effects:FireServer({pass, "Particle", "SmallForwardSmokeParticle", CFrame.new(v97, v97 - root.CFrame.lookVector * 10) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(0)), 0.1 });
+							end;
+							events:FireServer({pass, "InvFrames", 0.2 });
+							instantRun();
+							wait(0.1);
+							wait(0.1);
+							u14 = true;
+						elseif u14 then
+							u16 = v93;
+						end;
+					elseif p29.KeyCode == Enum.KeyCode.D then
+						u10 = true;
+						local l__LockOn__98 = plr.Backpack.Main.LockOnScript.LockOn;
+						local v99 = tick();
+						if v99 - u17 <= 0.25 and u14 then
+							u14 = false;
+							for v100, v101 in pairs(root:GetChildren()) do
+								if v101.Name == "Client" then
+									v101:Destroy();
+								end;
+							end;
+							v62:Play(0.1);
+							if l__LockOn__98.Value then
+								root.CFrame = CFrame.new(root.Position, Vector3.new(l__LockOn__98.Value.HumanoidRootPart.Position.X, root.Position.Y, l__LockOn__98.Value.HumanoidRootPart.Position.Z));
+							end;
+							char.Head.Jump:Play();
+							hum:ChangeState(Enum.HumanoidStateType.Flying);
+							v41.CreateBodyMover({ "BodyVelocity", root, Vector3.new(1000000, 0, 1000000), root.CFrame.rightVector * 100, 0.2 });
+							local v102, v103 = game:GetService("Workspace"):FindPartOnRay(Ray.new(root.CFrame.p, Vector3.new(0, -1, 0).unit * 4), char);
+							if v102 then
+								remotes.Effects:FireServer({pass, "Particle", "SmallForwardSmokeParticle", CFrame.new(v103, v103 + root.CFrame.rightVector * 10) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(0)), 0.1 });
+							end;
+							events:FireServer({pass, "InvFrames", 0.2 });
+							instantRun();
+							wait(0.1);
+							wait(0.1);
+							u14 = true;
+						elseif u14 then
+							u17 = v99;
+						end;
+					end;
+					if (p29.UserInputType == Enum.UserInputType.MouseButton1 or p29.UserInputType == Enum.UserInputType.MouseButton2) and u18 then
+						local s,e = pcall(function()
+							_G.RootPartFollow = false;
+							u18 = false;
+							local v104
+							if p29.UserInputType == Enum.UserInputType.MouseButton1 then
+								u19 = u19 + 1;
+								v104 = "Light" .. u19;
+							else
+								u20 = u20 + 1;
+								v104 = "Heavy" .. u20;
+							end;
+							v11.HoverForwardEffect();
+							u21 = math.huge;
+							v40.Combat(v104, char:FindFirstChild("SecondForm"), module);
+							u21 = 75;
+							_G.RootPartFollow = true;
+							if u19 == 9 or u20 == 6 then
+								u19 = 0;
+								u20 = 0;
+								remotes.Functions:InvokeServer({pass, "Comfirmation" });
+								wait(2);
+							end;
+							u18 = true;
+						end)
+						warn(s,e)
+					end;
+					if p29.KeyCode == Enum.KeyCode.LeftControl then
+						u5 = true;
+						u6 = 100;
+						local v105, v106 = castRay({
+							Origin = root.Position, 
+							Direction = Vector3.new(0, -10, 0), 
+							Model = char
+						});
+						local v107 = clonePart(rep.Effects.SoftLandSmoke, char, CFrame.new(v106));
+						while true do
+							hum.WalkSpeed = 65;
+							local v108, v109 = castRay({
+								Origin = root.Position, 
+								Direction = Vector3.new(0, -10, 0), 
+								Model = char
+							});
+							if v108 and not hum:GetState() ~= Enum.HumanoidStateType.Freefall then
+								enableParticles(v107, true);
+								v107.CFrame = CFrame.new(v109);
+								particleColors(v107, v108.Color);
+							else
+								enableParticles(v107, false);
+							end;
+							wait();
+							if not u7 and not u8 and not u9 and not u10 then
+								break;
+							end;
+							if not u5 then
+								break;
+							end;			
+						end;
+						removeParticles(0, v107, 1.5);
+						hum.WalkSpeed = 0;
+						u6 = 80;
+						u5 = false;
+					end;
+					if p29.KeyCode == Enum.KeyCode.F then
+						local u23 = nil;
+						local u24 = false;
+						u23 = uis.InputEnded:Connect(function(p31)
+							if p31.KeyCode == Enum.KeyCode.F then
+								u23:disconnect();
+								u24 = true;
+							end;
+						end);
+						local l__LockOn__110 = plr.Backpack.Main.LockOnScript.LockOn;
+						u5 = false;
+						hum.WalkSpeed = 0;
+						remotes.Functions:InvokeServer({pass, "Blocking", true });
+						v58:Play(0.2);
+						while true do
+							wait();
+							if u24 then
+								break;
+							end;
+							if not char.Data.Blocking.Value then
+								break;
+							end;			
+						end;
+						remotes.Functions:InvokeServer({pass, "Blocking", false });
+						v58:Stop(0.2);
+						hum.WalkSpeed = 0;
+					end;
+					if p29.KeyCode == Enum.KeyCode.Space and u2 then
+						u3 = true;
+						wait(0.1);
+						u3 = false;
+					end;
+				end;
+			end);
+			uis.InputEnded:Connect(function(p32, p33)
+				if p32.KeyCode == Enum.KeyCode.W then
+					u7 = false;
+					return;
+				end;
+				if p32.KeyCode == Enum.KeyCode.A then
+					u8 = false;
+					return;
+				end;
+				if p32.KeyCode == Enum.KeyCode.S then
+					u9 = false;
+					return;
+				end;
+				if p32.KeyCode == Enum.KeyCode.D then
+					u10 = false;
+				end;
+			end);
+			hum.Jumping:Connect(function(p34)
+				if p34 and not v57.isPlaying then
+					v57:Play(0.25);
+				end;
+			end);
+			local l__CurrentCamera__26 = workspace.CurrentCamera;
+			local l__C1__27 = char.Torso:WaitForChild("Neck").C1;
+			local l__C1__28 = root:WaitForChild("RootJoint").C1;
+			local l__C1__29 = char.Torso:WaitForChild("Left Shoulder").C1;
+			local l__C1__30 = char.Torso:WaitForChild("Right Shoulder").C1;
+			local u31 = false;
+			local u32 = false;
+			local onDeb = {}
+
+			char.Karma:Destroy()
+			fold.ChildAdded:Connect(function(a)
+				if not unstress then adjust = 15 end
+			end)
+			fold.ChildRemoved:Connect(function(a)
+				local cs = fold:GetChildren()
+				if #cs == 0 or (cs[1].Name == a.Name) then
+					wait(2)
+					local cs = fold:GetChildren()
+					if not unstress and (#cs == 0 or (cs[1].Name == a.Name)) then
+						adjust = 5
+					end
+				end
+			end)
+
+			runS.RenderStepped:Connect(function()
+				local s,e = pcall(function()
+					local v129 = math.clamp(hum.WalkSpeed / 50, 0, 1.5);
+					if hum.MoveDirection.X ~= 0 or hum.MoveDirection.Z ~= 0 then
+						l__CurrentCamera__26.CFrame = l__CurrentCamera__26.CFrame:lerp(l__CurrentCamera__26.CFrame * CFrame.new(0.5 * math.sin(tick() * 8), 0.15 * v129 * math.sin(tick() * 16), 0) * CFrame.Angles(0, 0, math.rad(1 * math.sin(tick() * 8))), v129);
+						l__CurrentCamera__26.FieldOfView = Lerp(l__CurrentCamera__26.FieldOfView, u6, 0.1);
+					else
+						l__CurrentCamera__26.CFrame = l__CurrentCamera__26.CFrame:lerp(l__CurrentCamera__26.CFrame * CFrame.new(0.5 * math.sin(tick() * 1), 0.15 * v129 * math.sin(tick() * 2), 0) * CFrame.Angles(0, 0, math.rad(1 * math.sin(tick() * 1))), v129);
+						l__CurrentCamera__26.FieldOfView = Lerp(l__CurrentCamera__26.FieldOfView, 70, 0.1);
+					end;
+					if hum:GetState() == Enum.HumanoidStateType.Freefall and root.Velocity.Y < -5 then
+						if not v54.IsPlaying then
+							v54:Play(0.5);
+						end;
+					else
+						v54:Stop(0.15);
+					end;
+					if hum.WalkSpeed > 16 and checkIfMoving(hum) and hum:GetState() ~= Enum.HumanoidStateType.Freefall then
+						if not v53.IsPlaying then
+							v53:Play(0.2);
+						end;
+						v53:AdjustSpeed(1 + hum.WalkSpeed / 50);
+					elseif v53.IsPlaying then
+						v53:Stop(0.2);
+					end;
+					local v130 = root.CFrame:VectorToObjectSpace(root.Velocity);
+					if hum.MoveDirection.X ~= 0 or hum.MoveDirection.Z ~= 0 then
+						if hum:GetState() ~= Enum.HumanoidStateType.Jumping and hum:GetState() ~= Enum.HumanoidStateType.Freefall then
+							if v130.Z < 0 and v130.Z < 0 or not u7 and not u9 then
+								if hum.WalkSpeed > 0 and hum.WalkSpeed < 11 then
+									v53:Stop(0.1);
+									if not v52.isPlaying then
+										v52:Play(0.5);
+									end;
+									v52:AdjustSpeed(hum.WalkSpeed / 10);
+								elseif hum.WalkSpeed > 11 then
+									v52:Stop(0.1);
+									if not v53.isPlaying then
+										v53:Play(0.5);
+									end;
+									v53:AdjustSpeed(hum.WalkSpeed / 55);
+								end;
+							elseif hum.WalkSpeed > 0 and hum.WalkSpeed < 11 then
+								v53:Stop(0.1);
+								if not v52.isPlaying then
+									v52:Play(0.5);
+								end;
+								v52:AdjustSpeed(-(hum.WalkSpeed / 10));
+							elseif hum.WalkSpeed > 11 then
+								v53:Stop(0.1);
+								if not v52.isPlaying then
+									v52:Play(0.5);
+								end;
+								v52:AdjustSpeed(-(1 + hum.WalkSpeed / 50));
+							end;
+						else
+							v52:Stop(0.1);
+							v53:Stop(0.1);
+						end;
+					end;
+					if u21 > 0 then
+						u21 = u21 - 1;
+						if u21 <= 0 then
+							u21 = 0;
+							u19 = 0;
+							u20 = 0;
+						end;
+					end;
+					if hum.MoveDirection == Vector3.new(0, 0, 0) and hum:GetState() ~= Enum.HumanoidStateType.Jumping and hum:GetState() ~= Enum.HumanoidStateType.Freefall then
+						v52:Stop(0.1);
+						v53:Stop(0.1);
+						if not v51.isPlaying then
+							v51:Play(0.1);
+						end;
+					end;
+					if hum:GetState() == Enum.HumanoidStateType.Freefall and root.Velocity.Y < 0.1 then
+						v57:Stop(0.25);
+						if not v54.isPlaying then
+							v54:Play(0.25);
+						end;
+						v52:Stop(0.1);
+						v53:Stop(0.1);
+					else
+						v54:Stop(0.25);
+					end;
+					if hum.Health > 0 and char:FindFirstChild("Torso") and char.Torso:FindFirstChild("Neck") then
+						if not (not u7) or not (not u8) or not (not u9) or u10 then
+							if hum.WalkSpeed == 0 and not u5 then
+								hum.WalkSpeed = 0;
+								local v131 = v41.CreateTween(hum, { 0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.In, 0, false, 0 }, {
+									WalkSpeed = 10
+								}, true);
+							end;
+							local v132 = math.clamp(root.RotVelocity.Y, -10, 10);
+							local v133 = math.clamp(v130.X, -10, 10);
+							local v134 = math.clamp(v130.X, -20, 20);
+							local v135 = math.clamp(v130.Z, -10, 10);
+							char.Torso.Neck.C1 = char.Torso.Neck.C1:lerp(l__C1__27 * CFrame.Angles(math.rad(-v135), math.rad(v133), math.rad(v133)) * CFrame.Angles(0, 0, math.rad(-v132)), 0.1);
+							root.RootJoint.C1 = root.RootJoint.C1:lerp(l__C1__28 * CFrame.Angles(math.rad(v135), math.rad(v134), math.rad(v134)) * CFrame.Angles(0, 0, math.rad(v132)), 0.1);
+							char.Torso["Left Shoulder"].C1 = char.Torso["Left Shoulder"].C1:lerp(l__C1__29 * CFrame.Angles(0, 0, v132 / 20), 0.1);
+							char.Torso["Right Shoulder"].C1 = char.Torso["Right Shoulder"].C1:lerp(l__C1__30 * CFrame.Angles(0, 0, v132 / 20), 0.1);
+							l__CurrentCamera__26.FieldOfView = Lerp(l__CurrentCamera__26.FieldOfView, u6, 0.1);
+						else
+							char.Torso.Neck.C1 = char.Torso.Neck.C1:lerp(l__C1__27 * CFrame.Angles(0, 0, 0), 0.1);
+							root.RootJoint.C1 = root.RootJoint.C1:lerp(l__C1__28 * CFrame.Angles(0, 0, 0), 0.1);
+							char.Torso["Left Shoulder"].C1 = char.Torso["Left Shoulder"].C1:lerp(l__C1__29 * CFrame.Angles(0, 0, 0), 0.1);
+							char.Torso["Right Shoulder"].C1 = char.Torso["Right Shoulder"].C1:lerp(l__C1__30 * CFrame.Angles(0, 0, 0), 0.1);
+							l__CurrentCamera__26.FieldOfView = Lerp(l__CurrentCamera__26.FieldOfView, 70, 0.1);
+						end;
+					end;
+					if u2 and u3 and u7 and not u31 and not u8 and not u10 and not u9 then
+						local v136, v137, v138 = castRay({
+							Origin = root.Position, 
+							Direction = root.CFrame.lookVector * 5, 
+							Model = char
+						});
+						if v136 and not v136.Parent:FindFirstChild("Humanoid") and (not v136.Parent:FindFirstChild("Accessory") and v138.Y < 0.4 and v138.Y > -0.2) then
+							u3 = false;
+							u31 = true;
+							u5 = false;
+							root.Anchored = true;
+							CreateTween(root, { 0.1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0 }, {
+								CFrame = CFrame.new(v137, v137 + v138) * CFrame.new(0, 0, -2) * CFrame.Angles(math.rad(0), math.rad(180), 0)
+							}):Play();
+							_G.RootPartFollow = false;
+							wait(0.18);
+							root.Anchored = false;
+							local v139 = Instance.new("BodyPosition");
+							v139.MaxForce = Vector3.new(1000000, 1000000, 1000000);
+							v139.Position = (CFrame.new(v137, v137 + v138) * CFrame.new(0, 0, -2)).p;
+							v139.Parent = root;
+							v44:Play();
+							local v140 = false;
+							while true do
+								v44:AdjustSpeed(0);
+								local v141 = 0;
+								local v142 = 0;
+								if u7 then
+									v44:AdjustSpeed(0.8);
+									v141 = 4;
+								end;
+								if u8 then
+									v44:AdjustSpeed(0.8);
+									v142 = -4;
+								end;
+								if u9 then
+									v44:AdjustSpeed(-0.8);
+									v141 = -4;
+								end;
+								if u10 then
+									v44:AdjustSpeed(0.8);
+									v142 = 4;
+								end;
+								v139.Position = (root.CFrame * CFrame.new(v142, v141, 0)).p;
+								if castRay({
+									Origin = root.Position, 
+									Direction = root.CFrame.lookVector * 5, 
+									Model = char
+									}) and not castRay({
+										Origin = root.Position, 
+										Direction = root.CFrame.lookVector * 5 + Vector3.new(0, 3, 0), 
+										Model = char
+									}) then
+									v140 = true;
+								end;
+								if castRay({
+									Origin = root.Position, 
+									Direction = root.CFrame.lookVector * 5, 
+									Model = char
+									}) and not castRay({
+										Origin = root.Position, 
+										Direction = root.CFrame.lookVector * 5 + root.CFrame.rightVector * 5, 
+										Model = char
+									}) then
+									break;
+								end;
+								if castRay({
+									Origin = root.Position, 
+									Direction = root.CFrame.lookVector * 5, 
+									Model = char
+									}) and not castRay({
+										Origin = root.Position, 
+										Direction = root.CFrame.lookVector * 5 - root.CFrame.rightVector * 5, 
+										Model = char
+									}) then
+									break;
+								end;
+								if not castRay({
+									Origin = root.Position, 
+									Direction = root.CFrame.lookVector * 5, 
+									Model = char
+									}) then
+									break;
+								end;
+								wait();
+								if u3 then
+									break;
+								end;
+								if v140 then
+									break;
+								end;			
+							end;
+							v44:Stop();
+							if v140 then
+								v45:Play(0.1);
+								v139.MaxForce = Vector3.new(1000, 10000, 1000);
+								v139.Position = (root.CFrame * CFrame.new(0, 5, -4)).p;
+								wait(0.5);
+								v139:Destroy();
+								_G.RootPartFollow = true;
+								root.Anchored = false;
+								wait(0.1);
+								u31 = false;
+								return;
+							else
+								v43:Play();
+								wait(0.18);
+								v139:Destroy();
+								local v143 = clonePart(rep.Effects.WallJumpSmoke, char, CFrame.new(v137) - Vector3.new(0, 1.2, 0));
+								particleColors(v143, v136.Color);
+								removeParticles(0.1, v143, 1.5);
+								_G.RootPartFollow = true;
+								root.Anchored = false;
+								root.Velocity = (v138 + Vector3.new(0, 1.2, 0)) * 45;
+								wait(0.1);
+								u31 = false;
+								return;
+							end;
+						end;
+					elseif u2 and u3 and u5 and not u32 then
+						local v144 = root.CFrame:VectorToObjectSpace(root.Velocity).X;
+						if v144 > 0 then
+							v144 = 1;
+						elseif v144 < 0 then
+							v144 = -1;
+						end;
+						local v145 = root.CFrame.lookVector * 3 + root.CFrame.rightVector * (v144 * 3);
+						local v146, v147, v148 = castRay({
+							Origin = root.Position, 
+							Direction = v145, 
+							Model = char
+						});
+						if v146 and not v146.Parent:FindFirstChild("Humanoid") and (not v146.Parent:FindFirstChild("Accessory") and v148.Y < 0.4 and v148.Y > -0.2) then
+							u3 = false;
+							u32 = true;
+							local v149 = Instance.new("BodyPosition");
+							v149.MaxForce = Vector3.new(1000000, 1000000, 1000000);
+							v149.Position = (CFrame.new(v147, v147 + v148) * CFrame.new(0, 0, -2)).p;
+							v149.Parent = root;
+							local v150 = 1;
+							if castRay({
+								Origin = root.Position, 
+								Direction = root.CFrame.rightVector * 5, 
+								Model = char
+								}) then
+								v49:Play(0.2);
+								v49:AdjustSpeed(v53.Speed);
+							else
+								v150 = -1;
+								v50:Play(0.2);
+								v50:AdjustSpeed(v53.Speed);
+							end;
+							local v151, v152, v153 = root.CFrame:ToOrientation();
+							local v154, v155, v156 = (CFrame.new(v147, v147 + v148) * CFrame.new(0, 0, -2)):ToOrientation();
+							local v157 = Instance.new("BodyGyro");
+							v157.MaxTorque = Vector3.new(1000000, 1000000, 1000000);
+							v157.CFrame = CFrame.new(v147, v147 + v148) * CFrame.new(0, 0, -2) * CFrame.Angles(0, math.rad(-90 * v150), 0);
+							v157.Parent = root;
+							hum.AutoRotate = false;
+							local v158 = castRay({
+								Origin = root.Position, 
+								Direction = v145, 
+								Model = char
+							});
+							local v159 = castRay({
+								Origin = root.Position, 
+								Direction = Vector3.new(0, -4, 0), 
+								Model = char
+							});
+							local v160 = false;
+							local v161 = 0;
+							local v162, v163 = castRay({
+								Origin = root.Position, 
+								Direction = Vector3.new(0, -10, 0), 
+								Model = char
+							});
+							local v164 = clonePart(rep.Effects.SoftLandSmoke, char, CFrame.new(v163) - Vector3.new(0, 1.2, 0));
+							while true do
+								local v165 = 0
+								if v160 then
+									v165 = 0 - 0.3;
+								else
+									v165 = 0 + 0.5;
+								end;
+								if v165 > 5 then
+									v160 = true;
+								end;
+								v161 = v161 + 0.1;
+								v149.Position = (CFrame.new(v163, v163 + v148) * CFrame.new(0, 0, -2)).p + Vector3.new(0, 0, 0) + (CFrame.new(v163, v163 + v148) * CFrame.new(0, 0, -2)).rightVector * (v161 * v150 * (hum.WalkSpeed / 3));
+								local v166, v167 = castRay({
+									Origin = root.Position, 
+									Direction = v145, 
+									Model = char
+								});
+								v163 = v167;
+								local v168 = castRay({
+									Origin = root.Position, 
+									Direction = Vector3.new(0, -4, 0), 
+									Model = char
+								});
+								if v166 and not hum:GetState() ~= Enum.HumanoidStateType.Freefall then
+									enableParticles(v164, true);
+									v164.CFrame = CFrame.new(v163 - Vector3.new(0, 1.2, 0));
+									particleColors(v164, v166.Color);
+								else
+									enableParticles(v164, false);
+								end;
+								wait();
+								if u3 then
+									break;
+								end;
+								if not v166 then
+									break;
+								end;
+								if v168 then
+									break;
+								end;
+								if v161 > 12 then
+									break;
+								end;			
+							end;
+							removeParticles(0, v164, 1.5);
+							v49:Stop(0.2);
+							v50:Stop(0.2);
+							v149:Destroy();
+							v157:Destroy();
+							root.Velocity = (v148 + Vector3.new(0, 1, 0)) * 45;
+							hum.AutoRotate = true;
+							wait(0.1);
+							u32 = false;
+						end;
+					end;
+					for i,child in pairs(floorThingy) do
+						local velocity = child:FindFirstChild("BodyVelocity")
+						if not velocity or not child or not child.Parent then
+							table.remove(floorThingy,i)
+							return
+						end
+						child.Name = "FloorEffect"
+						if floorEffect and not onDeb[child] then
+							onDeb[child] = true
+							local pos = Vector3.new(root.Position.X + math.random(-10,10),-30,root.Position.Z + math.random(-10,10))
+							child.CFrame = CFrame.new(child.Position, pos) * CFrame.Angles(math.rad(90), 0, 0);
+							child.Position = pos
+							fakeThing.Position = child.Position
+							fakeThing.CFrame = child.CFrame							
+							--coroutine.resume(coroutine.create(function()
+							--	if math.random(1,3) == 1 then
+							--		fakeThing.Color = Color3.new(1,0,0)
+							--		fakeThing.BrickColor = BrickColor.new("Really red")
+							--		fakeThing.Material = "Neon"
+							--		charaMoves:InvokeServer({pass, "KnifeProjectileOrange", "Hit", child, child.CFrame,fakeThing})
+							--	else
+							--fakeThing.Color = fakeBlock.Color
+							--fakeThing.BrickColor = fakeBlock.BrickColor
+							--fakeThing.Material = fakeBlock.Material
+							charaMoves:InvokeServer({pass, "KnifeProjectileOrange", "Hit", child, child.CFrame,fakeThing})
+							--	end
+							--end))
+							coroutine.resume(coroutine.create(function()
+								swait(floorEDelay)
+								onDeb[child] = nil
+							end))
+						else
+							child.Position = Vector3.new(0,-100,0)
+						end
+					end
+					for i,child in pairs(slashes) do
+						local velocity = child:FindFirstChild("BodyVelocity")
+						if not velocity or not child or not child.Parent then
+							table.remove(slashes,i)
+							return
+						end
+						local pos
+						if main.LockOnScript.LockOn.Value then
+							pos = main.LockOnScript.LockOn.Value.Torso.Position
+						else
+							pos = mouse.Hit.p
+						end
+						child.CFrame = CFrame.new(child.Position, pos) * CFrame.Angles(math.rad(90), 0, 0);
+						child.Position = pos
+					end
+				end)
+				if e then warn(e) end
+			end);
+		end)
+		spawn(function()
+			while true do
+				local v73 = pcall(function()
+					local v74 = Instance.new("BindableEvent");
+					v74.Event:connect(function()
+						functions:InvokeServer({pass, "Reset" })
+					end);
+					game:GetService("StarterGui"):SetCore("ResetButtonCallback", v74);
+				end);
+				wait();
+				if v73 then
+					break;
+				end;
+			end;
+		end)
+		warn(s,e)
+	end)
+	local charSel = plrGui:WaitForChild("CharacterSelection")
+	local val = charSel:WaitForChild("Character")
+	val.Value = "Chara"
+	wait(1)
+	--// Wings part
+	--repeat swait() until wings
+	if wings then
+		local vt=Vector3.new
+		local cf=CFrame.new
+		local euler=CFrame.fromEulerAnglesXYZ
+		local angles=CFrame.Angles
+		local sine = 0
+		local change = 1
+		local function CreateWeld(parent,part0,part1,C1X,C1Y,C1Z,C1Xa,C1Ya,C1Za,C0X,C0Y,C0Z,C0Xa,C0Ya,C0Za)
+			local weld = Instance.new("Weld")
+			weld.Parent = parent
+			weld.Part0 = part0
+			weld.Part1 = part1
+			weld.C1 = CFrame.new(C1X,C1Y,C1Z)*CFrame.Angles(C1Xa,C1Ya,C1Za)
+			weld.C0 = CFrame.new(C0X,C0Y,C0Z)*CFrame.Angles(C0Xa,C0Ya,C0Za)
+			return weld
+		end
+		local function clerp(a,b,t)
+			return a:lerp(b,t)
+		end
+		local function CreateParta(parent,transparency,reflectance,material,brickcolor)
+			local p = Instance.new("Part")
+			p.TopSurface = 0
+			p.BottomSurface = 0
+			p.Transparency = 1
+			p.Parent = parent
+			p.Size = Vector3.new(0.1,0.1,0.1)
+			p.Reflectance = reflectance
+			p.CanCollide = false
+			p.Locked = true
+			p.BrickColor = brickcolor
+			p.Material = material
+			return p
+		end
+		local char = plr.Character
+		local maincolor = BrickColor.new("Really red")
+		local m = Instance.new("Model",char)
+		local m2 = Instance.new("Model",char)
+		local m3 = Instance.new("Model",char)
+		local mw1 = Instance.new("Model",char)
+		local mw2 = Instance.new("Model",char)
+		local handlex = CreateParta(mw2,1,1,"Neon",maincolor)
+		local handlexweld = CreateWeld(handlex,char.Torso,handlex,0,-1.5,-1.05,math.rad(0),math.rad(0),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local extrawingmod1 = Instance.new("Model",char)
+		local extrawingmod2 = Instance.new("Model",char)
+		local handle = CreateParta(m,1,1,"Neon",maincolor)
+		local handleweld = CreateWeld(handle,char:WaitForChild("Torso"),handle,0,-1.5,-1.05,math.rad(0),math.rad(0),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local lwing1 = CreateParta(m,1,1,"Neon",maincolor)
+		local lwing1weld = CreateWeld(lwing1,handle,lwing1,3,0,0,math.rad(5),math.rad(0),math.rad(12.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing1,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing1,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A0 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing1,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A1 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing1,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local lwing2 = CreateParta(m,1,1,"Neon",maincolor)
+		local lwing2weld = CreateWeld(lwing2,handle,lwing2,4,1,0,math.rad(10),math.rad(0),math.rad(25),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing2,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing2,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A0 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing2,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A1 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing2,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local lwing3 = CreateParta(m,1,1,"Neon",maincolor)
+		local lwing3weld = CreateWeld(lwing3,handle,lwing3,4.75,2,0,math.rad(15),math.rad(0),math.rad(37.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing3,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing3,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A0 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing3,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A1 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing3,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+
+		local lwing4 = CreateParta(m,1,1,"Neon",maincolor)
+		local lwing4weld = CreateWeld(lwing4,handle,lwing4,5.75,3,0,math.rad(20),math.rad(0),math.rad(50),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing4,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing4,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing4,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing4,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local lwing5 = CreateParta(m,1,1,"Neon",maincolor)
+		local lwing5weld = CreateWeld(lwing5,handle,lwing5,6.75,4,0,math.rad(25),math.rad(0),math.rad(62.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing5,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing5,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing5,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing5,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local lwing6 = CreateParta(m,1,1,"Neon",maincolor)
+		local lwing6weld = CreateWeld(lwing6,handle,lwing6,7.75,5,0,math.rad(30),math.rad(0),math.rad(75),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing6,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing6,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing6,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+		CreateWeld(wed,lwing6,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		-- Right wing.
+
+		local rwing1 = CreateParta(m,1,1,"Neon",maincolor)
+		local rwing1weld = CreateWeld(rwing1,handle,rwing1,-3,0,0,math.rad(5),math.rad(0),math.rad(-12.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing1,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A0 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing1,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing1,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing1,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local rwing2 = CreateParta(m,1,1,"Neon",maincolor)
+		local rwing2weld = CreateWeld(rwing2,handle,rwing2,-4,1,0,math.rad(10),math.rad(0),math.rad(-25),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing2,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A0 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing2,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing2,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing2,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local rwing3 = CreateParta(m,1,1,"Neon",maincolor)
+		local rwing3weld = CreateWeld(rwing3,handle,rwing3,-4.75,2,0,math.rad(15),math.rad(0),math.rad(-37.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing3,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		A0 = Instance.new('Attachment',wed)
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing3,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing3,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(mw2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing3,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local rwing4 = CreateParta(m,1,1,"Neon",maincolor)
+		local rwing4weld = CreateWeld(rwing4,handle,rwing4,-5.75,3,0,math.rad(20),math.rad(0),math.rad(-50),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing4,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing4,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing4,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing4,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local rwing5 = CreateParta(m,1,1,"Neon",maincolor)
+		local rwing5weld = CreateWeld(rwing5,handle,rwing5,-6.75,4,0,math.rad(25),math.rad(0),math.rad(-62.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing5,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing5,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing5,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing5,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		local rwing6 = CreateParta(m,1,1,"Neon",maincolor)
+		local rwing6weld = CreateWeld(rwing6,handle,rwing6,-7.75,3,0,math.rad(30),math.rad(0),math.rad(-75),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing6,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing6,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing6,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+		CreateWeld(wed,rwing6,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+		setWings = true
+		for i=1,2 do
+			charaMoves:InvokeServer({pass,"KnifeProjectileDarkRed","Spawn",plr.Character.HumanoidRootPart.CFrame.UpVector * 2000})
+			wait()
+		end
+		repeat wait() until #wings == 8
+		setWings = false
+		local wing1 = wings[1]
+		wing1.Name = "Wing"
+		wing1.Parent = char
+		local wing2 = wings[2]
+		wing2.Name = "Wing"
+		wing2.Parent = char
+		local wing3 = wings[3]
+		wing3.Name = "Wing"
+		wing3.Parent = char
+		local wing4 = wings[4]
+		wing4.Name = "Wing"
+		wing4.Parent = char
+		local wing5 = wings[5]
+		wing5.Name = "Wing"
+		wing5.Parent = char
+		local wing6 = wings[6]
+		wing6.Name = "Wing"
+		wing6.Parent = char
+		local wing7 = wings[7]
+		wing7.Name = "Wing"
+		wing7.Parent = char
+		local wing8 = wings[8]
+		wing8.Name = "Wing"
+		wing8.Parent = char
+		while true do
+			swait()
+			lwing1weld.C1=clerp(lwing1weld.C1,cf(2,0,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(5 + 10 * math.cos(sine / 32)),math.rad(0),math.rad(12.5 + 5 * math.cos(sine / 32))),.3)
+			lwing2weld.C1=clerp(lwing2weld.C1,cf(3,1,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(10 + 15 * math.cos(sine / 32)),math.rad(0),math.rad(25 + 7.5 * math.cos(sine / 32))),.3)
+			lwing3weld.C1=clerp(lwing3weld.C1,cf(3.75,2,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(15 + 20 * math.cos(sine / 32)),math.rad(0),math.rad(37.5 + 10 * math.cos(sine / 32))),.3)
+			lwing4weld.C1=clerp(lwing4weld.C1,cf(4.75,3,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(20 + 25 * math.cos(sine / 32)),math.rad(0),math.rad(50 + 12.5 * math.cos(sine / 32))),.3)
+			lwing5weld.C1=clerp(lwing5weld.C1,cf(5.75,4,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(25 + 30 * math.cos(sine / 32)),math.rad(0),math.rad(62.5 + 15 * math.cos(sine / 32))),.3)
+			lwing6weld.C1=clerp(lwing6weld.C1,cf(6.75,5,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(30 + 35 * math.cos(sine / 32)),math.rad(0),math.rad(75 + 17.5 * math.cos(sine / 32))),.3)
+
+			rwing1weld.C1=clerp(rwing1weld.C1,cf(-2,0,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(5 + 10 * math.cos(sine / 32)),math.rad(0),math.rad(-12.5 - 5 * math.cos(sine / 32))),.3)
+			rwing2weld.C1=clerp(rwing2weld.C1,cf(-3,1,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(10 + 15 * math.cos(sine / 32)),math.rad(0),math.rad(-25 - 7.5 * math.cos(sine / 32))),.3)
+			rwing3weld.C1=clerp(rwing3weld.C1,cf(-3.75,2,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(15 + 20 * math.cos(sine / 32)),math.rad(0),math.rad(-37.5 - 10 * math.cos(sine / 32))),.3)
+			rwing4weld.C1=clerp(rwing4weld.C1,cf(-4.75,3,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(20 + 25 * math.cos(sine / 32)),math.rad(0),math.rad(-50 - 12.5 * math.cos(sine / 32))),.3)
+			rwing5weld.C1=clerp(rwing5weld.C1,cf(-5.75,4,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(25 + 30 * math.cos(sine / 32)),math.rad(0),math.rad(-62.5 - 15 * math.cos(sine / 32))),.3)
+			rwing6weld.C1=clerp(rwing6weld.C1,cf(-6.75,5,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(30 + 35 * math.cos(sine / 32)),math.rad(0),math.rad(-75 - 17.5 * math.cos(sine / 32))),.3)
+			sine = sine + change
+			wing1.CFrame = lwing1.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing2.CFrame = lwing2.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing3.CFrame = lwing3.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing4.CFrame = lwing4.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing5.CFrame = rwing1.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing6.CFrame = rwing2.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing7.CFrame = rwing3.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing8.CFrame = rwing4.CFrame * CFrame.Angles(math.rad(90),0,0)
+		end
+	end
+else
+	warn("Script needs to be executed on menu.")
+end
+
+--setup
+local player = game.Players.LocalPlayer
+local Players = game:GetService("Players")
+local rs = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local userInputService = game:GetService("UserInputService")
+sdis = false
+count = 0
+local done = {}
+local pass = 0
+local dead = 0
+local first = true
+local looped = 0
+_G.closed = true
+--_G
+_G.hidechat = true
+local mt = getrawmetatable(game)
+    local backup = mt.__namecall
+    if setreadonly then setreadonly(mt, false) else make_writeable(mt, true) end
+    
+    mt.__namecall = newcclosure(function(...)
+        local method = getnamecallmethod()
+        local args = {...}
+
+        if tostring(args[1]) == 'SayMessageRequest' and _G.hidechat then
+        return
+        end
+        return backup(...)
+    end)
+_G.customchat = true
+_G.Mode = 0
+_G.Trans = false
+
+--anims
+
+
+--headgui
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+        mouse.KeyDown:Connect(function(k) 
+            if k == "r" then
+                function getlockchar()
+                    local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+                    return char
+                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+            end
+        end)
+
+
+    --//=================================\\
+    --||Sitting Stuff
+    --\\=================================//
+    
+    local sitstart = Instance.new("Animation") 
+    sitstart.AnimationId = "rbxassetid://7507477136" 
+    local sitstartplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitstart)
+    local sitloop = Instance.new("Animation") 
+    sitloop.AnimationId = "rbxassetid://7507481748" 
+    local sitloopplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitloop)
+    local sitend = Instance.new("Animation") 
+    sitend.AnimationId = "rbxassetid://7507485912" 
+    local sitendplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitend) 
+    local sitting = false 
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k)
+        if k == "q" then if sitting == false then 
+            sitting = true
+            sitstartplay:Play() 
+            wait(1) 
+            sitloopplay:Play()
+        elseif sitting == true then 
+            sitting = false
+            sitloopplay:Stop() 
+            sitendplay:Play() 
+            end
+        end 
+    end)
+    
+wait(5)
+dripyes = Instance.new("Sound", game.Players.LocalPlayer.Character)
+dripyes.Volume = 4
+dripyes.Name = "Perfection"
+dripyes.SoundId = "rbxassetid://4375150262"
+dripyes.PlaybackSpeed = 0.8
+dripyes.Looped = true
+dripyes:Play()
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.Humanoid.Health = 1
+    end
+end)
+game.Players.LocalPlayer.Chatted:Connect(function(Chat)
+local A_1 =  {
+          [1] = getrenv()._G.Pass, 
+          [2] = "Chatted", 
+          [3] = '[The Unbeatable One]\n' ..Chat, 
+          [4] = Color3.fromRGB(255, 0, 0)
+    }
+    local Event = game:GetService("ReplicatedStorage").Remotes.Events
+    Event:FireServer(A_1)
+        Character = game.Players.LocalPlayer.Character
+    spawn(function()
+        repeat wait()
+            for _,v in pairs(Character:GetChildren()) do
+                if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                    v:Destroy()
+                end
+            end
+        until false
+    end)
+end)
+--// hit effect remover
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "KnifeHitEffect" then 
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "YellowHitEffect" then
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "CarrotHitEffect" then
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "NormalHitEffect" then
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "NormalHitEffect2" then
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "NormalHitEffect3" then
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "HeavyHitEffect" then 
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "BurstHitEffect" then
+        child:Destroy()
+end
+end)
+game.Players.LocalPlayer.Character.Effects.ChildAdded:Connect(function(child)
+    if child.Name == "BladeHitEffect" then
+        child:Destroy()
+end
+end)
