@@ -1,6 +1,7 @@
 game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
-game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Glitchtale Betty"
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Betty"
 wait(1)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
 game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
 local v1 = {
     [1] = getrenv()._G.Pass, 
