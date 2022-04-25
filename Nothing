@@ -69,7 +69,7 @@ for i = 1,#tab2 do
 spawn(function()
 local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
     local part = tab2[i]
-local  mspeed = 0
+local  mspeed = 1
 while true do
     wait()
     mspeed = mspeed + 1-- change it to a higher number if u want it faster
