@@ -72,7 +72,7 @@ local angle = circle / #tab2 * i---this will get the amount of parts you have an
 local  mspeed = 0
 while true do
     wait()
-    mspeed = mspeed + 20-- change it to a higher number if u want it faster
+    mspeed = mspeed + 10-- change it to a higher number if u want it faster
     local x_pos = math.cos(angle) * radius
     local y_pos = math.sin(angle) * radius
     local cf = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0), math.rad(mspeed),math.rad(0)) *CFrame.new(x_pos, 0, y_pos)
