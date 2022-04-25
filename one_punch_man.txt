@@ -1,0 +1,415 @@
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Sans"
+wait(1)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
+
+game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
+local v1 = {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Damage", 
+    [3] = math.huge, 
+    [4] = game.Players.LocalPlayer.Character
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Events
+event:FireServer(v1)
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.Humanoid.Health = 1
+    end
+end)
+
+game:GetService("Players").LocalPlayer.Character.Head.face:remove()
+
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").SansMoves.Animations.Idle.AnimationId = "rbxassetid://4900761581"        
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").SansMoves.Animations.Run.AnimationId = "rbxassetid://4576074471"   
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").SansMoves.Animations.Walk.AnimationId = "rbxassetid://4370512420"
+
+wait(2)
+
+local bypass = Instance.new("BoolValue")
+bypass.Name = "Battling"
+bypass.Parent = game.Players.LocalPlayer.Character
+wait(1)
+game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 150
+local bypass = Instance.new("BoolValue")
+bypass.Name = "Battling"
+bypass.Parent = game.Players.LocalPlayer.Character
+wait(1)
+game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = 10
+
+local ya = getrawmetatable(game)
+local mum = ya.__namecall
+setreadonly(ya, false)
+ya.__namecall =
+    newcclosure(
+    function(name, ...)
+        local tabs = {...}
+        if getnamecallmethod() == "InvokeServer" and tostring(name) == "Damage" then
+            tabs[3]["HitEffect"] = "HeavyHitEffect" -- any hit effect (use dex if u not know any)
+            tabs[3]["Damage"] = "NaN" -- 40 max for knockback, 10 max for normal hits
+            tabs[3]["Type"] = "Knockback" -- type (knockback or normal)
+            tabs[3]["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * 175 -- m1 knockback go brrrr
+        end
+        return mum(name, unpack(tabs))
+    end
+)
+
+setreadonly(ya, true)
+
+local uis = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+
+uis.InputBegan:Connect(function(inputs, event)
+	if event == true then return end
+
+	if inputs.KeyCode == Enum.KeyCode.R then
+
+		if player.Backpack:WaitForChild("Main").LockOnScript.LockOn.Value == nil then
+
+			print("mouse cframe teleport")
+
+			local cfr = player:GetMouse().Hit
+
+			player.Character:SetPrimaryPartCFrame(cfr * CFrame.new(0, 2, 0))
+
+		else
+
+			print("player cframe teleport")
+
+			local Tcf = player.Backpack:WaitForChild("Main").LockOnScript.LockOn.Value:GetPrimaryPartCFrame()
+
+			player.Character:SetPrimaryPartCFrame(Tcf * CFrame.new(0, 0, 3))
+
+		end
+
+	end
+
+end)
+
+local char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+
+wait(2)
+
+local player = game:GetService("Players").LocalPlayer
+local ClickAnimations = player.Backpack.Main.SansMoves.ModuleScript.Animations.BladesCombat
+
+char = game.Players.LocalPlayer.Character
+char.Bone:Destroy()
+
+ClickAnimations.Light1.AnimationId = "rbxassetid://5770437587"
+ClickAnimations.Light2.AnimationId = "rbxassetid://5770437587"
+ClickAnimations.Light3.AnimationId = "rbxassetid://5770437587"
+ClickAnimations.Light4.AnimationId = "rbxassetid://5770437587"
+ClickAnimations.Light5.AnimationId = "rbxassetid://5770437587"
+
+for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChildren()) do
+v:Destroy()
+end
+local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
+music.Volume = 1
+music.SoundId = "rbxassetid://335167645"
+music.Looped = true
+music:Play()
+
+local HealthBar = Instance.new("BillboardGui")
+local Frame = Instance.new("Frame")
+local HealthLabel = Instance.new("TextLabel")
+local PName = Instance.new("TextLabel")
+local rep = game:GetService("ReplicatedStorage")
+local uis = game:GetService("UserInputService")
+local plrs = game:GetService("Players")
+local runS = game:GetService("RunService")
+local tweenS = game:GetService("TweenService")
+local v21 = require(game:GetService("ReplicatedStorage").ClientModules.MainModule);
+local remotes = rep:WaitForChild("Remotes")
+local damage = remotes:WaitForChild("Damage")
+local functions = remotes:WaitForChild("Functions")
+local events = remotes:WaitForChild("Events")
+local LoseMoves = remotes:WaitForChild("SansMoves")
+local main
+local plr = plrs.LocalPlayer
+local plrGui = plr:WaitForChild("PlayerGui")
+local mouse = plr:GetMouse()
+local player = game.Players.LocalPlayer
+local Players = game:GetService("Players")
+local rs = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local userInputService = game:GetService("UserInputService")
+
+HealthBar.Name = "HealthBar"
+HealthBar.Parent = player.Character.Head
+HealthBar.ExtentsOffset = Vector3.new(0, 6, 0)
+HealthBar.Size = UDim2.new(4, 0, 2, 0)
+
+Frame.Parent = HealthBar
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame.BackgroundTransparency = 1.000
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+HealthLabel.Name = "HealthLabel"
+HealthLabel.Parent = Frame
+HealthLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HealthLabel.BackgroundTransparency = 1.000
+HealthLabel.Position = UDim2.new(0.200000003, 0, 0.200000003, 0)
+HealthLabel.Size = UDim2.new(0.800000012, 0, 0.300000012, 0)
+HealthLabel.Font = Enum.Font.Arcade
+HealthLabel.Text = ""
+HealthLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+HealthLabel.TextScaled = true
+HealthLabel.TextSize = 14.000
+HealthLabel.TextWrapped = true
+HealthLabel.TextXAlignment = Enum.TextXAlignment.Left
+HealthLabel.TextYAlignment = Enum.TextYAlignment.Center
+
+PName.Name = "PName"
+PName.Parent = Frame
+PName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PName.BackgroundTransparency = 1.000
+PName.Position = UDim2.new(-0.899999976, 0, -0.800000012, 0)
+PName.Size = UDim2.new(3, 0, 1, 0)
+PName.Font = Enum.Font.Arcade
+PName.Text = "One punch man"
+PName.TextColor3 = Color3.fromRGB(255, 255, 255)
+PName.TextScaled = true
+PName.TextSize = 5.000
+PName.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+PName.TextStrokeTransparency = 0.000
+PName.TextWrapped = true
+PName.TextXAlignment = Enum.TextXAlignment.Center
+PName.TextYAlignment = Enum.TextYAlignment.Top
+PName.Rotation = 5
+
+local part = PName
+        
+        local Info = TweenInfo.new(
+            2,                              --Length (seconds)
+            Enum.EasingStyle.Sine,          --Easing Style
+            Enum.EasingDirection.InOut,       --Easing Direction
+            -1,                             --Times Repeated
+            true,                           --reversed
+            0                               --deşau
+            )
+            
+        local Goals = {
+            Rotation = -5
+        }
+        
+        local nametween = TweenService:Create(part, Info, Goals)
+        nametween:Play()
+        	
+game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Attack: INF"
+game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Defense.Text = "Defense: INF"
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
+
+
+
+game.Players.LocalPlayer.Chatted:Connect(function(Chat)
+local A_1 =  {
+          [1] = getrenv()._G.Pass, 
+          [2] = "Chatted", 
+          [3] = '' ..Chat, 
+          [4] = Color3.fromRGB(255,255,255)
+    }
+    local Event = game:GetService("ReplicatedStorage").Remotes.Events
+    Event:FireServer(A_1)
+end)	
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k) 
+if k == "j" then
+local args = {
+    [1] = {
+    [1] = getrenv()._G.Pass,
+    [2] = "Damage",
+    [3] = math.huge,
+    [4] = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            }
+        }
+
+    game:GetService("ReplicatedStorage").Remotes.Events:FireServer(unpack(args))
+    end
+end)
+
+wait(1)
+game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)
+
+    if v.Name == "Bone" then
+
+        v:WaitForChild("NotTouched"):Destroy()
+        v:WaitForChild("ParticleEmitter"):Destroy()
+        v:WaitForChild("BodyVelocity"):Destroy()
+        v1 = Instance.new("BodyPosition", v)
+        fol = Instance.new("Folder", v1)
+        v1.Name = "Client"
+        v1.MaxForce = Vector3.new(1, 1, 1) * 100000
+        v1.D = 1000
+        v1.P = 30000
+    end
+end)
+
+local radius = 13 --how far away do you want the parts to be from you
+local circle = math.pi * 2-- Gets a full circle
+local char = game.Players.LocalPlayer.Character
+local tab = {}--Creates a table so you can insert values inside
+local amm = 15 ---amount of projectiles
+pass = getrenv()._G.Pass
+for i = 1,amm,1 do
+spawn(function()
+    local A_1 = {
+        [1] = getrenv()._G.Pass,
+        [2] = "Bones",
+        [3] = "AirSpawn2",
+        [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    }
+    local Target = game:GetService("ReplicatedStorage").Remotes.SansMoves
+    Target:InvokeServer(A_1)
+    wait()
+end)
+end
+am = 0
+local detect
+local detect2
+val = Instance.new('NumberValue',player)-- creates a value instance so you can use it in a connect function
+val.Name = 'Bone'
+detect = char.Attacks.ChildAdded:Connect(function(pp)-- this will detect if a child is added to the character
+if pp.Name == 'Bone' then
+    table.insert(tab,pp)--it will insert the blasts to the table
+am = am + 1--adds the numbers
+val.Value = am--set the Number value to that number
+pp:WaitForChild('BodyVelocity'):Destroy()
+pp:WaitForChild('Hitted'):Destroy()
+end
+end)
+
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
+if val.Value == amm then
+tab2 = {}
+for _,v in pairs(tab) do---will look through the tables
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(math.random(-20,20),1000,math.random(-20,20))
+v1 = Instance.new('BodyPosition',v)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'
+v1.MaxForce = Vector3.new(1,1,1)*100000
+v1.D = 500
+v1.P = 30000
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,0,0)
+        table.insert(tab2,v1)
+end
+
+
+
+for i = 1,#tab2 do
+spawn(function()
+local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
+    local part = tab2[i]
+local  mspeed = 0
+while true do
+    wait()
+    mspeed = mspeed + 5-- change it to a higher number if u want it faster
+    local x_pos = math.cos(angle) * radius
+    local y_pos = math.sin(angle) * radius
+    local cf = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0), math.rad(mspeed),math.rad(0)) *CFrame.new(x_pos, 0, y_pos)
+part.Position = cf.p
+end
+end)
+end
+val:Destroy()
+detect:Disconnect()
+detect2:Disconnect()
+end
+end)
+
+function talk(text,color)
+	if dead == true then return end
+	local A_1 = 
+		{
+			[1] = getrenv()._G.Pass, 
+			[2] = "Chatted", 
+			[3] = text, 
+			[4] = color
+		}
+	local Event = game:GetService("ReplicatedStorage").Remotes.Events
+	Event:FireServer(A_1)
+end
+
+local pass = getrenv()._G.Pass
+local player = game.Players.LocalPlayer
+local character = player.Character
+local uis = game:GetService("UserInputService")
+local function spamk()
+
+	local target = player.Backpack:WaitForChild("Main").LockOnScript.LockOn.Value
+
+	local A_1 = pass
+	local A_2 = target
+	local A_3 = {
+		["HitTime"] = 1,
+		["Type"] = "Knockback", 
+		["HitEffect"] = "KnifeHitEffect",
+		["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,  
+		["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+		["CombatInv"] = true,
+		["Velocity"] = Vector3.new(0, -1, 0),
+		["Damage"] = "NaN"
+	}
+	local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+	Event:InvokeServer(A_1, A_2, A_3)
+
+end
+
+uis.InputBegan:Connect(function(inputs, event)
+	if event == true then return end
+
+	if inputs.KeyCode == Enum.KeyCode.Z then
+
+		while wait(0.05) do
+
+			spamk()
+			talk([[Pucnhes]],Color3.fromRGB(255, 255, 255))
+
+		end
+
+	end
+
+end)
