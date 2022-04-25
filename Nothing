@@ -14,7 +14,7 @@ game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)
     end
 end)
 
-local radius = 15 --how far away do you want the parts to be from you
+local radius = 13 --how far away do you want the parts to be from you
 local circle = math.pi * 2-- Gets a full circle
 local char = game.Players.LocalPlayer.Character
 local tab = {}--Creates a table so you can insert values inside
@@ -69,10 +69,10 @@ for i = 1,#tab2 do
 spawn(function()
 local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
     local part = tab2[i]
-local  mspeed = 1
+local  mspeed = 0
 while true do
     wait()
-    mspeed = mspeed + 1-- change it to a higher number if u want it faster
+    mspeed = mspeed + 5-- change it to a higher number if u want it faster
     local x_pos = math.cos(angle) * radius
     local y_pos = math.sin(angle) * radius
     local cf = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0), math.rad(mspeed),math.rad(0)) *CFrame.new(x_pos, 0, y_pos)
