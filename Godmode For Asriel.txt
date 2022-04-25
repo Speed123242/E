@@ -1,6 +1,9 @@
 game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Asriel"
 wait(1)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
+
 game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
 local v1 = {
     [1] = getrenv()._G.Pass, 
