@@ -1,0 +1,48 @@
+game:GetObjects("rbxassetid://9022611353")[1].Parent = game.Workspace
+game.Workspace.PsychicAura.Name = "aura"
+local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+ local pa1 = Instance.new("Motor",game.Players.LocalPlayer.Character["Torso"])
+pa1.Name = "PsychicAura"
+pa1.Part0 = game.Workspace.aura.Torso
+pa1.Part1 = game.Players.LocalPlayer.Character["Torso"]
+pa1.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+
+local pa2 = Instance.new("Motor",game.Players.LocalPlayer.Character["Left Arm"])
+pa2.Name = "PsychicAura"
+pa2.Part0 = game.Workspace.aura["Left Arm"]
+pa2.Part1 = game.Players.LocalPlayer.Character["Left Arm"]
+pa2.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+
+local pa2 = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+pa2.Name = "PsychicAura"
+pa2.Part0 = game.Workspace.aura["Right Arm"]
+pa2.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+pa2.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+
+local pa3 = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Leg"])
+pa3.Name = "PsychicAura"
+pa3.Part0 = game.Workspace.aura["Right Leg"]
+pa3.Part1 = game.Players.LocalPlayer.Character["Right Leg"]
+pa3.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+
+local pa4 = Instance.new("Motor",game.Players.LocalPlayer.Character["Left Leg"])
+pa4.Name = "PsychicAura"
+pa4.Part0 = game.Workspace.aura["Left Leg"]
+pa4.Part1 = game.Players.LocalPlayer.Character["Left Leg"]
+pa4.C0 = cf0:Inverse()
+
+local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
+
+local pa4 = Instance.new("Motor",game.Players.LocalPlayer.Character["Head"])
+pa4.Name = "PsychicAura"
+pa4.Part0 = game.Workspace.aura["Head"]
+pa4.Part1 = game.Players.LocalPlayer.Character["Head"]
+pa4.C0 = cf0:Inverse()

@@ -1,0 +1,62 @@
+pos = 0
+pos2 = 180
+while true do
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.XSansMoves.ModuleScript.Animations.Slash.Swing2,
+[4] = Color3.fromRGB(255, 255, 255),
+[5] = CFrame.Angles(0, 0, math.rad(pos))})
+pos = pos + 2
+
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.XSansMoves.ModuleScript.Animations.Slash.Swing2,
+[4] = Color3.fromRGB(0, 0, 0),
+[5] = CFrame.Angles(0, 0, math.rad(pos2))})
+pos2 = pos2 - 2
+wait(0.1)
+end
+end)
+uiSecs.stuffs:addButton(
+    "RGB Aura",
+    function()
+     pos = 0
+pos2 = 45
+pos3 = 90
+pos4 = 115
+while true do
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.XSansMoves.ModuleScript.Animations.Slash.Swing2,
+[4] = Color3.fromRGB(0, 255, 0),
+[5] = CFrame.Angles(0, 0, math.rad(pos))})
+pos = pos + 4
+
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.XSansMoves.ModuleScript.Animations.Slash.Swing2,
+[4] = Color3.fromRGB(255, 0, 0),
+[5] = CFrame.Angles(0, 0, math.rad(pos2))})
+pos2 = pos2 - 4
+
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.XSansMoves.ModuleScript.Animations.Slash.Swing2,
+[4] = Color3.fromRGB(0, 0, 255),
+[5] = CFrame.Angles(0, 0, math.rad(pos3))})
+pos3 = pos3 + 4
+
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.XSansMoves.ModuleScript.Animations.Slash.Swing2,
+[4] = Color3.fromRGB(255, 255, 0),
+[5] = CFrame.Angles(0, 0, math.rad(pos4))})
+pos4 = pos4 - 4
+wait(0.1)
+end
