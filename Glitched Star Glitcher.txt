@@ -1,0 +1,1265 @@
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
+wait(1)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
+game.StarterGui:SetCore("SendNotification", {
+	Title = "StarGlitcherLoaded";
+	Text = "E00R0R0R0OR0ROR0R0ORO0RO0OROR0OR0OR0OR0OR0OR0OR0O0RO0ROR";
+	Duration = 5;
+})
+
+
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Walk.AnimationId = "rbxassetid://5096023358"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Idle.AnimationId = "rbxassetid://6136039008"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Run.AnimationId = "rbxassetid://5657151699"
+game.Players.LocalPlayer.Character["FullHateMode"]:Destroy()
+game.Players.LocalPlayer.Character["HateMode"]:Destroy()
+game.Players.LocalPlayer.Character["Karma"]:Destroy()
+game.Players.LocalPlayer.Character["RealKnife"]:Destroy()
+game.Players.LocalPlayer.Character["HeartLocket"]:Destroy()
+game.Players.LocalPlayer.Character["HateArm"]:Destroy()
+
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 10
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://1252518733" 
+Sound.Name = "STARGLITCHING"
+
+
+
+
+    for _,v in pairs(game.ReplicatedStorage.RogueEffects:GetChildren()) do
+        if v.Name == 'RedEyes' then
+        local char = game.Players.LocalPlayer.Character
+        sword2 = v:Clone()
+        sword2.Parent = char
+        sword2.Trail.Lifetime = 2
+        sword2.Trail.Lifetime = 2
+        sword2.Anchored = false
+        weld = Instance.new('Weld',sword2)
+        weld.Part0 = sword2
+        weld.Part1 = char['Head']
+        sword2.Name = 'Red'
+        weld.C0 = CFrame.new(0,0,-0)*CFrame.Angles(0,0,0)
+        sword2.Transparency = 1
+        end
+        end
+
+            for _,v in pairs(game:GetService("ReplicatedStorage").Effects:GetChildren()) do
+                if v.Name == 'DarkAuraEffect' then
+                local char = game.Players.LocalPlayer.Character
+                sword2 = v:Clone()
+                sword2.Parent = char
+                sword2.Anchored = false
+                weld = Instance.new('Weld',sword2)
+                weld.Part0 = sword2
+                weld.Part1 = char['Torso']
+                sword2.Name = 'DARKAURA'
+                weld.C0 = CFrame.new(0,2,0)*CFrame.Angles(0,0,0)
+                sword2.Transparency = 1
+                end
+                end  
+            for _,v in pairs(game:GetService("ReplicatedStorage").Effects:GetChildren()) do
+                if v.Name == 'TransformationAura' then
+                local char = game.Players.LocalPlayer.Character
+                sword2 = v:Clone()
+                sword2.Parent = char
+                sword2.Anchored = false
+                weld = Instance.new('Weld',sword2)
+                weld.Part0 = sword2
+                weld.Part1 = char['Torso']
+                sword2.Name = 'DARKAURA'
+                weld.C0 = CFrame.new(0,2,0)*CFrame.Angles(0,0,0)
+                sword2.Transparency = 1
+                end
+                end
+
+game.Players.LocalPlayer:GetMouse()
+game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
+    if inputObject.KeyCode == Enum.KeyCode.X then
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass,
+                [2] = "Chatted", 
+                [3] = "Go to brazil.",
+                [4] = Color3.new(255,255,255)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        local args = { 
+            [1] = getrenv()._G.Pass,
+            [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+            [3] = {
+                ["Type"] = "Knockback",
+                ["HitEffect"] = "HeavyHitEffect",
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+                ["Velocity"] = Vector3.new(-0, -1, -0),
+                ["HitTime"] = 1,
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+                ["Damage"] = 0
+            }
+}
+        game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+end
+end)
+game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
+    if inputObject.KeyCode == Enum.KeyCode.X then
+        wait("2.4")
+        repeat
+        local args = { 
+            [1] = getrenv()._G.Pass,
+            [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+            [3] = {
+                ["Type"] = "Knockback",
+                ["HitEffect"] = "HeavyHitEffect",
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+                ["Velocity"] = Vector3.new(-0, 150, -0),
+                ["HitTime"] = 1,
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+                ["Damage"] = 0
+            }
+        }
+
+
+        game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+        wait(2.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value].HumanoidRootPart.CFrame
+        until game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value == nil
+end
+end)
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k) 
+if k == "j" then
+_G.cdr = false
+if _G.cdr then return end
+_G.cdr = true
+pass = getrenv()._G.Pass
+player = game.Players.LocalPlayer
+m = player:GetMouse()
+local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
+if LockOn then 
+target = LockOn
+r2 = target.HumanoidRootPart.CFrame
+elseif not LockOn then
+r2 = m.Hit*CFrame.new(0,4,0)
+end
+char = player.Character
+h = char.Humanoid
+a = Instance.new('Animation')
+a.AnimationId = 'rbxassetid://4905914802'
+k = h:LoadAnimation(a)
+k:Play()
+k:AdjustSpeed(3)
+--char.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,20,0)
+--wait(.1)
+amm = 5
+--char.HumanoidRootPart.Position + Vector3.new(0,10000,0)
+for i = 1,amm,1 do
+spawn(function()
+local A_1 =  {
+      [1] = pass,
+      [2] = "KnifeProjectileDarkRed", 
+      [3] = "Spawn", 
+      [4] = r2.p
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+end
+am = 0
+val = Instance.new('NumberValue',player)
+val.Name = 'KnifeSlashes Amount'
+local tabeeas = {}
+detect = char.Attacks.ChildAdded:Connect(function(pp)
+if pp.Name == 'KnifeSlashProjectileDark' then
+    table.insert(tabeeas,pp)
+    spawn(function()
+   local rp
+   local yeaeoase = pp
+rp = yeaeoase.Changed:Connect(function(pr)
+    if pr == "Anchored" then
+if not pr.Anchored then
+am = am + 1
+val.Value = am
+rp:Disconnect()
+end
+    end
+end)
+end)
+end
+end)
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()
+if val.Value == amm*3 then
+tab = {}
+tab2 = {}
+for _,v in pairs(char.Attacks:GetChildren()) do
+if v.Name == 'KnifeSlashProjectileDark' then
+    v:WaitForChild('BodyVelocity'):Destroy()
+    v:WaitForChild('ParticleEmitter'):Destroy()
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,10,-2)
+v1 = Instance.new('BodyPosition',v)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'
+v1.MaxForce = Vector3.new(1,1,1)*100000
+v1.D = 1000
+v1.P = 30000
+v2 = Instance.new('BodyGyro',v)
+fol = Instance.new('Folder',v2)
+v2.Name = 'Client'
+v2.MaxTorque = Vector3.new(1,1,1)*10000
+v2.D = 0
+v2.P = 3000
+v2.CFrame = char.HumanoidRootPart.CFrame*CFrame.Angles(math.rad(90),0,0)
+x = math.random(-10,10)*2
+z = math.random(-10,10)*2
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,10,0)
+table.insert(tab,v1)
+table.insert(tab2,v)
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(x,10,z)
+end
+end
+wait(.5)
+for i = 1,#tab do
+    m.TargetFilter = game.workspace.Terrain
+local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
+if LockOn then 
+target = LockOn
+r2 = target.HumanoidRootPart.CFrame
+r1 = target.HumanoidRootPart
+elseif not LockOn then
+r2 = m.Hit
+r1 = m.Target
+end
+x = math.random(-20,20)
+z = math.random(-20,20)
+tab[i].D = 150
+tab[i].Position = r2.p + Vector3.new(0,-1,0)
+tab2[i].CFrame = r2*CFrame.new(x,10,z)
+spawn(function()
+local A_1 =  {
+      [1] = pass, 
+      [2] = "KnifeProjectileDarkRed", 
+      [3] = "Hit", 
+      [4] = tab2[i], 
+      [5] = r2, 
+      [6] = r1
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+wait()
+end
+end
+end)
+wait(3)
+for _,v in pairs(tabeeas) do
+    v:Destroy()
+    end
+detect:Disconnect()
+detect2:Disconnect()
+val:Destroy()
+_G.cdr = false
+end
+end)
+
+
+local userInputService = game:GetService("UserInputService")
+sdis = false
+local rs = game:GetService("RunService")
+userInputService.InputBegan:Connect(function(input,gameProcessedEvent)
+    local keyPressed = input.KeyCode
+    
+      if not gameProcessedEvent then
+          if keyPressed == Enum.KeyCode.C then
+              
+         --player is typing
+         
+         if sdis == true then
+	        sdis = false
+	    elseif sdis == false then
+	        sdis = true
+	        local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Spawn",
+        [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector *10 + Vector3.new(math.random(0,35),math.random(0,30),math.random(0,33))
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+	        while sdis == true do
+	            game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1,
+[4] = Color3.fromRGB(255, 255, 255),
+[5] = CFrame.Angles(0, 0, math.rad(0))})
+
+game:GetService("ReplicatedStorage").Remotes.Events:FireServer({
+[1] = getrenv()._G.Pass,
+[2] = "SlashEffect",
+[3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1,
+[4] = Color3.fromRGB(0, 0, 0),
+[5] = CFrame.Angles(0, 0, math.rad(180))})
+	    local player = game.Players.LocalPlayer
+local Character = player.Character
+for _,b in pairs(game.workspace:GetChildren()) do
+
+if b:FindFirstChildOfClass('Humanoid') then
+if b:FindFirstChild('Torso') then
+    if b.Humanoid.Health == 0 or b.Name == "Hateball Defense Dummy" or b.Name == "Defense:250 Dummy" or b.Name == "HalfStaminaDummy" or b.Name == "BlockingDummy" or b.Name == "NoStaminaDummy" or b.Name == "AttackDummy" or b.Name == "DodgingDummy" or b.Name == "Defense:150 Dummy" or b.Name == "Hateball Defense Dummy" then
+        else
+range = (Character.PrimaryPart.Position - b.PrimaryPart.Position).Magnitude
+if range <1115 and b.Name ~= player.Name then
+		
+local projectiles = game.Players.LocalPlayer.Character.Attacks
+for i,v in pairs(projectiles:GetChildren()) do
+if v.Name == "KnifeSlashProjectileOrange" or "Removing" then
+local detect = rs.Heartbeat:Connect(function()
+    if b.Humanoid.Health == 0 or b.Name == "Hateball Defense Dummy" or b.Name == "Defense:250 Dummy" or b.Name == "HalfStaminaDummy" or b.Name == "BlockingDummy" or b.Name == "NoStaminaDummy" or b.Name == "AttackDummy" or b.Name == "DodgingDummy" or b.Name == "Defense:150 Dummy" or b.Name == "Hateball Defense Dummy" then
+        v:Destroy()
+        detect:disconnect()
+        else
+            
+v.Position = b.LockOn.Position
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = game:GetService("Players").LocalPlayer.Character.Attacks.KnifeSlashProjectileOrange,
+        [5] = b.HumanoidRootPart.CFrame,
+        [6] = b.HumanoidRootPart
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+game.Players.LocalPlayer.Character.Effects:FindFirstChild("CarrotHitEffect"):Destroy()
+
+    
+end
+
+end)
+end
+end
+end
+end
+end
+end
+end
+wait(0.2)
+end
+
+	    end
+          end
+  end
+end)
+
+
+        local player = game:GetService("Players").LocalPlayer.Character
+        local aura = game:GetService("ReplicatedStorage").Resources.Character.Auras.AsrielAura
+        
+        aura:Clone()
+        aura.Head.BodyAura.Parent = player.Head
+        aura.Torso.BodyAura.Parent = player.Torso
+        aura.Torso.BodyAura.Parent = player.Torso
+        aura:FindFirstChild("Left Arm").BodyAura.Parent = player:FindFirstChild("Left Arm")
+        aura:FindFirstChild("Right Arm").BodyAura.Parent = player:FindFirstChild("Right Arm")
+        aura:FindFirstChild("Left Leg").BodyAura.Parent = player:FindFirstChild("Left Leg")
+        aura:FindFirstChild("Right Leg").BodyAura.Parent = player:FindFirstChild("Right Leg")
+      
+local hideEntire = false -- if true it hides your entire bar
+local StarGlitcherwings = true -- if true it gives you edgy star glitcher wings
+game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
+local v1 = {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Damage", 
+    [3] = math.huge, 
+    [4] = game.Players.LocalPlayer.Character
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Events
+event:FireServer(v1)
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.Humanoid.Health = 1
+    end
+end)
+--// Services
+local rep = game:GetService("ReplicatedStorage")
+local uis = game:GetService("UserInputService")
+local plrs = game:GetService("Players")
+local runS = game:GetService("RunService")
+local tweenS = game:GetService("TweenService")
+local remotes = rep:WaitForChild("Remotes")
+local damage = remotes:WaitForChild("Damage")
+local functions = remotes:WaitForChild("Functions")
+local events = remotes:WaitForChild("Events")
+local charaMoves = remotes:WaitForChild("CharaMoves")
+local setWings = true
+local wings = {}
+local plr = plrs.LocalPlayer
+local plrGui = plr:WaitForChild("PlayerGui")
+local orbiting = {}
+local auraThing = true
+local mouse = plr:GetMouse()
+
+local player = game.Players.LocalPlayer
+local Players = game:GetService("Players")
+local rs = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local userInputService = game:GetService("UserInputService")
+sdis = false
+count = 0
+local done = {}
+local pass = 0
+local dead = 0
+local first = true
+local looped = 0
+_G.closed = true
+--_G
+_G.hidechat = true
+_G.customchat = true
+_G.Mode = 0
+_G.Trans = false
+
+--anims
+
+                local swordequip = Instance.new("Animation") 
+swordequip.AnimationId = "rbxassetid://3204744488" 
+local swordequipplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(swordequip)
+              
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929570007"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)     
+
+--custom Name
+
+
+
+
+
+local mt = getrawmetatable(game)
+    local backup = mt.__namecall
+    if setreadonly then setreadonly(mt, false) else make_writeable(mt, true) end
+    
+    mt.__namecall = newcclosure(function(...)
+        local method = getnamecallmethod()
+        local args = {...}
+
+        if tostring(args[1]) == 'SayMessageRequest' and _G.hidechat then
+        return
+        end
+        return backup(...)
+    end)
+
+
+--headgui
+local HealthBar = Instance.new("BillboardGui")
+local Frame = Instance.new("Frame")
+local HealthLabel = Instance.new("TextLabel")
+local TheName = Instance.new("TextLabel")
+
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+        mouse.KeyDown:Connect(function(k) 
+            if k == "r" then
+                function getlockchar()
+                    local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+                    return char
+                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+            end
+        end)
+
+
+--Properties:
+
+HealthBar.Name = "HealthBar"
+HealthBar.Parent = player.Character.Head
+HealthBar.ExtentsOffset = Vector3.new(0, 3, 0)
+HealthBar.Size = UDim2.new(4, 0, 2, 0)
+
+Frame.Parent = HealthBar
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+
+
+TheName.Name = "EREREROEROEOR"
+TheName.Parent = Frame
+TheName.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+TheName.BackgroundTransparency = 1.000
+TheName.Position = UDim2.new(-0.899999976, 0, -0.800000012, 0)
+TheName.Size = UDim2.new(3, 0, 1, 0)
+TheName.Font = Enum.Font.Antique
+TheName.Text = "eRr0r"
+TheName.TextColor3 = Color3.fromRGB(0, 0, 255)
+TheName.TextScaled = true
+TheName.TextSize = 5.000
+TheName.TextStrokeColor3 = Color3.fromRGB(0, 0, 100)
+TheName.TextStrokeTransparency = 0.000
+TheName.TextWrapped = true
+TheName.TextYAlignment = Enum.TextYAlignment.Top
+TheName.Rotation = 5
+
+
+
+
+--tween Rotation
+local part = TheName
+        
+        local Info = TweenInfo.new(
+            2,                              --Length (seconds)
+            Enum.EasingStyle.Sine,          --Easing Style
+            Enum.EasingDirection.InOut,       --Easing Direction
+            -1,                             --Times Repeated
+            true,                           --reversed
+            0                               --deşau
+            )
+            
+        local Goals = {
+            Rotation = -5
+        }
+        
+        local nametween = TweenService:Create(part, Info, Goals)
+        nametween:Play()
+
+
+	local ui1 = plrGui:WaitForChild("UI")
+	local ui = ui1:WaitForChild("Ui")
+	spawn(function()
+		ui.Info:Destroy()
+		ui.StaminaBar.LocalScript:Destroy()
+		ui.UpdateLog:Destroy()
+		ui.UpdateLogInfo:Destroy()
+		ui.StaminaBar.BackgroundTransparency = 0.6
+		ui.ManaBar.BackgroundTransparency = 0.6
+		ui.StaminaBar.ImageLabel:Destroy()
+		ui.ManaBar.AnchorPoint = Vector2.new(0.5,0.5)
+		ui.StaminaBar.Bar.BackgroundColor3 = Color3.new(0,0,255)
+		ui.ManaBar.Bar.BackgroundColor3 = Color3.new(0,0,255)
+		ui.ManaBar.Position = UDim2.new(0.5, 0,0.98, 0)
+		ui.ManaBar.Size = UDim2.new(0.302, 0,0.01, 0)
+		ui.StaminaBar.Size = UDim2.new(0.4, 0,0.01, 0)
+		ui.StaminaBar.AnchorPoint = Vector2.new(0.5,0.5)
+		ui.StaminaBar.Position = UDim2.new(0.5,0,0.96,0)
+		ui:WaitForChild("MoveDebounceShower").Visible = false
+		ui.MoveDebounceShower.LocalScript:Destroy()
+		local corner = Instance.new("UICorner")
+		corner.Parent = ui.StaminaBar
+		corner:Clone().Parent = ui.StaminaBar.Bar
+		corner:Clone().Parent = ui.ManaBar
+		corner:Clone().Parent = ui.ManaBar.Bar
+		local ci = plrGui:WaitForChild("CharaIndicator")
+		ci:WaitForChild("Help"):Destroy()
+		ci:WaitForChild("Indicator").AnchorPoint = Vector2.new(0.5,0.5)
+		ci.Indicator.Position = UDim2.new(0.5,0,0.93,0)
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 1
+wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 3
+	
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local block
+local unblock 
+    camfix2 = 10
+--Properties:
+ScreenGui.ResetOnSpawn = false
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+TextLabel.BackgroundTransparency = 1.00
+TextLabel.Position = UDim2.new(-0.000625994056, 0, .80, 0)
+TextLabel.Size = UDim2.new(0, 250, 0, 75)
+TextLabel.Font = Enum.Font.Arcade
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 35.000
+TextLabel.TextWrapped = true
+TextLabel.Text = 'Mode Err0r0r00rr0r'
+
+
+
+
+
+char = game.Players.LocalPlayer.Character
+for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren()) do
+if v.Name == 'GTFriskSword' then
+sword2 = v:Clone()
+sword2.Parent = char
+sword2.GTFriskSword:Destroy()
+sword2.Anchored = false
+weld = Instance.new('Weld',sword2)
+weld.Part0 = sword2
+weld.Part1 = char['Left Arm']
+sword2.Name = 'GTFSword3'
+sword2.Color = Color3.fromRGB(0, 0, 255)
+weld.C0 = CFrame.new(0.95,-1.7,-0)*CFrame.Angles(1.6,0,-1.6)
+sword2.Transparency = 0
+end
+end
+
+		
+	
+
+local player = game.Players.LocalPlayer
+local m = player:GetMouse()
+local toggle = false
+m.KeyDown:Connect(function(k)
+if k == '7' then
+if not toggle then
+toggle = true
+
+local radius = 20--how far away do you want the parts to be from you
+local circle = math.pi * 50-- Gets a full circle
+local char = game.Players.LocalPlayer.Character
+local tab = {}--Creates a table so you can insert values inside
+local amm = 2---amount of projectiles
+pass = getrenv()._G.Pass
+for i = 1,amm,1 do
+spawn(function()
+local A_1 =  {
+     [1] = pass, 
+     [2] = "KnifeProjectilePurple", 
+     [3] = "Spawn", 
+     [4] = (char.HumanoidRootPart.CFrame*CFrame.new(1,100,-10)).p
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+end
+am = 0
+local detect
+local detect2
+val = Instance.new('NumberValue',player)-- creates a value instance so you can use it in a connect function
+val.Name = 'KnifeSlashProjectilePurple Count'
+detect = char.Attacks.ChildAdded:Connect(function(pp)-- this will detect if a child is added to the character
+if pp.Name == 'KnifeSlashProjectilePurple' then
+    table.insert(tab,pp)--it will insert the blasts to the table
+am = am + 1--adds the numbers
+val.Value = am--set the Number value to that number
+pp:WaitForChild('BodyVelocity'):Destroy()
+pp:WaitForChild('Hitted'):Destroy()
+pp:WaitForChild('Particle'):WaitForChild('ParticleEmitter'):Destroy()
+end
+end)
+
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
+if val.Value == amm then
+tab2 = {}
+for _,v in pairs(tab) do---will look through the tables
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(math.random(20,20),1000,math.random(-20,20))
+v1 = Instance.new('BodyPosition',v)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'
+v1.MaxForce = Vector3.new(1,1,1)*100000
+v1.D = 500
+v1.P = 30000
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(10,0,0)
+        table.insert(tab2,v1)
+end
+
+
+
+local speeds = {25,25}--put as many speeds as how much projectile you have (in order)
+for i = 1,#tab2 do
+spawn(function()
+local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
+local add = speeds[i]
+    local part = tab2[i]
+local  mspeed = 0
+while true do
+    wait()
+    mspeed = mspeed + add-- change it to a higher number if u want it faster
+    local x_pos = math.cos(angle) * radius
+    local y_pos = math.sin(angle) * radius
+    local cf = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0), math.rad(mspeed),math.rad(0)) *CFrame.new(x_pos, 0, y_pos)
+part.Position = cf.p
+end
+end)
+end
+val:Destroy()
+detect:Disconnect()
+detect2:Disconnect()
+end
+end)
+elseif toggle then
+toggle = false
+--make orbs dissapear
+end
+
+end
+end)
+
+
+
+local player = game.Players.LocalPlayer
+local m = player:GetMouse()
+local toggle = false
+m.KeyDown:Connect(function(k)
+if k == '8' then
+if not toggle then
+toggle = true
+local radius = 15 --how far away do you want the parts to be from you
+local circle = math.pi * 2-- Gets a full circle
+local char = game.Players.LocalPlayer.Character
+local tab = {}--Creates a table so you can insert values inside
+local amm = 3 ---amount of projectiles
+pass = getrenv()._G.Pass
+for i = 1,amm,1 do
+spawn(function()
+local A_1 =  {
+     [1] = pass, 
+     [2] = "KnifeProjectileYellow", 
+     [3] = "Spawn", 
+     [4] = (char.HumanoidRootPart.CFrame*CFrame.new(1,100,-10)).p
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+end
+am = 0
+local detect
+local detect2
+val = Instance.new('NumberValue',player)-- creates a value instance so you can use it in a connect function
+val.Name = 'YellowBlast Count'
+detect = char.Attacks.ChildAdded:Connect(function(pp)-- this will detect if a child is added to the character
+if pp.Name == 'YellowBlast' then
+    table.insert(tab,pp)--it will insert the blasts to the table
+am = am + 1--adds the numbers
+val.Value = am--set the Number value to that number
+pp:WaitForChild('BodyVelocity'):Destroy()
+pp:WaitForChild('Hitted'):Destroy()
+pp:WaitForChild('Particle'):WaitForChild('ParticleEmitter'):Destroy()
+end
+end)
+
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
+if val.Value == amm then
+tab2 = {}
+for _,v in pairs(tab) do---will look through the tables
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(math.random(-20,20),1000,math.random(-20,20))
+v1 = Instance.new('BodyPosition',v)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'
+v1.MaxForce = Vector3.new(1,1,1)*100000
+v1.D = 500
+v1.P = 30000
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,0,0)
+        table.insert(tab2,v1)
+end
+
+
+
+for i = 1,#tab2 do
+spawn(function()
+local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
+    local part = tab2[i]
+local  mspeed = 0
+while true do
+    wait()
+    mspeed = mspeed + 20-- change it to a higher number if u want it faster
+    local x_pos = math.cos(angle) * radius
+    local y_pos = math.sin(angle) * radius
+    local cf = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0), math.rad(mspeed),math.rad(0)) *CFrame.new(x_pos, 0, y_pos)
+part.Position = cf.p
+end
+end)
+end
+val:Destroy()
+detect:Disconnect()
+detect2:Disconnect()
+end
+end)
+elseif toggle then
+toggle = false
+--make orbs dissapear
+end
+
+end
+end)
+
+local player = game.Players.LocalPlayer
+local m = player:GetMouse()
+local toggle = false
+m.KeyDown:Connect(function(k)
+if k == '9' then
+if not toggle then
+toggle = true
+local radius = 100 --how far away do you want the parts to be from you
+local circle = math.pi * 2-- Gets a full circle
+local char = game.Players.LocalPlayer.Character
+local tab = {}--Creates a table so you can insert values inside
+local amm = 3 ---amount of projectiles
+pass = getrenv()._G.Pass
+for i = 1,amm,1 do
+spawn(function()
+local A_1 =  {
+     [1] = pass, 
+     [2] = "KnifeProjectile", 
+     [3] = "Spawn", 
+     [4] = (char.HumanoidRootPart.CFrame*CFrame.new(1,100,-10)).p
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+end
+am = 0
+local detect
+local detect2
+val = Instance.new('NumberValue',player)-- creates a value instance so you can use it in a connect function
+val.Name = 'KnifeSlashProjectile Count'
+detect = char.Attacks.ChildAdded:Connect(function(pp)-- this will detect if a child is added to the character
+if pp.Name == 'KnifeSlashProjectile' then
+    table.insert(tab,pp)--it will insert the blasts to the table
+am = am + 1--adds the numbers
+val.Value = am--set the Number value to that number
+pp:WaitForChild('BodyVelocity'):Destroy()
+pp:WaitForChild('Hitted'):Destroy()
+pp:WaitForChild('Particle'):WaitForChild('ParticleEmitter'):Destroy()
+end
+end)
+
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
+if val.Value == amm then
+tab2 = {}
+for _,v in pairs(tab) do---will look through the tables
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(math.random(-20,20),1000,math.random(-20,20))
+v1 = Instance.new('BodyPosition',v)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'
+v1.MaxForce = Vector3.new(1,1,1)*100000
+v1.D = 500
+v1.P = 30000
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,0,0)
+        table.insert(tab2,v1)
+end
+
+
+for i = 1,#tab2 do
+spawn(function()
+local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
+    local part = tab2[i]
+local  mspeed = 0
+while true do
+    wait()
+    mspeed = mspeed + 25-- change it to a higher number if u want it faster
+    local x_pos = math.cos(angle) * radius
+    local y_pos = math.sin(angle) * radius
+    local cf = char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(0), math.rad(mspeed),math.rad(0)) *CFrame.new(x_pos, 0, y_pos)
+part.Position = cf.p
+end
+end)
+end
+val:Destroy()
+detect:Disconnect()
+detect2:Disconnect()
+end
+end)
+elseif toggle then
+toggle = false
+--make orbs dissapear
+end
+
+end
+end)
+
+
+
+    
+    
+    
+end)
+
+
+
+
+if StarGlitcherwings then
+
+
+	repeat task.wait() until plr.Character
+	task.wait(2)
+	repeat task.wait() until plr.Character
+	task.wait(2)
+	local vt=Vector3.new
+	local cf=CFrame.new
+	local euler=CFrame.fromEulerAnglesXYZ
+	local angles=CFrame.Angles
+	local sine = 0
+	local change = 1
+	local function CreateWeld(parent,part0,part1,C1X,C1Y,C1Z,C1Xa,C1Ya,C1Za,C0X,C0Y,C0Z,C0Xa,C0Ya,C0Za)
+		local weld = Instance.new("Weld")
+		weld.Parent = parent
+		weld.Part0 = part0
+		weld.Part1 = part1
+		weld.C1 = CFrame.new(C1X,C1Y,C1Z)*CFrame.Angles(C1Xa,C1Ya,C1Za)
+		weld.C0 = CFrame.new(C0X,C0Y,C0Z)*CFrame.Angles(C0Xa,C0Ya,C0Za)
+		return weld
+	end
+	local function clerp(a,b,t)
+		return a:lerp(b,t)
+	end
+	local function CreateParta(parent,transparency,reflectance,material,brickcolor)
+		local p = Instance.new("Part")
+		p.TopSurface = 0
+		p.BottomSurface = 0
+		p.Transparency = 0
+		p.Parent = parent
+		p.Size = Vector3.new(1,2,0.1)
+		p.Reflectance = reflectance
+		p.CanCollide = false
+		p.Locked = true
+		p.BrickColor = brickcolor
+		p.Material = material
+		return p
+	end
+	local char = plr.Character
+	local maincolor = BrickColor.new("Really Red")
+	local m = Instance.new("Model",char)
+	local m2 = Instance.new("Model",char)
+	local m3 = Instance.new("Model",char)
+	local mw1 = Instance.new("Model",char)
+	local mw2 = Instance.new("Model",char)
+	local handlex = CreateParta(mw2,1,1,"Neon",maincolor)
+	local handlexweld = CreateWeld(handlex,char.Torso,handlex,0,-1.5,-1.05,math.rad(0),math.rad(0),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	local extrawingmod1 = Instance.new("Model",char)
+	local extrawingmod2 = Instance.new("Model",char)
+	local handle = CreateParta(m,1,1,"Neon",maincolor)
+	local handleweld = CreateWeld(handle,char:WaitForChild("Torso"),handle,0,-1.5,-1.05,math.rad(0),math.rad(0),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	local lwing1 = CreateParta(m,1,1,"Neon",maincolor)
+	local lwing1weld = CreateWeld(lwing1,handle,lwing1,3,0,0,math.rad(5),math.rad(0),math.rad(12.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing1,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing1,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A0 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing1,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A1 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing1,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	tl1 = Instance.new('Trail',wed)
+	tl1.Attachment0 = A0
+	tl1.Attachment1 = A1
+	--tl1.Texture = "http://www.roblox.com/asset/?id=1049219073"
+	tl1.LightEmission = 100
+	tl1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0),NumberSequenceKeypoint.new(1, 1)})
+	tl1.Color = ColorSequence.new(BrickColor.new('Black').Color)
+	tl1.Lifetime = 0.6
+
+
+	local lwing2 = CreateParta(m,1,1,"Neon",maincolor)
+	local lwing2weld = CreateWeld(lwing2,handle,lwing2,4,1,0,math.rad(10),math.rad(0),math.rad(25),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing2,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing2,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A0 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing2,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A1 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing2,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	tl2 = Instance.new('Trail',wed)
+	tl2.Attachment0 = A0
+	tl2.Attachment1 = A1
+	--tl2.Texture = "http://www.roblox.com/asset/?id=1049219073"
+	tl2.LightEmission = 0
+	tl2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0),NumberSequenceKeypoint.new(1, 1)})
+	tl2.Color = ColorSequence.new(BrickColor.new('Black').Color)
+	tl2.Lifetime = 0.6
+
+	local lwing3 = CreateParta(m,1,1,"Neon",maincolor)
+	local lwing3weld = CreateWeld(lwing3,handle,lwing3,4.75,2,0,math.rad(15),math.rad(0),math.rad(37.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing3,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing3,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A0 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing3,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A1 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing3,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	tl3 = Instance.new('Trail',wed)
+	tl3.Attachment0 = A0
+	tl3.Attachment1 = A1
+	--tl3.Texture = "http://www.roblox.com/asset/?id=1049219073"
+	tl3.LightEmission = 0
+	tl3.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0),NumberSequenceKeypoint.new(1, 1)})
+	tl3.Color = ColorSequence.new(BrickColor.new('Black').Color)
+	tl3.Lifetime = 0.6
+
+	tl1.Enabled = false
+	tl2.Enabled = false
+	tl3.Enabled = false
+	local lwing4 = CreateParta(m,1,1,"Neon",maincolor)
+	local lwing4weld = CreateWeld(lwing4,handle,lwing4,5.75,3,0,math.rad(20),math.rad(0),math.rad(50),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing4,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing4,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing4,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing4,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	local lwing5 = CreateParta(m,1,1,"Neon",maincolor)
+	local lwing5weld = CreateWeld(lwing5,handle,lwing5,6.75,4,0,math.rad(25),math.rad(0),math.rad(62.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing5,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing5,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing5,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing5,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	local lwing6 = CreateParta(m,1,1,"Neon",maincolor)
+	local lwing6weld = CreateWeld(lwing6,handle,lwing6,7.75,5,0,math.rad(30),math.rad(0),math.rad(75),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing6,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing6,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing6,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod1,0,0,"Neon",maincolor)
+	CreateWeld(wed,lwing6,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	-- Right wing.
+
+	local rwing1 = CreateParta(m,1,1,"Neon",maincolor)
+	local rwing1weld = CreateWeld(rwing1,handle,rwing1,-3,0,0,math.rad(5),math.rad(0),math.rad(-12.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing1,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A0 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing1,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing1,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing1,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A1 = Instance.new('Attachment',wed)
+
+	tr1 = Instance.new('Trail',wed)
+	tr1.Attachment0 = A0
+	tr1.Attachment1 = A1
+	--tr1.Texture = "http://www.roblox.com/asset/?id=1049219073"
+	tr1.LightEmission = 0
+	tr1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0),NumberSequenceKeypoint.new(1, 1)})
+	tr1.Color = ColorSequence.new(BrickColor.new('Black').Color)
+	tr1.Lifetime = 0.6
+
+	local rwing2 = CreateParta(m,1,1,"Neon",maincolor)
+	local rwing2weld = CreateWeld(rwing2,handle,rwing2,-4,1,0,math.rad(10),math.rad(0),math.rad(-25),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing2,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A0 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing2,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing2,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing2,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A1 = Instance.new('Attachment',wed)
+
+	tr2 = Instance.new('Trail',wed)
+	tr2.Attachment0 = A0
+	tr2.Attachment1 = A1
+	--tr2.Texture = "http://www.roblox.com/asset/?id=1049219073"
+	tr2.LightEmission = 0
+	tr2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0),NumberSequenceKeypoint.new(1, 1)})
+	tr2.Color = ColorSequence.new(BrickColor.new('Black').Color)
+	tr2.Lifetime = 0.6
+
+	local rwing3 = CreateParta(m,1,1,"Neon",maincolor)
+	local rwing3weld = CreateWeld(rwing3,handle,rwing3,-4.75,2,0,math.rad(15),math.rad(0),math.rad(-37.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing3,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A0 = Instance.new('Attachment',wed)
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing3,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing3,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(mw2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing3,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	A1 = Instance.new('Attachment',wed)
+
+	tr3 = Instance.new('Trail',wed)
+	tr3.Attachment0 = A0
+	tr3.Attachment1 = A1
+	--tr3.Texture = "http://www.roblox.com/asset/?id=1049219073"
+	tr3.LightEmission = 0
+	tr3.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0),NumberSequenceKeypoint.new(1, 1)})
+	tr3.Color = ColorSequence.new(BrickColor.new('Black').Color)
+	tr3.Lifetime = 0.6
+
+
+	local rwing4 = CreateParta(m,1,1,"Neon",maincolor)
+	local rwing4weld = CreateWeld(rwing4,handle,rwing4,-5.75,3,0,math.rad(20),math.rad(0),math.rad(-50),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing4,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing4,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing4,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing4,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	local rwing5 = CreateParta(m,1,1,"Neon",maincolor)
+	local rwing5weld = CreateWeld(rwing5,handle,rwing5,-6.75,4,0,math.rad(25),math.rad(0),math.rad(-62.5),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing5,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing5,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing5,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing5,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	local rwing6 = CreateParta(m,1,1,"Neon",maincolor)
+	local rwing6weld = CreateWeld(rwing6,handle,rwing6,-7.75,3,0,math.rad(30),math.rad(0),math.rad(-75),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing6,wed,0,0,0.25,math.rad(0),math.rad(90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing6,wed,0,0,0.25,math.rad(0),math.rad(-90),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing6,wed,0,-0.25,1.75,math.rad(0),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	wed = CreateParta(extrawingmod2,0,0,"Neon",maincolor)
+	CreateWeld(wed,rwing6,wed,0,-1.75,0.25,math.rad(90),math.rad(90),math.rad(90),0,0,0,math.rad(0),math.rad(0),math.rad(0))
+	repeat task.wait() until plr.Character.Humanoid.MaxHealth == 200
+	task.wait(5)
+	setWings = true
+	for i=1,2 do
+		charaMoves:InvokeServer({pass,"KnifeProjectileDarkRed","Spawn",plr.Character.HumanoidRootPart.CFrame.UpVector * 2000})
+		task.wait()
+	end
+	repeat task.wait() until #wings == 8
+	for i=1,2 do
+		charaMoves:InvokeServer({ pass , "KnifeProjectileOrange", "Spawn",plr.Character.HumanoidRootPart.CFrame.UpVector * 2000})
+		task.wait()
+	end
+	repeat task.wait() until #wings == 10
+	charaMoves:InvokeServer({ pass , "KnifeProjectileYellow", "Spawn",plr.Character.HumanoidRootPart.CFrame.UpVector * 2000})
+	repeat task.wait() until #wings == 11
+	setWings = false
+	local wing1 = wings[1]
+	wing1.Name = "Wing"
+	wing1.Parent = char
+	local wing2 = wings[2]
+	wing2.Name = "Wing"
+	wing2.Parent = char
+	local wing3 = wings[3]
+	wing3.Name = "Wing"
+	wing3.Parent = char
+	local wing4 = wings[4]
+	wing4.Name = "Wing"
+	wing4.Parent = char
+	local wing5 = wings[5]
+	wing5.Name = "Wing"
+	wing5.Parent = char
+	local wing6 = wings[6]
+	wing6.Name = "Wing"
+	wing6.Parent = char
+	local wing7 = wings[7]
+	wing7.Name = "Wing"
+	wing7.Parent = char
+	local wing8 = wings[8]
+	wing8.Name = "Wing"
+	wing8.Parent = char
+	local wing9 = wings[9]
+	wing9.Name = "Wing"
+	wing9.Parent = char
+	local wing10 = wings[10]
+	wing10.Name = "Wing"
+	wing10.Parent = char
+	local orb = wings[11]
+	orb.Name = "Orb"
+	orb.Parent = char
+	while true do
+		task.wait()
+		lwing1weld.C1=clerp(lwing1weld.C1,cf(2,0,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(5 + 10 * math.cos(sine / 32)),math.rad(0),math.rad(12.5 + 5 * math.cos(sine / 32))),.3)
+		lwing2weld.C1=clerp(lwing2weld.C1,cf(3,1,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(10 + 15 * math.cos(sine / 32)),math.rad(0),math.rad(25 + 7.5 * math.cos(sine / 32))),.3)
+		lwing3weld.C1=clerp(lwing3weld.C1,cf(3.75,2,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(15 + 20 * math.cos(sine / 32)),math.rad(0),math.rad(37.5 + 10 * math.cos(sine / 32))),.3)
+		lwing4weld.C1=clerp(lwing4weld.C1,cf(4.75,3,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(20 + 25 * math.cos(sine / 32)),math.rad(0),math.rad(50 + 12.5 * math.cos(sine / 32))),.3)
+		lwing5weld.C1=clerp(lwing5weld.C1,cf(5.75,4,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(25 + 30 * math.cos(sine / 32)),math.rad(0),math.rad(62.5 + 15 * math.cos(sine / 32))),.3)
+		lwing6weld.C1=clerp(lwing6weld.C1,cf(6.75,5,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(30 + 35 * math.cos(sine / 32)),math.rad(0),math.rad(75 + 17.5 * math.cos(sine / 32))),.3)
+
+		rwing1weld.C1=clerp(rwing1weld.C1,cf(-2,0,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(5 + 10 * math.cos(sine / 32)),math.rad(0),math.rad(-12.5 - 5 * math.cos(sine / 32))),.3)
+		rwing2weld.C1=clerp(rwing2weld.C1,cf(-3,1,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(10 + 15 * math.cos(sine / 32)),math.rad(0),math.rad(-25 - 7.5 * math.cos(sine / 32))),.3)
+		rwing3weld.C1=clerp(rwing3weld.C1,cf(-3.75,2,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(15 + 20 * math.cos(sine / 32)),math.rad(0),math.rad(-37.5 - 10 * math.cos(sine / 32))),.3)
+		rwing4weld.C1=clerp(rwing4weld.C1,cf(-4.75,3,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(20 + 25 * math.cos(sine / 32)),math.rad(0),math.rad(-50 - 12.5 * math.cos(sine / 32))),.3)
+		rwing5weld.C1=clerp(rwing5weld.C1,cf(-5.75,4,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(25 + 30 * math.cos(sine / 32)),math.rad(0),math.rad(-62.5 - 15 * math.cos(sine / 32))),.3)
+		rwing6weld.C1=clerp(rwing6weld.C1,cf(-6.75,5,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(30 + 35 * math.cos(sine / 32)),math.rad(0),math.rad(-75 - 17.5 * math.cos(sine / 32))),.3)
+		sine = sine + change
+		wing1.CFrame = lwing1.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing2.CFrame = lwing2.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing3.CFrame = lwing3.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing4.CFrame = lwing4.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing5.CFrame = rwing1.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing6.CFrame = rwing2.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing7.CFrame = rwing3.CFrame * CFrame.Angles(math.rad(90),0,0)
+		wing8.CFrame = rwing4.CFrame * CFrame.Angles(math.rad(90),0,0)
+		if secondPhase then
+			wing9.CFrame = rwing5.CFrame * CFrame.Angles(math.rad(90),0,0)
+			wing10.CFrame = lwing5.CFrame * CFrame.Angles(math.rad(90),0,0)
+			orb.CFrame = handlex.CFrame * CFrame.new(0,0.6,0)
+		else
+			wing9.CFrame = CFrame.new(0,10000,0)
+			wing10.CFrame = CFrame.new(0,10000,0)
+			orb.CFrame = CFrame.new(0,10000,0)
+		end
+		--wing11.CFrame = rwing5.CFrame * CFrame.Angles(math.rad(90),0,0)
+		--wing12.CFrame = rwing6.CFrame * CFrame.Angles(math.rad(90),0,0)
+
+
+end
+end
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
