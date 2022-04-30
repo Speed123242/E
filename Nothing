@@ -14,11 +14,11 @@ game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)
     end
 end)
 
-local radius = 6.5 --how far away do you want the parts to be from you
+local radius = 10 --how far away do you want the parts to be from you
 local circle = math.pi * 2-- Gets a full circle
 local char = game.Players.LocalPlayer.Character
 local tab = {}--Creates a table so you can insert values inside
-local amm = 30 ---amount of projectiles
+local amm = 15 ---amount of projectiles
 pass = getrenv()._G.Pass
 for i = 1,amm,1 do
 spawn(function()
