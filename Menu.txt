@@ -1,0 +1,4891 @@
+
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Enabled = false
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Altered = Instance.new("ScreenGui")
+local MainM = Instance.new("ImageLabel")
+local CSelection = Instance.new("TextButton")
+local CUSSSelection = Instance.new("TextButton")
+local Quit = Instance.new("TextButton")
+local CustomSelection = Instance.new("ImageLabel")
+local GTCR = Instance.new("TextButton")
+local DTP1 = Instance.new("TextButton")
+local DTP2 = Instance.new("TextButton")
+local TitleCUS = Instance.new("TextButton")
+local CharacterSelection = Instance.new("ImageLabel")
+local GlitchtaleChara = Instance.new("TextButton")
+local Asriel = Instance.new("TextButton")
+local DeltaSans = Instance.new("TextButton")
+local TitleCS = Instance.new("TextButton")
+local UTFrisk = Instance.new("TextButton")
+local GTFrisk = Instance.new("TextButton")
+local UTSans = Instance.new("TextButton")
+local XTale = Instance.new("TextButton")
+local GTUndyne = Instance.new("TextButton")
+local SSChara = Instance.new("TextButton")
+local GTAsgore = Instance.new("TextButton")
+local Betty = Instance.new("TextButton")
+local Warning1 = Instance.new("ImageLabel")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local Title = Instance.new("ImageLabel")
+local TextButton_4 = Instance.new("TextButton")
+
+--Properties:
+
+Altered.Name = "Altered"
+Altered.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+MainM.Name = "MainM"
+MainM.Parent = Altered
+MainM.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainM.BackgroundTransparency = 1.000
+MainM.BorderSizePixel = 0
+MainM.Position = UDim2.new(0.832099438, 0, 0.0975543112, 0)
+MainM.Size = UDim2.new(0, 276, 0, 879)
+MainM.Image = "rbxassetid://3570695787"
+MainM.ImageColor3 = Color3.fromRGB(0, 0, 0)
+MainM.ScaleType = Enum.ScaleType.Slice
+MainM.SliceCenter = Rect.new(100, 100, 100, 100)
+MainM.SliceScale = 0.120
+
+CSelection.Name = "CSelection"
+CSelection.Parent = MainM
+CSelection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CSelection.BackgroundTransparency = 1.000
+CSelection.BorderSizePixel = 0
+CSelection.Position = UDim2.new(0.0471014529, 0, 0.257110327, 0)
+CSelection.Size = UDim2.new(0, 250, 0, 20)
+CSelection.Font = Enum.Font.Arcade
+CSelection.Text = "Character Selection"
+CSelection.TextColor3 = Color3.fromRGB(255, 255, 255)
+CSelection.TextSize = 23.000
+CSelection.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+CSelection.TextStrokeTransparency = 0.000
+
+CUSSSelection.Name = "CUSSSelection"
+CUSSSelection.Parent = MainM
+CUSSSelection.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CUSSSelection.BackgroundTransparency = 1.000
+CUSSSelection.BorderSizePixel = 0
+CUSSSelection.Position = UDim2.new(0.119565219, 0, 0.369738311, 0)
+CUSSSelection.Size = UDim2.new(0, 210, 0, 47)
+CUSSSelection.Font = Enum.Font.Arcade
+CUSSSelection.Text = "Custom Selection"
+CUSSSelection.TextColor3 = Color3.fromRGB(255, 255, 255)
+CUSSSelection.TextSize = 23.000
+CUSSSelection.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+CUSSSelection.TextStrokeTransparency = 0.000
+
+Quit.Name = "Quit"
+Quit.Parent = MainM
+Quit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Quit.BackgroundTransparency = 1.000
+Quit.BorderSizePixel = 0
+Quit.Position = UDim2.new(0.119565219, 0, 0.855517626, 0)
+Quit.Size = UDim2.new(0, 210, 0, 47)
+Quit.Font = Enum.Font.Arcade
+Quit.Text = "Exit  Game"
+Quit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Quit.TextSize = 23.000
+Quit.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+Quit.TextStrokeTransparency = 0.000
+
+CustomSelection.Name = "CustomSelection"
+CustomSelection.Parent = Altered
+CustomSelection.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+CustomSelection.BackgroundTransparency = 1.000
+CustomSelection.Position = UDim2.new(-0.5, 0, -0.0520000011, 0)
+CustomSelection.Size = UDim2.new(0, 644, 0, 697)
+CustomSelection.Image = "rbxassetid://3570695787"
+CustomSelection.ImageColor3 = Color3.fromRGB(47, 47, 47)
+CustomSelection.ScaleType = Enum.ScaleType.Slice
+CustomSelection.SliceCenter = Rect.new(100, 100, 100, 100)
+CustomSelection.SliceScale = 0.120
+
+GTCR.Name = "GTCR"
+GTCR.Parent = CustomSelection
+GTCR.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GTCR.BackgroundTransparency = 1.000
+GTCR.BorderSizePixel = 0
+GTCR.Position = UDim2.new(0.118012421, 0, 0.197991386, 0)
+GTCR.Size = UDim2.new(0, 200, 0, 50)
+GTCR.Font = Enum.Font.Arcade
+GTCR.Text = "GTCR"
+GTCR.TextColor3 = Color3.fromRGB(0, 0, 0)
+GTCR.TextSize = 30.000
+
+DTP1.Name = "DTP1"
+DTP1.Parent = CustomSelection
+DTP1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DTP1.BackgroundTransparency = 1.000
+DTP1.BorderSizePixel = 0
+DTP1.Position = UDim2.new(0.551242232, 0, 0.197991386, 0)
+DTP1.Size = UDim2.new(0, 200, 0, 50)
+DTP1.Font = Enum.Font.Arcade
+DTP1.Text = "Dusttrust Phase 1"
+DTP1.TextColor3 = Color3.fromRGB(0, 0, 0)
+DTP1.TextSize = 30.000
+
+DTP2.Name = "DTP2"
+DTP2.Parent = CustomSelection
+DTP2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DTP2.BackgroundTransparency = 1.000
+DTP2.BorderSizePixel = 0
+DTP2.Position = UDim2.new(0.29192549, 0, 0.351506472, 0)
+DTP2.Size = UDim2.new(0, 200, 0, 50)
+DTP2.Font = Enum.Font.Arcade
+DTP2.Text = "Dusttrust Phase 2 (Demo)"
+DTP2.TextColor3 = Color3.fromRGB(0, 0, 0)
+DTP2.TextSize = 30.000
+
+TitleCUS.Name = "TitleCUS"
+TitleCUS.Parent = CustomSelection
+TitleCUS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleCUS.BackgroundTransparency = 1.000
+TitleCUS.BorderSizePixel = 0
+TitleCUS.Position = UDim2.new(0.29192546, 0, 0.0430416018, 0)
+TitleCUS.Size = UDim2.new(0, 200, 0, 50)
+TitleCUS.Font = Enum.Font.Arcade
+TitleCUS.Text = "Custom Selection"
+TitleCUS.TextColor3 = Color3.fromRGB(0, 0, 0)
+TitleCUS.TextSize = 30.000
+TitleCUS.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+TitleCUS.TextStrokeTransparency = 0.000
+
+CharacterSelection.Name = "CharacterSelection"
+CharacterSelection.Parent = Altered
+CharacterSelection.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+CharacterSelection.BackgroundTransparency = 1.000
+CharacterSelection.Position = UDim2.new(-0.5, 0, -0.0520000011, 0)
+CharacterSelection.Size = UDim2.new(0, 644, 0, 805)
+CharacterSelection.Image = "rbxassetid://3570695787"
+CharacterSelection.ImageColor3 = Color3.fromRGB(47, 47, 47)
+CharacterSelection.ScaleType = Enum.ScaleType.Slice
+CharacterSelection.SliceCenter = Rect.new(100, 100, 100, 100)
+CharacterSelection.SliceScale = 0.120
+
+GlitchtaleChara.Name = "GlitchtaleChara"
+GlitchtaleChara.Parent = CharacterSelection
+GlitchtaleChara.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GlitchtaleChara.BackgroundTransparency = 1.000
+GlitchtaleChara.BorderSizePixel = 0
+GlitchtaleChara.Position = UDim2.new(0.118012421, 0, 0.197991386, 0)
+GlitchtaleChara.Size = UDim2.new(0, 200, 0, 50)
+GlitchtaleChara.Font = Enum.Font.Arcade
+GlitchtaleChara.Text = "Glitchtale Chara"
+GlitchtaleChara.TextColor3 = Color3.fromRGB(0, 0, 0)
+GlitchtaleChara.TextSize = 30.000
+
+Asriel.Name = "Asriel"
+Asriel.Parent = CharacterSelection
+Asriel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Asriel.BackgroundTransparency = 1.000
+Asriel.BorderSizePixel = 0
+Asriel.Position = UDim2.new(0.571428597, 0, 0.197991386, 0)
+Asriel.Size = UDim2.new(0, 200, 0, 50)
+Asriel.Font = Enum.Font.Arcade
+Asriel.Text = "Asriel"
+Asriel.TextColor3 = Color3.fromRGB(0, 0, 0)
+Asriel.TextSize = 30.000
+
+DeltaSans.Name = "DeltaSans"
+DeltaSans.Parent = CharacterSelection
+DeltaSans.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DeltaSans.BackgroundTransparency = 1.000
+DeltaSans.BorderSizePixel = 0
+DeltaSans.Position = UDim2.new(0.29192549, 0, 0.351506472, 0)
+DeltaSans.Size = UDim2.new(0, 200, 0, 50)
+DeltaSans.Font = Enum.Font.Arcade
+DeltaSans.Text = "Delta!Sans"
+DeltaSans.TextColor3 = Color3.fromRGB(0, 0, 0)
+DeltaSans.TextSize = 30.000
+
+TitleCS.Name = "TitleCS"
+TitleCS.Parent = CharacterSelection
+TitleCS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleCS.BackgroundTransparency = 1.000
+TitleCS.BorderSizePixel = 0
+TitleCS.Position = UDim2.new(0.29192546, 0, 0.0430416018, 0)
+TitleCS.Size = UDim2.new(0, 200, 0, 50)
+TitleCS.Font = Enum.Font.Arcade
+TitleCS.Text = "Character Selection"
+TitleCS.TextColor3 = Color3.fromRGB(0, 0, 0)
+TitleCS.TextSize = 30.000
+
+UTFrisk.Name = "UTFrisk"
+UTFrisk.Parent = CharacterSelection
+UTFrisk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UTFrisk.BackgroundTransparency = 1.000
+UTFrisk.BorderSizePixel = 0
+UTFrisk.Position = UDim2.new(0.0885093138, 0, 0.463414609, 0)
+UTFrisk.Size = UDim2.new(0, 200, 0, 50)
+UTFrisk.Font = Enum.Font.Arcade
+UTFrisk.Text = "UT!Frisk"
+UTFrisk.TextColor3 = Color3.fromRGB(0, 0, 0)
+UTFrisk.TextSize = 30.000
+
+GTFrisk.Name = "GTFrisk"
+GTFrisk.Parent = CharacterSelection
+GTFrisk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GTFrisk.BackgroundTransparency = 1.000
+GTFrisk.BorderSizePixel = 0
+GTFrisk.Position = UDim2.new(0.586956501, 0, 0.467985481, 0)
+GTFrisk.Size = UDim2.new(0, 200, 0, 50)
+GTFrisk.Font = Enum.Font.Arcade
+GTFrisk.Text = "GT!Frisk"
+GTFrisk.TextColor3 = Color3.fromRGB(0, 0, 0)
+GTFrisk.TextSize = 30.000
+
+UTSans.Name = "UTSans"
+UTSans.Parent = CharacterSelection
+UTSans.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UTSans.BackgroundTransparency = 1.000
+UTSans.BorderSizePixel = 0
+UTSans.Position = UDim2.new(0.29192543, 0, 0.628407478, 0)
+UTSans.Size = UDim2.new(0, 200, 0, 50)
+UTSans.Font = Enum.Font.Arcade
+UTSans.Text = "Undertale!Sans"
+UTSans.TextColor3 = Color3.fromRGB(0, 0, 0)
+UTSans.TextSize = 30.000
+
+XTale.Name = "XTale"
+XTale.Parent = CharacterSelection
+XTale.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+XTale.BackgroundTransparency = 1.000
+XTale.BorderSizePixel = 0
+XTale.Position = UDim2.new(0.0885092765, 0, 0.754662871, 0)
+XTale.Size = UDim2.new(0, 200, 0, 50)
+XTale.Font = Enum.Font.Arcade
+XTale.Text = "XTale Sans/Chara"
+XTale.TextColor3 = Color3.fromRGB(0, 0, 0)
+XTale.TextSize = 30.000
+
+GTUndyne.Name = "GTUndyne"
+GTUndyne.Parent = CharacterSelection
+GTUndyne.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GTUndyne.BackgroundTransparency = 1.000
+GTUndyne.BorderSizePixel = 0
+GTUndyne.Position = UDim2.new(0.602484405, 0, 0.754662871, 0)
+GTUndyne.Size = UDim2.new(0, 200, 0, 50)
+GTUndyne.Font = Enum.Font.Arcade
+GTUndyne.Text = "GT!Undyne"
+GTUndyne.TextColor3 = Color3.fromRGB(0, 0, 0)
+GTUndyne.TextSize = 30.000
+
+SSChara.Name = "SSChara"
+SSChara.Parent = CharacterSelection
+SSChara.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SSChara.BackgroundTransparency = 1.000
+SSChara.BorderSizePixel = 0
+SSChara.Position = UDim2.new(0.29192543, 0, 0.863701582, 0)
+SSChara.Size = UDim2.new(0, 200, 0, 50)
+SSChara.Font = Enum.Font.Arcade
+SSChara.Text = "Storyshift Chara"
+SSChara.TextColor3 = Color3.fromRGB(0, 0, 0)
+SSChara.TextSize = 30.000
+
+GTAsgore.Name = "GTAsgore"
+GTAsgore.Parent = CharacterSelection
+GTAsgore.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GTAsgore.BackgroundTransparency = 1.000
+GTAsgore.BorderSizePixel = 0
+GTAsgore.Position = UDim2.new(0.670807481, 0, 0.924699426, 0)
+GTAsgore.Size = UDim2.new(0, 200, 0, 50)
+GTAsgore.Font = Enum.Font.Arcade
+GTAsgore.Text = "GT!Asgore"
+GTAsgore.TextColor3 = Color3.fromRGB(0, 0, 0)
+GTAsgore.TextSize = 30.000
+
+Betty.Name = "Betty"
+Betty.Parent = CharacterSelection
+Betty.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Betty.BackgroundTransparency = 1.000
+Betty.BorderSizePixel = 0
+Betty.Position = UDim2.new(0.578999996, 0, 0.300000012, 0)
+Betty.Size = UDim2.new(0, 200, 0, 50)
+Betty.Font = Enum.Font.Arcade
+Betty.Text = "Betty"
+Betty.TextColor3 = Color3.fromRGB(0, 0, 0)
+Betty.TextSize = 30.000
+
+Warning1.Name = "Warning1"
+Warning1.Parent = Altered
+Warning1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Warning1.BackgroundTransparency = 1.000
+Warning1.Position = UDim2.new(-0.5, 0, -0.0520000011, 0)
+Warning1.Size = UDim2.new(0, 376, 0, 107)
+Warning1.Image = "rbxassetid://3570695787"
+Warning1.ImageColor3 = Color3.fromRGB(74, 74, 74)
+Warning1.ScaleType = Enum.ScaleType.Slice
+Warning1.SliceCenter = Rect.new(100, 100, 100, 100)
+Warning1.SliceScale = 0.120
+
+TextButton.Parent = Warning1
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0611702129, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 330, 0, 50)
+TextButton.Font = Enum.Font.Arcade
+TextButton.Text = "Are you sure you want to quit?"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 20.000
+TextButton.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+TextButton.TextStrokeTransparency = 0.000
+
+TextButton_2.Parent = Warning1
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.BackgroundTransparency = 1.000
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.0611702129, 0, 0.467289716, 0)
+TextButton_2.Size = UDim2.new(0, 213, 0, 50)
+TextButton_2.Font = Enum.Font.Arcade
+TextButton_2.Text = "Yes"
+TextButton_2.TextColor3 = Color3.fromRGB(26, 255, 1)
+TextButton_2.TextSize = 40.000
+TextButton_2.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+TextButton_2.TextStrokeTransparency = 0.000
+
+TextButton_3.Parent = Warning1
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.BackgroundTransparency = 1.000
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Position = UDim2.new(0.486702144, 0, 0.467289716, 0)
+TextButton_3.Size = UDim2.new(0, 213, 0, 50)
+TextButton_3.Font = Enum.Font.Arcade
+TextButton_3.Text = "No"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_3.TextSize = 40.000
+TextButton_3.TextStrokeColor3 = Color3.fromRGB(43, 33, 136)
+TextButton_3.TextStrokeTransparency = 0.000
+
+Title.Name = "Title"
+Title.Parent = Altered
+Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Title.BorderSizePixel = 10
+Title.Position = UDim2.new(0.140246481, 0, 0.905544162, 0)
+Title.Size = UDim2.new(0, 1138, 0, 81)
+Title.Image = "rbxassetid://3570695787"
+Title.ImageColor3 = Color3.fromRGB(0, 0, 0)
+Title.ScaleType = Enum.ScaleType.Slice
+Title.SliceCenter = Rect.new(100, 100, 100, 100)
+Title.SliceScale = 0.120
+
+TextButton_4.Parent = Title
+TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.BackgroundTransparency = 1.000
+TextButton_4.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.Position = UDim2.new(0.00527240802, 0, -0.0529629588, 0)
+TextButton_4.Size = UDim2.new(0, 1132, 0, 96)
+TextButton_4.Font = Enum.Font.Arcade
+TextButton_4.Text = "Soulshatters (but its not)"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_4.TextSize = 50.000
+TextButton_4.TextStrokeColor3 = Color3.fromRGB(45, 0, 0)
+TextButton_4.TextStrokeTransparency = 0.000
+
+-- Scripts:
+
+local function SDCFBBB_fake_script() -- GTCR.LocalScript 
+	local script = Instance.new('LocalScript', GTCR)
+
+	
+	
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.GTCR
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://2595535704" 
+	Sound.Name = "GTCR"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.GTCR.GTCR.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+	
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.GTCR.GTCR.Playing = false
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.GTCR.GTCR.TimePosition = 0
+	end)
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.Selected.Playing = true
+	
+	
+	end)
+end
+coroutine.wrap(SDCFBBB_fake_script)()
+local function GANW_fake_script() -- DTP1.LocalScript 
+	local script = Instance.new('LocalScript', DTP1)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://437475935" 
+	Sound.Name = "DTP1Summon"
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://437475935" 
+	Sound.Name = "DTP1Summon2"
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://6477653909" 
+	Sound.Name = "DTP1"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("*block*")
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1.DTP1.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("*still block*")
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1.DTP1.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1.DTP1.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1.DTP1Summon.Playing = true
+	wait(0.1)
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1.DTP2Summon.Playing = true
+		print("It was Knife to meet ya ")
+	end)
+end
+coroutine.wrap(GANW_fake_script)()
+local function WDEYM_fake_script() -- DTP2.LocalScript 
+	local script = Instance.new('LocalScript', DTP2)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://437475935" 
+	Sound.Name = "DTP2Summon"
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://437475935" 
+	Sound.Name = "DTP2Summon2"
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://6477770041" 
+	Sound.Name = "DTP2"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("*block*")
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2.DTP2.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("*still block*")
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2.DTP2.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2.DTP2.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2.DTP2Summon.Playing = true
+		wait(0.1)
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2.DTP2Summon2.Playing = true
+		print("It was Knife to meet ya ")
+	end)
+end
+coroutine.wrap(WDEYM_fake_script)()
+local function SQWCMCK_fake_script() -- TitleCUS.LocalScript 
+	local script = Instance.new('LocalScript', TitleCUS)
+
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.TitleCUS
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://4700149603" 
+	Sound.Name = "Seeeecreeet"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.TitleCUS.Seeeecreeet.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+		print("amy was here <3")
+	end)
+	
+	btn.MouseLeave:Connect(function()
+	print("thanks fatal for letting me do the lil updates with sound and buttons")
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.TitleCUS.Seeeecreeet.Playing = false
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.TitleCUS.Seeeecreeet.TimePosition = 0
+	end)
+	
+	
+end
+coroutine.wrap(SQWCMCK_fake_script)()
+local function OODWOC_fake_script() -- GlitchtaleChara.LocalScript 
+	local script = Instance.new('LocalScript', GlitchtaleChara)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://7167345586" 
+	Sound.Name = "GlitchtaleChara"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("This is all about that 5$ i didnt give you back?")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara.GlitchtaleChara.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Huh i guess not.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara.GlitchtaleChara.Playing = false
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara.GlitchtaleChara.TimePosition = 0
+	end)
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://437475935" 
+	Sound.Name = "GTChara"
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara.GTChara.Playing = true
+	
+	end)
+end
+coroutine.wrap(OODWOC_fake_script)()
+local function IXPCYUM_fake_script() -- Asriel.LocalScript 
+	local script = Instance.new('LocalScript', Asriel)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://2836888600" 
+	Sound.Name = "Summon"
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://337231840" 
+	Sound.Name = "Asriel"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+	print("This is gonna get Asriel as it gets.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel.Asriel.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Didn't like my pun?")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel.Asriel.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel.Asriel.TimePosition = 2
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel.Summon.Playing = true
+		print("I know my puns are great.")
+	end)
+	
+end
+coroutine.wrap(IXPCYUM_fake_script)()
+local function ACHLN_fake_script() -- DeltaSans.LocalScript 
+	local script = Instance.new('LocalScript', DeltaSans)
+
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://6027340180" 
+	Sound.Name = "DeltaSans"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("Time for an inf combo huh?")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans.DeltaSans.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Oh, you have honor?")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans.DeltaSans.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans.DeltaSans.TimePosition = 1
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://382366855" 
+	Sound.Name = "Summon"
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans.Summon.Playing = true
+		print("I know my puns are great.")
+	end)
+end
+coroutine.wrap(ACHLN_fake_script)()
+local function OLSDWEC_fake_script() -- TitleCS.LocalScript 
+	local script = Instance.new('LocalScript', TitleCS)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.TitleCS
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://2578754972" 
+	Sound.Name = "DontForget"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("Secret.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.TitleCS.DontForget.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+		print("amy was here <3")
+	end)
+	
+	btn.MouseLeave:Connect(function()
+	print("this was fun-----Amy")
+		print("Don't Forget.")
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.TitleCS.DontForget.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.TitleCS.DontForget.TimePosition = 0
+	end)
+end
+coroutine.wrap(OLSDWEC_fake_script)()
+local function WZWJNOG_fake_script() -- UTFrisk.LocalScript 
+	local script = Instance.new('LocalScript', UTFrisk)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://6796468660" 
+	Sound.Name = "UTFrisk"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("Genocide.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk.UTFrisk.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Mercy.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk.UTFrisk.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk.UTFrisk.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://1005386374" 
+	Sound.Name = "Frisko"
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk.Frisko.Playing = true
+	
+	end)
+end
+coroutine.wrap(WZWJNOG_fake_script)()
+local function OGCHQRC_fake_script() -- GTFrisk.LocalScript 
+	local script = Instance.new('LocalScript', GTFrisk)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTFrisk
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://5922804560" 
+	Sound.Name = "GTFrisk"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("It doesn't matter...")
+		print("You won't remember any of it...")
+		print("Nobody will...")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTFrisk.GTFrisk.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("FrIsk Wait!")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTFrisk.GTFrisk.Playing = false
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTFrisk.GTFrisk.TimePosition = 0
+	end)
+end
+coroutine.wrap(OGCHQRC_fake_script)()
+local function OUDLQ_fake_script() -- UTSans.LocalScript 
+	local script = Instance.new('LocalScript', UTSans)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://6036718971" 
+	Sound.Name = "UTSans"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("Dodge and run.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans.UTSans.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Or just run.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans.UTSans.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans.UTSans.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://340722848" 
+	Sound.Name = "SansSummon"
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans.SansSummon.Playing = true
+		print("You choose me for the puns.")
+	end)
+end
+coroutine.wrap(OUDLQ_fake_script)()
+local function CBHJZXN_fake_script() -- XTale.LocalScript 
+	local script = Instance.new('LocalScript', XTale)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://7281550772" 
+	Sound.Name = "XTaleSummon"
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://3152767644" 
+	Sound.Name = "XTale"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("Take their soul and make it yours.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale.XTale.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Other Way around then.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale.XTale.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale.XTale.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale.XTaleSummon.Playing = true
+		print("I know my puns are great.")
+	end)
+end
+coroutine.wrap(CBHJZXN_fake_script)()
+local function PROLLG_fake_script() -- GTUndyne.LocalScript 
+	local script = Instance.new('LocalScript', GTUndyne)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://3143843068" 
+	Sound.Name = "GTUndyne"
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://5624230354" 
+	Sound.Name = "GTUndyneLaugh"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("I will never let you pass. Even if my tears run dry")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne.GTUndyne.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("What you think youre stronger?")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne.GTUndyne.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne.GTUndyne.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne.GTUndyneLaugh.Playing = true
+		print("no.. I don't think so. I know so.")
+	end)
+end
+coroutine.wrap(PROLLG_fake_script)()
+local function LPUMPQ_fake_script() -- SSChara.LocalScript 
+	local script = Instance.new('LocalScript', SSChara)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://400396923" 
+	Sound.Name = "SSChara"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("You killed them YOU KILLED THEM ALL!!!")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara.SSChara.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("COME BACK HERE!")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara.SSChara.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara.SSChara.TimePosition = 0
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+	end)
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://539294959" 
+	Sound.Name = "SSSChara"
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara
+	Sound.Volume = 4
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://437475935" 
+	Sound.Name = "SSSSChara"
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara.SSSChara.Playing = true
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara.SSSSChara.Playing = true
+	end)
+end
+coroutine.wrap(LPUMPQ_fake_script)()
+local function LGWQCFW_fake_script() -- GTAsgore.LocalScript 
+	local script = Instance.new('LocalScript', GTAsgore)
+
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://4642021912" 
+	Sound.Name = "GTAsgore"
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://4065225041 " 
+	Sound.Name = "GTAsgore1"
+	
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+		print("He killed them she said.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore.GTAsgore.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("She imprisoned them.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore.GTAsgore.Playing = false
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore.GTAsgore.TimePosition = 4
+	end)
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore.GTAsgore1.Playing = true
+		print("bro if you dont get the refrence ur poop")
+	end)
+end
+coroutine.wrap(LGWQCFW_fake_script)()
+local function GABMX_fake_script() -- Betty.LocalScript 
+	local script = Instance.new('LocalScript', Betty)
+
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://155334395" 
+	Sound.Name = "Betty"
+	
+	local btn = script.Parent
+	btn.MouseEnter:Connect(function()
+	print("They will never survive.")
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty.Betty.Playing = true
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = false 
+	
+	end)
+	
+	btn.MouseLeave:Connect(function()
+		print("Or will they?")
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"].Playing = true 
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty.Betty.Playing = false
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty.Betty.TimePosition = 2
+	end)
+	
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty
+	Sound.Volume = 1.5
+	Sound.Playing = false
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://4538419034" 
+	Sound.Name = "Summon"
+	
+	btn.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty.Summon.Playing = true
+	end)
+end
+coroutine.wrap(GABMX_fake_script)()
+local function SBBCZ_fake_script() -- Altered.Script 
+	local script = Instance.new('LocalScript', Altered)
+
+	script.Parent:WaitForChild("MainM").CSelection.MouseEnter:Connect(function()
+		script.Parent.Hover.Playing = true
+		script.Parent.Hover.TimePosition = 0
+		script.Parent.MainM.CSelection.TextColor3 = Color3.new(1,1,0)
+	end)
+	script.Parent:WaitForChild("MainM").CSelection.MouseLeave:Connect(function()
+		
+	script.Parent.MainM.CSelection.TextColor3 = Color3.new(1,1,1)
+	end)
+	script.Parent:WaitForChild("MainM").CUSSSelection.MouseEnter:Connect(function()
+		script.Parent.Hover.Playing = true	
+		script.Parent.Hover.TimePosition = 0
+	script.Parent.MainM.CUSSSelection.TextColor3 = Color3.new(1,1,0)
+	end)
+	script.Parent:WaitForChild("MainM").CUSSSelection.MouseLeave:Connect(function()
+		script.Parent.MainM.CUSSSelection.TextColor3 = Color3.new(1,1,1)
+		
+	end)
+	script.Parent:WaitForChild("MainM").Quit.MouseLeave:Connect(function()
+		script.Parent.MainM.Quit.TextColor3 = Color3.new(1,1,1)
+		
+	end)
+	script.Parent:WaitForChild("MainM").Quit.MouseEnter:Connect(function()
+		script.Parent.Hover.Playing = true
+		script.Parent.Hover.TimePosition = 0
+		script.Parent.MainM.Quit.TextColor3 = Color3.new(1,1,0)
+	end)
+	script.Parent.MainM.CSelection.MouseButton1Click:Connect(function()
+		if script.Parent.CustomSelection.Position == UDim2.new(-0.5,0,-0.052,0) then
+		if script.Parent.CharacterSelection.Position ~= UDim2.new(-0.5,0,-0.052,0) and script.Parent.CharacterSelection.Position == UDim2.new(0, 0,-0.052, 0) then
+			script.Parent.Selected.Playing = true
+			script.Parent.CharacterSelection:TweenPosition(UDim2.new(-0.5, 0,-0.052, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,0.7)	
+		elseif script.Parent.CharacterSelection.Position ~= UDim2.new(0,0,-0.052,0) and script.Parent.CharacterSelection.Position == UDim2.new(-0.5, 0,-0.052, 0) then
+			script.Parent.Selected.Playing = true
+			script.Parent.CharacterSelection:TweenPosition(UDim2.new(0, 0,-0.052, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,0.7)
+			end
+			end
+	end)
+	
+	script.Parent.MainM.CUSSSelection.MouseButton1Click:Connect(function()
+		if script.Parent.CharacterSelection.Position == UDim2.new(-0.5,0,-0.052,0) then
+		if script.Parent.CustomSelection.Position ~= UDim2.new(-0.5,0,-0.052,0) and script.Parent.CustomSelection.Position == UDim2.new(0, 0,-0.052, 0) then
+			script.Parent.Selected.Playing = true
+			script.Parent.CustomSelection:TweenPosition(UDim2.new(-0.5, 0,-0.052, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,0.7)	
+		elseif script.Parent.CustomSelection.Position ~= UDim2.new(0,0,-0.052,0) and script.Parent.CustomSelection.Position == UDim2.new(-0.5, 0,-0.052, 0) then
+			script.Parent.Selected.Playing = true
+				script.Parent.CustomSelection:TweenPosition(UDim2.new(0, 0,-0.052, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,0.7)
+				end
+		end
+	end)
+	script.Parent.MainM.Quit.MouseButton1Click:Connect(function()
+		if script.Parent.Warning1.Position == UDim2.new(-0.5,0,-0.052,0) then
+			if script.Parent.Warning1.Position ~= UDim2.new(-0.5,0,-0.052,0) and script.Parent.CharacterSelection.Position == UDim2.new(0, 0,-0.052, 0) then
+				script.Parent.Selected.Playing = true
+				script.Parent.Warning1:TweenPosition(UDim2.new(-0.5, 0,-0.052, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,0.7)	
+			elseif script.Parent.Warning1.Position ~= UDim2.new(0,0,-0.052,0) and script.Parent.CharacterSelection.Position == UDim2.new(-0.5, 0,-0.052, 0) then
+				script.Parent.Selected.Playing = true
+				script.Parent.Warning1:TweenPosition(UDim2.new(0, 0,-0.052, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quart,0.7)
+			end
+		end
+	end)
+end
+coroutine.wrap(SBBCZ_fake_script)()
+local function CQCL_fake_script() -- Altered.LocalScript 
+	local script = Instance.new('LocalScript', Altered)
+
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered
+	Sound.Volume = 1.5
+	Sound.Playing = true
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://5350464575" 
+	Sound.Name = "Selected"
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.PlayerGui.Altered
+	Sound.Volume = 1.5
+	Sound.Playing = true
+	Sound.Looped = false
+	Sound.SoundId = "rbxassetid://8211321592" 
+	Sound.Name = "Hover"
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game.Players.LocalPlayer.MenuPlaylist
+	Sound.Volume = 1
+	Sound.Playing = true
+	Sound.Looped = true
+	Sound.SoundId = "rbxassetid://5973079632"
+	Sound.Name = "1Menu"
+	
+	
+		game.Players.LocalPlayer:WaitForChild("MenuPlaylist")
+		game.Players.LocalPlayer.MenuPlaylist["1Menu"]:Destroy()
+	
+end
+coroutine.wrap(CQCL_fake_script)()
+
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GlitchtaleChara.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
+game.Players.LocalPlayer.PlayerGui.Altered.Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Asriel.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Asriel"
+game.Players.LocalPlayer.PlayerGui.Altered:destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.SSChara.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "SFChara"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.DeltaSans.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "DeltaSans"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTFrisk.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "GTFrisk"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTUndyne.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Undyne"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.XTale.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "XSans"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTFrisk.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Frisk"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.UTSans.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Sans"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.GTCR.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+wait(1)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.HP:Destroy()
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.HealthLabel:Destroy()
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName:Destroy()
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.StaminaBar:Destroy()
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Idle.AnimationId = "rbxassetid://7038816551"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Walk.AnimationId = "rbxassetid://5658603994"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Run.AnimationId = "rbxassetid://5658603994"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Jump.AnimationId = "rbxassetid://3198665507"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Fall.AnimationId = "rbxassetid://6136052357"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Block.AnimationId = "rbxassetid://3203734026"
+game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = "60"
+local plrs = game:GetService("Players")
+local rep = game:GetService("ReplicatedStorage")
+local uis = game:GetService("UserInputService")
+local runS = game:GetService("RunService")
+local tweenS = game:GetService("TweenService")
+
+local remotes = rep:WaitForChild("Remotes")
+local damage = remotes:WaitForChild("Damage")
+local functions = remotes:WaitForChild("Functions")
+local events = remotes:WaitForChild("Events")
+local charaMoves = remotes:WaitForChild("CharaMoves")
+local pass = getrenv()._G.Pass
+local mouse = game.Players.LocalPlayer:GetMouse()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "GTCR Loaded!";
+		Text = "Made By Fatal Error Sans#4931, Enjoy!";
+		Duration = 5;
+	})
+char = game.Players.LocalPlayer.Character
+local vel = Instance.new('BodyVelocity',char.HumanoidRootPart)
+vel.Name = 'Client'
+vel.MaxForce = Vector3.new(4000,4000,4000)*math.huge
+vel.P = math.huge
+vel.Velocity = (Vector3.new(0,8,0))*4
+wait(0.5)
+vel:Destroy()
+char.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0, 1, 0)
+playerpos = char.HumanoidRootPart.Position + Vector3.new(0, 0, 0)
+local part = Instance.new("Part")
+part.Name = "Platform"            -- Name the part... hehe
+part.Anchored = true                -- Anchor the part
+part.Parent = game.Workspace        -- Put the part into the Workspace
+part.Shape = Enum.PartType.Block        -- Give the part a ball shape
+part.Transparency = 1
+part.Size = Vector3.new(5, 1, 5)
+part.Position = playerpos + Vector3.new(0, -5, 0)
+stop = false
+player = game.Players.LocalPlayer
+char = player.Character
+hum = char:FindFirstChildOfClass('Humanoid')
+anim = Instance.new('Animation')
+anim.AnimationId = 'rbxassetid://4562533193'-- put id here, with rbxasset thing and everything
+k = hum:LoadAnimation(anim)
+k:Play()
+wait(0.2)
+local player = game.Players.LocalPlayer
+local char = player.Character
+local selfpos = char.HumanoidRootPart.Position
+stop = false
+for yay = 1, 2 do
+spawn(function()
+local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "KnifeProjectileYellow", 
+    [3] = "Spawn", 
+    [4] = Vector3.new(0, 1000, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+wait(0.5)
+	local A_1 =  {
+	[1] = pass, 
+	[2] = "Chatted", 
+	[3] = "Lets See how you SURVIVE This power!", 
+	[4] = Color3.new(1, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+end)
+end
+spawn(function()
+wait(2)
+part:Destroy()
+wait(3)
+stop = true
+end)
+while stop == false do
+spawn(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Attacks:GetChildren()) do 
+spawn(function()
+v.Name = 'affected'
+for _,e in pairs(v:GetChildren()) do 
+if e.Name == 'Particle' or e.Name == 'Hitted' or e.Name == 'HitBox' then
+e:Destroy()
+end
+end
+v:WaitForChild('BodyVelocity'):Destroy()
+local move = Instance.new('BodyPosition',v)
+move.Name = 'Client'
+move.D = 1000
+move.MaxForce = Vector3.new(1,1,1)*1000000
+move.P = 25000
+spawn(function()
+for thing = 1, 100 do
+selfpos = char.HumanoidRootPart.Position
+move.Position = selfpos
+wait(0.2)
+end
+end)
+wait(1)
+v:Destroy()
+end)
+end
+end)
+wait()
+end
+local mode = "DT"
+spawn(function()
+local userInputService = game:GetService("UserInputService")
+on = true
+posz = 0
+posx = 0
+local dt = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(255,0,0),
+Transparency = 0
+}
+
+local justice = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(255,255,0),
+Transparency = 0
+}
+
+local bravery = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(255, 110, 0),
+Transparency = 0
+}
+local patience = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(5, 252, 236),
+Transparency = 0
+}
+
+local integrity = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(0, 60, 255),
+Transparency = 0
+}
+
+local kindness = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(0, 255, 13),
+Transparency = 0
+}
+local perseverance = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(194, 3, 252),
+Transparency = 0
+}
+
+local hate = {
+Parent = game.workspace,
+Name = 'ye',
+Material = Enum.Material.Neon,
+Color = Color3.fromRGB(0,0,0),
+Transparency = 0
+}
+    times = 0
+    _G.soulsmode = 1
+_G.closed = false
+local effects = game.Players.LocalPlayer.Character.Effects
+local rs = game:GetService("RunService")
+
+        local player = game.Players.LocalPlayer
+local Character = player.Character
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Spawn",
+        [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector *10 + Vector3.new(math.random(0,35),math.random(0,30),math.random(0,33))
+    }
+}
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+local projectiles = game.Players.LocalPlayer.Character.Attacks
+for i,v in pairs(projectiles:GetChildren()) do
+if v.Name == "KnifeSlashProjectileOrange" or "Removing" then
+    v:WaitForChild("BodyVelocity"):Destroy()
+    v:WaitForChild("ParticleEmitter"):Destroy()
+    coroutine.resume(coroutine.create(function() 
+
+        
+while 
+wait(0.05)
+do
+    if _G.closed then
+        break
+        end
+    times = times + 1
+    if 
+    times == 6
+    then 
+    times = 0
+    end
+    if times == 1 then
+v.Position = Character.HumanoidRootPart.Position - Vector3.new(0,40,0)
+elseif times == 2 then
+    v.Position = Character.HumanoidRootPart.Position - Vector3.new(10,40,0)
+elseif times == 3 then
+    v.Position = Character.HumanoidRootPart.Position - Vector3.new(0,30,10)
+elseif times == 4 then
+    v.Position = Character.HumanoidRootPart.Position - Vector3.new(0,30,-10)
+elseif times == 5 then
+    v.Position = Character.HumanoidRootPart.Position - Vector3.new(-10,30,0)
+    end
+-- Script generated by SimpleSpy - credits to exx#9394
+
+local args1 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = dt
+    }
+}
+
+local args2 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = justice
+    }
+}
+
+local args3 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = bravery
+    }
+}
+
+local args4 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = patience
+    }
+}
+
+local args5 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = integrity
+    }
+}
+
+local args6 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = kindness
+    }
+}
+
+local args7 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = perseverance
+    }
+}
+
+local args8 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = hate
+    }
+}
+if _G.soulsmode == 1 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args1))
+elseif _G.soulsmode == 2 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args2))
+elseif _G.soulsmode == 3 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args3))
+elseif _G.soulsmode == 4 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args4))
+elseif _G.soulsmode == 5 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args5))
+elseif _G.soulsmode == 6 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args6))
+elseif _G.soulsmode == 7 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args7))
+elseif _G.soulsmode == 8 then
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args8))
+end
+end
+end))
+end
+end
+
+spawn(function()
+
+while wait(0.01) do
+if mode == "hate" then
+                        local args = {
+                                [1] = {
+                                    [1] = getrenv()._G.Pass,
+                                    [2] = "KnifeColor",
+                                    [3] = "ChangeColor",
+                                    [4] = Color3.fromRGB(0,0,0),
+                                    [5] = 0,
+                                    [6] = "SpecialHell"
+                                }
+                            }
+                            
+         game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+         game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Hate"
+         game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+         game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://6141390171"
+Sound.Name = "1Megalo Strike Back"
+                         while mode == "hate" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+
+         elseif mode == "DT" then
+            local args = {
+                [1] = {
+                    [1] = getrenv()._G.Pass,
+                    [2] = "KnifeColor",
+                    [3] = "ChangeColor",
+                    [4] = Color3.fromRGB(255,0,0),
+                    [5] = 0,
+                    [6] = "RedMode"
+                }
+            }
+            
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Determination"
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    wait(0.5)
+    game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://2759823703"
+Sound.Name = "1Megalo Strike Back"
+    local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        while mode == "DT" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 0, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+    
+         elseif mode == "justice" then
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Justice"
+    game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+        wait(1)
+    game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://5670393738"
+Sound.Name = "1Megalo Strike Back"
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "ChangeColor",
+                [4] = Color3.fromRGB(247, 234, 53) --[[Color3]],
+                [5] = 0.3,
+                [6] = "YellowMode"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        
+                while mode == "justice" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(255, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+    elseif mode == "perseverance" then
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "ChangeColor",
+                [4] = Color3.fromRGB(210, 39, 245) --[[Color3]],
+                [5] = 0.3,
+                [6] = "PurpleMode"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Karma"
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(88, 0, 129)
+        wait(1.5)
+        game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://5294451688"
+Sound.Name = "1Megalo Strike Back"
+                while mode == "perseverance" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(88, 0, 129), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(88, 0, 129), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.2)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(88, 0, 129), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.1)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(88, 0, 129), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+    elseif mode == "bluemode" then
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "ChangeColor",
+                [4] = Color3.fromRGB(6, 10, 248)--[[Color3]],
+                [5] = 0,
+                [6] = "BlueMode"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Integrity"
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+                wait(1.5)
+        game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://6403520059"
+Sound.Name = "1Megalo Strike Back"
+                while mode == "bluemode" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 255), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 255), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 255), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 0, 255), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+    elseif mode == "kindness" then
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "ChangeColor",
+                [4] = Color3.fromRGB(6, 248, 38)--[[Color3]],
+                [5] = 0,
+                [6] = "GreenMode"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Kindness"
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+                        wait(1.5)
+        game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://3012888916"
+Sound.Name = "1Megalo Strike Back"
+                        while mode == "kindness" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 255, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+        
+    elseif mode == "orangemode" then
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "ChangeColor",
+                [4] = Color3.fromRGB(255, 89, 0),
+                [5] = 0,
+                [6] = "OrangeMode"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Bravery"
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 89, 0)
+                                wait(2)
+        game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://7256486381"
+Sound.Name = "1Megalo Strike Back"
+                        while mode == "orangemode" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.fromRGB(255, 89, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.fromRGB(255, 89, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.fromRGB(255, 89, 0), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.fromRGB(255, 89, 0), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+    elseif mode == "lightbluemode" then
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "ChangeColor",
+                [4] = Color3.fromRGB(6, 248, 228),
+                [5] = 0,
+                [6] = "LightBlueMode"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.Info.Attack.Text = "Patience"
+        game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(0, 180, 250)
+                                        wait(1.7)
+        game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://935501955"
+Sound.Name = "1Megalo Strike Back"
+                        while mode == "lightbluemode" do
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 180, 250), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+        local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 180, 250), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 180, 250), 
+                [5] = CFrame.new(0, 0, 0, 0.866025388, -3, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(0.3)
+                local A_1 = 
+            {
+                [1] = getrenv()._G.Pass, 
+                [2] = "SlashEffect", 
+                [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing1, 
+                [4] = Color3.new(0, 180, 250), 
+                [5] = CFrame.new(0, 0, 0, 1.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        end
+    end-- the end of if
+    end
+    end)
+    
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k)
+    if k == "e" then wait(0)
+     if mode == "hate" then
+     
+        mode = "DT"
+        _G.soulsmode = 1
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "Reverse"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        wait(0.5)
+    
+
+        Player = game.Players.LocalPlayer.Name
+    AnimationId = "7004737889"
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "DT" then
+    mode = "justice"
+    _G.soulsmode = 2
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "justice" then
+    mode = "orangemode"
+    _G.soulsmode = 3
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "orangemode" then
+    mode = "lightbluemode"
+    _G.soulsmode = 4
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "lightbluemode" then
+    mode = "bluemode"
+    _G.soulsmode = 5
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "bluemode" then
+    mode = "kindness"
+    _G.soulsmode = 6
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "kindness" then
+    mode = "perseverance"
+    _G.soulsmode = 7
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "perseverance" then
+    mode = "hate"
+    _G.soulsmode = 8
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+    end
+    end
+    end)
+ local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k)
+    if k == "q" then wait(0)
+     if mode == "hate" then
+         _G.soulsmode = 7
+        mode = "perseverance"
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "KnifeColor",
+                [3] = "Reverse"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+        wait(0.5)
+    
+
+        Player = game.Players.LocalPlayer.Name
+    AnimationId = "7004737889"
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "perseverance" then
+    mode = "kindness"
+    _G.soulsmode = 6
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "kindness" then
+    mode = "bluemode"
+    _G.soulsmode = 5
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "bluemode" then
+    mode = "lightbluemode"
+    _G.soulsmode = 4
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "lightbluemode" then
+    mode = "orangemode"
+    _G.soulsmode = 3
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "orangemode" then
+    mode = "justice"
+    _G.soulsmode = 2
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "justice" then
+    mode = "DT"
+    _G.soulsmode = 1
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+elseif mode == "DT" then
+    mode = "hate"
+    _G.soulsmode = 8
+    local args = {
+        [1] = {
+            [1] = getrenv()._G.Pass,
+            [2] = "KnifeColor",
+            [3] = "Reverse"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
+wait(0.5)
+        
+Player = game.Players.LocalPlayer.Name
+AnimationId = "7004737889"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+    local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim)
+    k:Play() --Play the animation
+    k:AdjustSpeed(1.5)
+end
+end
+end)
+
+
+
+end)
+
+_G.infon = false
+
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"):WaitForChild("ModuleScript"):WaitForChild("Animations").BladesCombat:ClearAllChildren()
+local function lmb(damage,knockback,hittime,animinst,kbvalue,sound)
+    print("fired")
+    
+		if game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
+    local A_1 = getrenv()._G.Pass
+local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local A_3 = 
+    {
+["HitTime"] = hittime,
+["Type"] = knockback, 
+["HitEffect"] = "KnifeHitEffect",
+["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,  
+["Sound"] = sound, --KnifeHit
+["Velocity"] = kbvalue,
+["Damage"] = damage
+    }
+    local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+    Event:InvokeServer(A_1, A_2, A_3)
+    end
+local Anim = Instance.new("Animation")
+Anim.AnimationId = animinst
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(3)
+end
+
+
+
+
+
+--lmb
+local uis = game:GetService("UserInputService")
+local walkspeed = game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+local lmbmode = 0
+local waittime = 0
+local lmbon = true
+uis.InputBegan:Connect(function(inputObject,gameProcessedEvent)
+      if not gameProcessedEvent then
+	if inputObject.UserInputType == Enum.UserInputType.MouseButton1 then
+		if lmbmode == 0 and lmbon == true then
+		    lmbon = false
+    waittime = 0.8
+		    walkspeed = 0
+		    lmb(10,"Normal",0.5,"rbxassetid://4906092495",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * Vector3.new(0, 0, 1),game:GetService("ReplicatedStorage").Sounds.KnifeHit)
+		    local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "SlashEffect", 
+    [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing3, 
+    [4] = Color3.new(0, 0, 0), 
+    [5] = CFrame.Angles(0,0,0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(0.05)
+
+    lmbmode = 1
+
+		    walkspeed = 10
+		    lmbon = true
+elseif lmbmode == 1 and lmbon == true then
+    lmbon = false
+    
+    waittime = 0.8
+		    walkspeed = 0
+		    lmb(2,"Normal",0.6,"rbxassetid://4800266314",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * Vector3.new(0, 0, 1),game:GetService("ReplicatedStorage").Sounds.KnifeHit)
+		    local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "SlashEffect", 
+    [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing3, 
+    [4] = Color3.new(0, 0, 0), 
+    [5] = CFrame.Angles(0,0,math.rad(70))
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(0.1)
+
+    lmbmode = 2
+walkspeed = 10
+
+		    lmbon = true
+elseif lmbmode == 2 and lmbon == true then
+    lmbon = false
+    waittime = 0.8
+    walkspeed = 0
+		    lmb(4,"Normal",0.4,"rbxassetid://4348301706",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * Vector3.new(0, 0, 1),game:GetService("ReplicatedStorage").Sounds.KnifeHit)
+		    local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "SlashEffect", 
+    [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing3, 
+    [4] = Color3.new(0, 0, 0), 
+    [5] = CFrame.Angles(0,0,math.rad(20))
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(0.05)
+
+    lmbmode = 3
+walkspeed = 10
+
+		    lmbon = true
+elseif lmbmode == 3 and lmbon == true then
+    lmbon = false
+    
+    waittime = 0.8
+    walkspeed = 0
+		    lmb(3,"Normal",0.5,"rbxassetid://4456901030",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * Vector3.new(0, 0, 1),game:GetService("ReplicatedStorage").Sounds.KnifeHit)
+		    local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "SlashEffect", 
+    [3] = game:GetService("Players").LocalPlayer.Backpack.Main.CharaMoves.ModuleScript.Animations.Slash.Swing3, 
+    [4] = Color3.new(0, 0, 0), 
+    [5] = CFrame.Angles(0,0,math.rad(110))
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(0.1)
+
+    lmbmode = 4
+walkspeed = 10
+		    lmbon = true
+elseif lmbmode == 4 and lmbon == true then
+    lmbon = false
+    
+    waittime = 0.8
+    walkspeed = 0
+		    lmb(5,"Normal",0.6,"rbxassetid://4300091335",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * Vector3.new(0, 0, 1),game:GetService("ReplicatedStorage").Sounds.KnifeHit)
+		    
+wait(0.1)
+
+    if _G.infon then
+    lmbmode = 0
+    else
+    lmbmode = 5
+    end
+walkspeed = 10
+		    lmbon = true
+elseif lmbmode == 5 and lmbon == true then
+    lmbon = false
+    
+    walkspeed = 0
+            lmb(5,"Knockback",0.6,"rbxassetid://4906108508",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 170 + Vector3.new(0, -40, 0),game:GetService("ReplicatedStorage").Sounds.KnifeHit)
+   
+wait(0.3)
+
+walkspeed = 10
+wait(2.7)
+    lmbmode = 0
+		    lmbon = true
+end
+end
+end
+end)
+
+
+coroutine.resume(coroutine.create(function()
+    while true do 
+        wait(0.1)
+        if waittime ~= 0 then
+            waittime = waittime - 0.1
+            if waittime > 0 then
+            else
+                waittime = 0
+            end
+            
+        end
+        if waittime == 0 then
+            lmbmode = 0
+        end
+    end
+end))
+
+
+uis.InputBegan:Connect(function(input,gameProcessedEvent)
+    local keyPressed = input.KeyCode
+    print("keypress")
+      if not gameProcessedEvent then
+          print("processed")
+          if keyPressed == Enum.KeyCode.P then
+if _G.infon == false then
+_G.infon = true
+	local A_1 =  {
+	[1] = pass, 
+	[2] = "Chatted", 
+	[3] = "INF COMBO = TRUE", 
+	[4] = Color3.new(1, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+else
+_G.infon = false
+	local A_1 =  {
+	[1] = pass, 
+	[2] = "Chatted", 
+	[3] = "INF COMBO = FALSE", 
+	[4] = Color3.new(1, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+end
+end
+end
+end)
+
+function attack1()
+--Test
+--_G.cdr = false--Just global cooldown cause this is just a pure script, so ya know you dont accidently spam it and get banned
+if _G.cdr then return end-- it will stop the script from running after you used it until the cooldown is done
+_G.cdr = true---sets to true so the line above would work
+pass = getrenv()._G.Pass
+player = game.Players.LocalPlayer
+m = player:GetMouse()
+local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
+if LockOn then 
+target = LockOn
+r2 = target.HumanoidRootPart.CFrame
+elseif not LockOn then
+r2 = m.Hit*CFrame.new(0,4,0)
+end
+char = player.Character
+h = char.Humanoid
+a = Instance.new('Animation')
+a.AnimationId = 'rbxassetid://4905914802'
+k = h:LoadAnimation(a)
+k:Play()
+k:AdjustSpeed(3)
+--char.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,20,0)
+--wait(.1)
+amm = 5
+--char.HumanoidRootPart.Position + Vector3.new(0,10000,0)
+for i = 1,amm,1 do
+spawn(function()
+local A_1 =  {
+      [1] = pass,
+      [2] = "KnifeProjectile", 
+      [3] = "Spawn", 
+      [4] = r2.p
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+end
+am = 0
+local tab2 = {}-- Adds the table for the projectiles
+val = Instance.new('NumberValue',player)--Creates a number value Instance to be able to detect value
+val.Name = 'KnifeSlashes Amount'
+detect = char.Attacks.ChildAdded:Connect(function(pp)--- detects if an instance is added to the Attacks Folder
+if pp.Name == 'KnifeSlashProjectile' then-- you can use dex to get the name of the projectiles
+    table.insert(tab2,pp)---inserts the part to the table so it can be used later
+am = am + 1-- everytime a projectile is added it will add the numbers and change the NumberValue to that number
+val.Value = am
+ pp:WaitForChild('BodyVelocity'):Destroy()-- Removes body velocity(Body Velocity is the instance that makes the projectile move)
+end
+end)
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()
+if val.Value == amm then--- Detect when there are a specific number of projectiles well depending on the remote u have to multiply it sometimes
+tab = {}-- Adding table for the BodyPosition
+for _,v in pairs(tab2) do---goes through the table
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,10,-2)
+v1 = Instance.new('BodyPosition',v)-- Adds Body Position Instance(It will move the projectiles to a specific location)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'-- Needs to be named client in soulshatters so it wont crash
+v1.MaxForce = Vector3.new(1,1,1)*100000
+v1.D = 1000--Dampening
+v1.P = 30000---The Velocity that will be used to move the projeciles to a specific position
+x = math.random(-10,10)*2
+z = math.random(-10,10)*2
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,10,0)
+table.insert(tab,v1)--Inserts the instances to the table
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(x,10,z)
+end
+wait(.5)
+for i = 1,#tab do--will loop for how many things are in the table
+local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value--LockOn Value to get the lock on of a player
+if LockOn then -- Checks if you are locked on
+target = LockOn
+r2 = target.HumanoidRootPart.CFrame
+r1 = target.HumanoidRootPart
+elseif not LockOn then--If you are not locked it will use your Mouse Position instead
+r2 = m.Hit
+r1 = m.Target
+end
+x = math.random(-20,20)
+z = math.random(-20,20)
+tab[i].D = 150---when you add things into a table there wil be a number that defines that instance in the table(kinda like names work)
+tab[i].Position = r2.p + Vector3.new(0,-4,0)
+tab2[i].CFrame = r2*CFrame.new(x,10,z)
+wait()
+spawn(function()-- Remote to make it damage the target
+local A_1 =  {
+      [1] = pass, 
+      [2] = "KnifeProjectile", 
+      [3] = "Hit", 
+      [4] = tab2[i], --The projectile
+      [5] = r2, --The target CFrame
+      [6] = r1-- Target Part
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+wait(.1)
+end
+wait(3)---cooldown
+detect:Disconnect()-- Disconnects the functions so it wont keep running
+detect2:Disconnect()
+val:Destroy()-- Destroy the Number value instance used to detect the Projectiles
+_G.cdr = false--_G is a global value so if u used the same _G.(local name) in another script it will still work
+-- so this is just to make the cooldown Global
+end
+end)
+end
+function attack2()
+--Test
+--_G.cdr = false--Just global cooldown cause this is just a pure script, so ya know you dont accidently spam it and get banned
+if _G.cdr then return end-- it will stop the script from running after you used it until the cooldown is done
+_G.cdr = true---sets to true so the line above would work
+pass = getrenv()._G.Pass
+player = game.Players.LocalPlayer
+m = player:GetMouse()
+local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
+if LockOn then 
+target = LockOn
+r2 = target.HumanoidRootPart.CFrame
+elseif not LockOn then
+r2 = m.Hit*CFrame.new(0,4,0)
+end
+char = player.Character
+h = char.Humanoid
+a = Instance.new('Animation')
+a.AnimationId = 'rbxassetid://4905914802'
+k = h:LoadAnimation(a)
+k:Play()
+k:AdjustSpeed(3)
+--char.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,20,0)
+--wait(.1)
+amm = 5
+--char.HumanoidRootPart.Position + Vector3.new(0,10000,0)
+for i = 1,amm,1 do
+spawn(function()
+local A_1 =  {
+      [1] = pass,
+      [2] = "KnifeProjectilePurple", 
+      [3] = "Spawn", 
+      [4] = r2.p
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+end
+am = 0
+local tab2 = {}-- Adds the table for the projectiles
+val = Instance.new('NumberValue',player)--Creates a number value Instance to be able to detect value
+val.Name = 'KnifeSlashes Amount'
+detect = char.Attacks.ChildAdded:Connect(function(pp)--- detects if an instance is added to the Attacks Folder
+if pp.Name == 'KnifeSlashProjectilePurple' then-- you can use dex to get the name of the projectiles
+    table.insert(tab2,pp)---inserts the part to the table so it can be used later
+am = am + 1-- everytime a projectile is added it will add the numbers and change the NumberValue to that number
+val.Value = am
+ pp:WaitForChild('BodyVelocity'):Destroy()-- Removes body velocity(Body Velocity is the instance that makes the projectile move)
+end
+end)
+detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()
+if val.Value == amm then--- Detect when there are a specific number of projectiles well depending on the remote u have to multiply it sometimes
+tab = {}-- Adding table for the BodyPosition
+for _,v in pairs(tab2) do---goes through the table
+v.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,10,0)
+v1 = Instance.new('BodyPosition',v)-- Adds Body Position Instance(It will move the projectiles to a specific location)
+fol = Instance.new('Folder',v1)
+v1.Name = 'Client'-- Needs to be named client in soulshatters so it wont crash
+v1.MaxForce = Vector3.new(0,1,0)*100000
+v1.D = 1000--Dampening
+v1.P = 30000---The Velocity that will be used to move the projeciles to a specific position
+x = math.random(0,0)*2
+z = math.random(0,10)*2
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,10,0)
+table.insert(tab,v1)--Inserts the instances to the table
+v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(x,10,z)
+end
+wait(.5)
+for i = 1,#tab do--will loop for how many things are in the table
+local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value--LockOn Value to get the lock on of a player
+if LockOn then -- Checks if you are locked on
+target = LockOn
+r2 = target.HumanoidRootPart.CFrame
+r1 = target.HumanoidRootPart
+elseif not LockOn then--If you are not locked it will use your Mouse Position instead
+r2 = m.Hit
+r1 = m.Target
+end
+x = math.random(0,0)
+z = math.random(-20,2)
+tab[i].D = 150---when you add things into a table there wil be a number that defines that instance in the table(kinda like names work)
+tab[i].Position = r2.p + Vector3.new(0,-4,0)
+tab2[i].CFrame = r2*CFrame.new(x,10,z)
+wait()
+spawn(function()-- Remote to make it damage the target
+local A_1 =  {
+      [1] = pass, 
+      [2] = "KnifeProjectilePurple", 
+      [3] = "Hit", 
+      [4] = tab2[i], --The projectile
+      [5] = r2, --The target CFrame
+      [6] = r1-- Target Part
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+end)
+wait(.1)
+end
+wait(3)---cooldown
+detect:Disconnect()-- Disconnects the functions so it wont keep running
+detect2:Disconnect()
+val:Destroy()-- Destroy the Number value instance used to detect the Projectiles
+_G.cdr = false--_G is a global value so if u used the same _G.(local name) in another script it will still work
+-- so this is just to make the cooldown Global
+end
+end)
+end
+function attack3()
+local char = player.Character
+local bigmogus = char.Humanoid
+local attack3sus = Instance.new('Animation')
+attack3sus.AnimationId = 'rbxassetid://4905914802'
+local amgus = bigmogus:LoadAnimation(a)
+amgus:Play()
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)}) 
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})  
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})
+ wait(0.5)
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)}) 
+ wait(0.5)
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})  
+ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "KnifeProjectileYellow", "Spawn", Vector3.new(0,2000,0)})
+ amgus:Stop()
+end
+local userInputService = game:GetService("UserInputService")
+userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        rmb()
+    end
+    end)
+mouse.KeyDown:Connect(function(k)
+    if k == "z" then
+        attack1()
+    end
+end)
+mouse.KeyDown:Connect(function(k)
+    if k == "x" then
+        attack2()
+    end
+end)
+mouse.KeyDown:Connect(function(k)
+    if k == "c" then
+        attack3()
+    end
+end)
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP1.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Sans"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+function Chat(text,color)
+if dead == true then return end
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Chatted", 
+	[3] = text, 
+	[4] = color
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+end
+         game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalovania"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://6118537198"
+Sound.Name = "1Megalovania"
+spawn(function()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5657849029"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(2)
+wait(2)
+Chat("Lets Just get to the point.", Color3.fromRGB(255, 0, 0))
+wait(2)
+Chat("So your finally here...", Color3.fromRGB(255, 0, 0))
+wait(1)
+Chat("Well.", Color3.fromRGB(255, 0, 0))
+wait(2)
+Chat("Who said you will finish the job?", Color3.fromRGB(255, 0, 0))
+wait(2)
+Chat("Ill make sure ill finish the job!", Color3.fromRGB(255, 0, 0))
+wait(1)
+k:Stop()
+--sword by glasyrx cool yes
+char = game.Players.LocalPlayer.Character
+for _,v in pairs(game.ReplicatedStorage.Resources.Weapons:GetChildren()) do
+if v.Name == 'ChaosSaber' then
+sword2 = v:Clone()
+sword2.Parent = char
+sword2.ChaosSaber:Destroy()
+sword2.Anchored = false
+weld = Instance.new('Weld',sword2)
+weld.Part0 = sword2
+weld.Part1 = char['Left Arm']
+sword2.Name = 'GTFSword3'
+sword2.Color = Color3.fromRGB(223, 0, 216)
+weld.C0 = CFrame.new(0.95,-1.7,-0)*CFrame.Angles(1.6,0,-1.6)
+sword2.Transparency = 0.8
+wait(0.5)
+sword2.Transparency = 0.7
+wait(0.5)
+sword2.Transparency = 0.5
+wait(0.5)
+sword2.Transparency = 0
+end
+end
+--sword by glasyrx cool yes
+char = game.Players.LocalPlayer.Character
+for _,v in pairs(game.ReplicatedStorage.Resources.Weapons:GetChildren()) do
+if v.Name == 'ChaosSaber' then
+sword2 = v:Clone()
+sword2.Parent = char
+sword2.ChaosSaber:Destroy()
+sword2.Anchored = false
+weld = Instance.new('Weld',sword2)
+weld.Part0 = sword2
+weld.Part1 = char['Right Arm']
+sword2.Name = 'GTFSword3'
+sword2.Color = Color3.fromRGB(223, 0, 216)
+weld.C0 = CFrame.new(0.95,-1.7,-0)*CFrame.Angles(1.6,0,-1.6)
+sword2.Transparency = 0.8
+wait(0.5)
+sword2.Transparency = 0.7
+wait(0.5)
+sword2.Transparency = 0.5
+wait(0.5)
+sword2.Transparency = 0
+end
+end
+game.Players.LocalPlayer.Character.Bone:Destroy()
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text = "Bones Enabled"
+game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.LeftJaw.Color = Color3.fromRGB(242, 243, 243)
+game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.RightJaw.Color = Color3.fromRGB(242, 243, 243)
+game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.Eye1.Color = Color3.fromRGB(255, 0, 0)
+game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.Eye2.Color = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.Text = "Sans"
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextColor3 = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(255, 0, 255)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.HealthLabel.Text = "488/488"
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.TextColor3 = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.TextStrokeColor3 = Color3.fromRGB(255, 0, 255)
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Font = "Arcade"
+game.Workspace.ServerEffects.ServerCooldown:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves1["4"]:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves2["2"]:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves2["3"]:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves2["4"]:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves2["5"]:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves2["6"]:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower.Moves3["3"]:Destroy()
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "1" then 
+	if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Bones Enabled" then	    
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "BoneHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, 28, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","CrossLineBones",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+end
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "1" then 
+		  if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Swords Enabled" then	
+game.ReplicatedStorage.Effects.BurstEffect.Effect1.Color = Color3.fromRGB(170, 0, 170)
+game.ReplicatedStorage.Effects.BurstEffect.Effect2.Color = Color3.fromRGB(170, 0, 170)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "BoneHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(50,10,50)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1,
+            ["Velocity"] = Vector3.new(0, 1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+game.ReplicatedStorage.Effects.KnifeHitEffect22.BallEffect.Color = Color3.fromRGB(170, 0, 170)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","KnifeHitEffect22",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+end
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "1" then 
+	if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Blasters Enabled" then
+	    game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.Head.Anchored = true
+	    game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.Eye1.Anchored = true
+	    game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.Eye2.Anchored = true
+	    game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.RootPart.Anchored = true
+	    game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.LeftJaw.Anchored = true
+	    game.ReplicatedStorage.Effects.BigDeltaGasterBlaster.RightJaw.Anchored = true
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "Effect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(100, -100, 100),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 0
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","BigDeltaGasterBlaster",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})	   
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(100, -100, 100),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+        
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","DeterminationExplosion",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+wait(1)
+game.Players.LocalPlayer.Character.Effects.BigDeltaGasterBlaster:Destroy()
+end
+end
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "2" then 
+				    if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Swords Enabled" then
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(30, 30, 30),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","KnifeHitEffect3",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+end
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "2" then 
+	if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Bones Enabled" then	 
+boneCloned = false
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://3731949745"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1.5)
+wait(0.25)
+k:AdjustSpeed(0)
+wait(0.2)
+spawn(function()
+ez = true
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(game.ReplicatedStorage.Effects.UnderswapPapyrusBones:GetChildren()) do
+if v.Name == 'Bone' and boneCloned == false then
+    boneCloned = true
+clone = v:Clone()
+clone.Parent = char
+clone.Anchored = true
+clone.Name = 'SpkBone'
+clone.Transparency = 0
+clone.BrickColor = BrickColor.new(255, 255, 255)
+clone.Material = Enum.Material.Neon
+clone.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0,-9,-4)
+end
+end
+end)
+wait(0.3)
+spawn(function()
+    repeat wait()
+        clone.CFrame = clone.CFrame*CFrame.new(0, 3, 0)
+    until ez == false
+end)
+wait(0.1625)
+ez = false
+wait(1.3)
+spawn(function()
+    repeat wait()
+        clone.Transparency = clone.Transparency + 0.15
+    until ez2 == false
+end)
+wait(0.2)
+ez2 = false
+wait()
+clone:Destroy()
+end)
+spawn(function()
+wait(0.2)
+local player = game.Players.LocalPlayer
+local char = player.Character
+local sound = Instance.new('Sound',char.Head)
+local id = 3731906158
+sound.Volume = 3
+sound.SoundId = 'rbxassetid://'..id
+sound:Play()
+end)
+spawn(function()
+local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 0.65,
+        ["Type"] = "Knockback",
+        ["HitEffect"] = "BoneHitEffect",
+        ["CombatInv"] = true,
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
+        ["Velocity"] = Vector3.new(0, 1, 0),
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
+        ["Damage"] = 35
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+end)
+wait(0.2)
+k:AdjustSpeed(1.5)
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "3" then 
+	if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Bones Enabled" then	  
+game.ReplicatedStorage.Effects.GroundSpear.Part.BrickColor = BrickColor.new(170, 0, 170)
+game.ReplicatedStorage.Effects.GroundSpear.Spear.BrickColor = BrickColor.new(170, 0, 170)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","GroundSpear",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+end
+wait(0.5)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 1,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "BurstEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -100, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+	end
+    end
+    end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "e" then 
+		if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Blasters Enabled" then
+		    wait(0.1)
+		    game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text = "Swords Enabled"
+		end
+				end
+			end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "q" then 
+		if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Bones Enabled" then
+		    wait(0.1)
+		    game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text = "Swords Enabled"
+		end
+				end
+			end)
+end)
+
+
+wait(25)
+Chat("papyrus was hiding something from me.....", Color3.fromRGB(255, 0, 0))
+wait(5)
+Chat("cant blame him, he knew it would corrupt me.", Color3.fromRGB(255, 0, 0))
+wait(5)
+Chat("but thanks to me, he is nothing but dust.", Color3.fromRGB(255, 0, 0))
+wait(5)
+Chat("and thanks to his death, i finally know why he kept it a secret.", Color3.fromRGB(255, 0, 0))
+wait(10)
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "Bones",
+        [3] = "AirSpawn",
+        [4] = Vector3.new(10,60,0)
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args))
+wait(0.01)
+game.Players.LocalPlayer.Character.Attacks.Bone.BrickColor = BrickColor.new(255, 0, 0)
+wait(1)
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "Bones",
+        [3] = "AirSpawn",
+        [4] = Vector3.new(10,60,0)
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args))
+wait(0.01)
+game.Players.LocalPlayer.Character.Attacks.Bone.BrickColor = BrickColor.new(255, 0, 0)
+wait(1)
+Chat("after his fall, my soul grew stronger...", Color3.fromRGB(255, 0, 0))
+wait(5)
+Chat("but my mind was breaking.", Color3.fromRGB(255, 0, 0))
+wait(5)
+Chat("i was lost in grief in a dark and cruel world,", Color3.fromRGB(255, 0, 0))
+wait(5)
+Chat("a world shaped in part by my brother actions.", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("amidst the destruction, a strange figure approached me.", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("and in my darkest hour, offered the solution to my problems", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("he said i was the true hero of this world,", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("making me out to be the savior of all.", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("at first, i thought he was mad as well but he started to share his knowledge with me.", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("the knowledge about time and space, resets, the endless deaths, your struggle for ultimate power...", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("an intense mind bending reality that nobody could hope to comprehend.", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("and because of that harsh reality, i understood that my madness was not detrimental.", Color3.fromRGB(255, 0, 0))
+wait(8)
+Chat("it was an awakening", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("with my newfound knowledge, these newfound powers...", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("i will be the hero to save these tormented souls. the hero to save this everything from you.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("the hero who will put an end to this endless cycle of resets once and for all.", Color3.fromRGB(255, 0, 0))
+wait(18)
+Chat("at first i believed that once i understood my brothers plan, i could continue his work...", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("but as i continued to dust monsters, i began to see how flawed his plan was.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("he planned to accept his madness. to lose himself fighting you.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("he believed the only way he would emerge victorious was to become an instinctual dusting machine.", Color3.fromRGB(255, 0, 0))
+wait(18)
+Chat("but i realized after reaching hot land that wouldnt work...", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("you cannot be defeated through battle, as you will return smarter, faster.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("all because you have the power to shape this world to your desires.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("but if i can so much as chip away your DETERMINATION...", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("i can use this power to erase YOU from this world.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("to finally let this timeline continue its cycle.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("i will be the one to manipulate this world. a god among our fellow monsters.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("its what must be done to end this nightmare for once and for all.", Color3.fromRGB(255, 0, 0))
+wait(10)
+Chat("whats necessary to give my people the happy ending you NEVER did.", Color3.fromRGB(255, 0, 0))
+wait(40)
+game.Players.LocalPlayer.Character.GTFSword3:Destroy()
+wait(2)
+Chat("-284", Color3.fromRGB(255, 0, 0))
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health:Destroy()
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.HealthLabel.Text = "204/488"
+wait(3)
+Chat("...!", Color3.fromRGB(255, 0, 0))
+wait(50)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.HealthLabel.Text = "12/488"
+wait(5)
+game.Players.LocalPlayer:Kick("You think you can dust me with one blow?")
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.GTAsgore.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Undyne"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+wait(5)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextColor3 = Color3.fromRGB(255, 0, 0)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.StaminaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+game.Players.LocalPlayer.Character.Head.Voice:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.Character.Head
+Sound.Volume = 5
+Sound.Playing = false
+Sound.Looped = false
+Sound.SoundId = "rbxassetid://7807218979"
+Sound.Name = "Voice"
+Sound.PlaybackSpeed = 1
+         game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalo Strike Back"]:Destroy()
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.StarterPlaylist
+Sound.Volume = 2
+Sound.Playing = true
+Sound.Looped = true
+Sound.SoundId = "rbxassetid://4617295755"
+Sound.Name = "1Megalo Strike Back"
+ spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(player.Backpack.Main:GetChildren()) do
+er = string.lower(v.Name)
+if string.match(er,'moves') then
+v.Animations.Idle.AnimationId = "rbxassetid://5411065101"-- change specifc animations to whatever you want
+v.Animations.Walk.AnimationId = "rbxassetid://5411071023"
+v.Animations.Run.AnimationId = "rbxassetid://5411068397"
+v.Animations.Block.AnimationId = "rbxassetid://5411080645"
+end
+end
+---------Module------------------
+local module
+local modulelocation
+original = player.Backpack.Main
+clone = player.Backpack.Main:Clone()
+for _,v in pairs(original:GetDescendants()) do--- the 
+if v.Name == 'ModuleScript' then
+module = v
+modulelocation = v.Parent.Name
+end
+end
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == 'ModuleScript' then
+v:Destroy()
+end
+end
+ 
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == modulelocation then
+module.Parent = v
+ 
+end
+end
+-------------Gui stuff-----------Just to make the whole thing work bascially
+for _,v in pairs(player.PlayerGui.UI.Ui:GetChildren()) do
+er = string.lower(v.Name)
+if string.match(er,'move') then
+originalm = v
+clonem = v:Clone()
+end
+end
+for _,v in pairs(player.PlayerGui:GetChildren()) do
+er = string.lower(v.Name)
+if string.find(er,'indicator') then
+clonem1 = v:Clone()
+originalm1 = v
+end
+end
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == 'Extra' then
+eg = v
+end
+end
+----------------
+clonem1.Parent = eg
+clonem.Parent = eg
+originalm:Destroy()
+originalm1:Destroy()
+clone.Parent = player.Backpack
+ 
+wait()
+original:Destroy()---destroys so you can play the animations
+end)
+wait(1)
+    game.Players.LocalPlayer.Backpack.Main.UndyneMoves.ModuleScript.Animations.BladesCombat.Light1.AnimationId = "rbxassetid://5411089475"
+    game.Players.LocalPlayer.Backpack.Main.UndyneMoves.ModuleScript.Animations.BladesCombat.Light2.AnimationId = "rbxassetid://4800163313"
+    game.Players.LocalPlayer.Backpack.Main.UndyneMoves.ModuleScript.Animations.BladesCombat.Light3.AnimationId = "rbxassetid://5776251749"
+    game.Players.LocalPlayer.Backpack.Main.UndyneMoves.ModuleScript.Animations.BladesCombat.Light4.AnimationId = "rbxassetid://4800630930"
+    game.Players.LocalPlayer.Backpack.Main.UndyneMoves.ModuleScript.Animations.BladesCombat.Light5.AnimationId = "rbxassetid://6154060166"
+game.Workspace.ServerEffects.ServerCooldown:Destroy()
+game.Players.LocalPlayer.Character.Spear:Destroy()
+game.ReplicatedStorage.Effects.HeavyHitEffect.Effect1.Color = Color3.fromRGB(255, 176, 0)
+game.ReplicatedStorage.Effects.HeavyHitEffect.Effect2.Color = Color3.fromRGB(255, 0, 0)
+game.ReplicatedStorage.Effects.SpearGroundExplosion.Explosion.Name = "Explosion1"
+game.ReplicatedStorage.Effects.SpearGroundExplosion.Explosion1.Color = Color3.fromRGB(255, 120, 0)
+game.ReplicatedStorage.Effects.SpearGroundExplosion.Explosion.Color = Color3.fromRGB(255, 0, 0)
+wait(1)
+    --//=================================\\
+    --||trident by King Dream#9746
+    --\\=================================//
+pls = game:GetService'Players'
+rs = game:GetService'RunService'
+uinps = game:GetService'UserInputService'
+lp = pls.LocalPlayer
+mouse = lp:GetMouse()
+c = lp.Character
+human = c.Humanoid
+critTime = .27
+--------------------------------------------------------
+local cf0 = CFrame.new(0,-0.80,0) * CFrame.Angles(-3,-1.50,0)
+local h = Instance.new("Part",c)
+h.Name = "Trident"
+h.BrickColor = BrickColor.new(1,0,0)
+h.Material = Enum.Material.Neon
+h.Size = Vector3.new(2,1,10)
+h.Locked = true
+h.CanCollide = false
+h.Name = "Handle"
+local m = Instance.new("SpecialMesh",h)
+m.MeshType = "FileMesh"
+m.Scale = Vector3.new(1.5,2.3,2.3)
+m.MeshId = "http://www.roblox.com/asset/?id=30694864"
+local hw = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+hw.Name = "HandleWeld"
+hw.Part0 = game.Players.LocalPlayer.Character["Right Arm"]
+hw.Part1 = h
+hw.C0 = cf0:Inverse()
+wait(1)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "1" then 
+local AnimationId = "4385319937"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		function getlockchar()
+			local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+			return char
+		end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
+wait(0.15)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "BurstEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(-20, 0, -20),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "2" then 
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "LightHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+h.BrickColor = BrickColor.new(255,170,0)
+wait(0.5)
+h.BrickColor = BrickColor.new(0,0,255)
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "LightHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.5)
+h.BrickColor = BrickColor.new(255,170,0)
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "LightHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.5)
+h.BrickColor = BrickColor.new(0,0,255)
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "LightHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.5)
+h.BrickColor = BrickColor.new(255,170,0)
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "LightHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.5)
+h.BrickColor = BrickColor.new(0,0,255)
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.8,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "LightHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+h.BrickColor = BrickColor.new(1,0,0)
+end
+end)
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "3" then 
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		function getlockchar()
+			local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+			return char
+		end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
+local AnimationId = "5411089475"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(0.3)
+wait(0.3)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 1,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "HeavyHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = Vector3.new(0, -1, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+lockon = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+for _,v in pairs(game.ReplicatedStorage.RogueEffects.FireEffect:GetDescendants()) do
+    if v.Name == "Fire" then
+        print("debug2398")
+        clone = v:Clone()
+        print("debug29388")
+        clone.Parent = lockon.Torso
+        clone.Name = "CustomParticle"
+end
+end
+wait(5)
+for i = 1,4 do
+game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Torso.CustomParticle:Destroy()
+end
+end
+end)
+ player = game.Players.LocalPlayer
+char = player.Character
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k) 
+    if k == "4" then
+        local AnimationId = "4408052168"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","SpearGroundExplosion",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+end
+            for _,v in pairs(game.workspace:GetChildren()) do
+                if v:FindFirstChildOfClass('Humanoid') and v ~= char and v:FindFirstChild('HumanoidRootPart') then
+                    mag = (char.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+                    if mag <= 10 then
+                        spawn(function()
+                            local A_1 = getrenv()._G.Pass
+                            local A_2 = v
+                            local A_3 =  {
+                                ["Type"] = "Normal",
+                                ["HitEffect"] = "HeavyHitEffect", 
+                                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.Clashing, 
+                                ["Velocity"] = Vector3.new(0, -0.1, 0), 
+                                ["HitTime"] = 1, 
+                                ["CombatInv"] = true, 
+                                ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneDischarge, 
+                                ["Damage"] = 4
+                            }
+                            local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+                            Event:InvokeServer(A_1, A_2, A_3)
+                        end)
+                    end
+                end
+            end
+        end
+end)
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.Betty.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Betty"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.DTP2.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Sans"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+wait(4)
+function Chat(text,color)
+if dead == true then return end
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Chatted", 
+	[3] = text, 
+	[4] = color
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+end
+function playSound(id,pitch)
+    spawn(function()
+local player = game.Players.LocalPlayer
+local char = player.Character
+local sound = Instance.new('Sound',char.Head)
+sound.Volume = 2
+sound.SoundId = 'rbxassetid://'..id
+sound.Pitch = pitch
+sound:Play()
+end)
+end
+
+game.Players.LocalPlayer.Character.Bone:Destroy()
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text = "Bones Enabled"
+game.Players.LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game.Players.LocalPlayer.PlayerGui.UI.Ui.ManaBar.Bar.BackgroundColor3 = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.Text = "Sans"
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextColor3 = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(255, 0, 255)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health:Destroy()
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.HealthLabel.Text = "12/488"
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.TextColor3 = Color3.fromRGB(170, 0, 170)
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.TextStrokeColor3 = Color3.fromRGB(255, 0, 255)
+game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Font = "Arcade"
+spawn(function()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5657849029"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(5)
+wait(2)
+Chat("You really thought you could dust me in one blow?", Color3.fromRGB(255, 255, 255))
+wait(2)
+Chat("im not that weak.", Color3.fromRGB(255, 255, 255))
+wait(4)
+Chat("you will have to do more than slash me with that rusty knife", Color3.fromRGB(255, 255, 255))
+wait(5)
+char = game.Players.LocalPlayer.Character
+for _,v in pairs(game.ReplicatedStorage.Resources.Weapons:GetChildren()) do
+if v.Name == 'ChaosSaber' then
+sword2 = v:Clone()
+sword2.Parent = char
+sword2.ChaosSaber:Destroy()
+sword2.Anchored = false
+weld = Instance.new('Weld',sword2)
+weld.Part0 = sword2
+weld.Part1 = char['Right Arm']
+sword2.Name = 'GTFSword3'
+sword2.Color = Color3.fromRGB(223, 0, 216)
+weld.C0 = CFrame.new(0.95,-1.7,-0)*CFrame.Angles(1.6,0,-1.6)
+sword2.Transparency = 0.8
+wait(0.5)
+sword2.Transparency = 0.7
+wait(0.5)
+sword2.Transparency = 0.5
+wait(0.5)
+sword2.Transparency = 0
+end
+end
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","SpearJusticeExplosion",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+playSound(3215220222, 1)
+k:Stop()
+local p = game.Players.LocalPlayer
+        local char = p.Character
+        local mouse = p:GetMouse()
+        local larm = char["Left Arm"]
+        local rarm = char["Right Arm"]
+        local lleg = char["Left Leg"]
+        local rleg = char["Right Leg"]
+        local hed = char.HumanoidRootPart
+        local torso = char.Torso
+        local hum = char.Humanoid
+        local root = char.HumanoidRootPart
+        local rs = game:GetService("RunService").RenderStepped
+        local new = Instance.new
+        local v3 = Vector3.new
+        local ns = NumberSequence.new
+        local nr = NumberRange.new
+        local bc = BrickColor.new
+        local cf = CFrame.new
+        local cfa = CFrame.Angles
+        local rad = math.rad
+        a1 = new("Part", char)
+        a1.Name = "Head"
+        a1.BrickColor = BrickColor.new("White")
+        a1.Material = "Neon"
+        a1.Transparency = 0
+        aa1 = new("SpecialMesh", a1)
+        aa1.MeshType = "FileMesh"
+        aa1.Offset = v3(7, 3, -0.1)
+        aa1.Scale = v3(0.1, 0.1, 0.1)
+        aa1.MeshId = "rbxassetid://2267134290"
+        aaa1 = new("Weld", a1)
+        aaa1.Part0 = hed
+        aaa1.Part1 = a1
+        aaa1.C0 = CFrame.Angles(0, math.rad(0), 0)
+ 
+        a2 = new("Part", char)
+        a2.Name = "RJaw"
+        a2.BrickColor = BrickColor.new("Dark stone grey")
+        a2.Material = "Neon"
+        a2.Transparency = 0
+        aa2 = new("SpecialMesh", a2)
+        aa2.MeshType = "FileMesh"
+        aa2.Offset = v3(9.1, 2.01, -0.2)
+        aa2.Scale = v3(0.07, 0.07, 0.07)
+        aa2.MeshId = "rbxassetid://2267146284"
+        aaa2 = new("Weld", a2)
+        aaa2.Part0 = hed
+        aaa2.Part1 = a2
+        aaa2.C0 = CFrame.Angles(0, math.rad(0), 0)
+        a3 = new("Part", char)
+        a3.Name = "LJaw"
+        a3.BrickColor = BrickColor.new("Dark stone grey")
+        a3.Material = "Neon"
+        a3.Transparency = 0
+        aa3 = new("SpecialMesh", a3)
+        aa3.MeshType = "FileMesh"
+        aa3.Offset = v3(5, 2.01, -0.2)
+        aa3.Scale = v3(0.07, 0.07, 0.07)
+        aa3.MeshId = "rbxassetid://2267147917"
+        aaa3 = new("Weld", a3)
+        aaa3.Part0 = hed
+        aaa3.Part1 = a3
+        aaa3.C0 = CFrame.Angles(0, math.rad(0), 0)
+        a4 = new("Part", char)
+        a4.Name = "Inside"
+        a4.BrickColor = BrickColor.new("White")
+        a4.Material = "Neon"
+        a4.Transparency = 0
+        aa4 = new("SpecialMesh", a4)
+        aa4.MeshType = "FileMesh"
+        aa4.Offset = v3(7, 3, -0.1)
+        aa4.Scale = v3(0.1, 0.1, 0.1)
+        aa4.MeshId = "rbxassetid://2267130588"
+        aaa4 = new("Weld", a4)
+        aaa4.Part0 = hed
+        aaa4.Part1 = a4
+        aaa4.C0 = CFrame.Angles(0, math.rad(0), 0)
+        a5 = new("Part", char)
+        a5.Name = "Inside2"
+        a5.BrickColor = BrickColor.new("White")
+        a5.Material = "Neon"
+        a5.Transparency = 0
+        aa5 = new("SpecialMesh", a5)
+        aa5.MeshType = "FileMesh"
+        aa5.Offset = v3(7, 3, -0.1)
+        aa5.Scale = v3(0.1, 0.1, 0.1)
+        aa5.MeshId = "rbxassetid://2267130588"
+        aaa5 = new("Weld", a5)
+        aaa5.Part0 = hed
+        aaa5.Part1 = a5
+        aaa5.C0 = CFrame.Angles(0, math.rad(0), 0)
+ 
+        a1e = new("Part", char)
+        a1e.Name = "Head"
+        a1e.BrickColor = BrickColor.new("White")
+        a1e.Material = "Neon"
+        a1e.Transparency = 0
+        aa1e = new("SpecialMesh", a1e)
+        aa1e.MeshType = "FileMesh"
+        aa1e.Offset = v3(-7, 3, -0.1)
+        aa1e.Scale = v3(0.1, 0.1, 0.1)
+        aa1e.MeshId = "rbxassetid://2267134290"
+        aaa1e = new("Weld", a1e)
+        aaa1e.Part0 = hed
+        aaa1e.Part1 = a1e
+        aaa1e.C0 = CFrame.Angles(0, math.rad(0), 0)
+        a2e = new("Part", char)
+        a2e.Name = "RJaw"
+        a2e.BrickColor = BrickColor.new("Dark stone grey")
+        a2e.Material = "Neon"
+        a2e.Transparency = 0
+        aa2e = new("SpecialMesh", a2e)
+        aa2e.MeshType = "FileMesh"
+        aa2e.Offset = v3(-5, 2.01, -0.2)
+        aa2e.Scale = v3(0.07, 0.07, 0.07)
+        aa2e.MeshId = "rbxassetid://2267146284"
+        aaa2e = new("Weld", a2e)
+        aaa2e.Part0 = hed
+        aaa2e.Part1 = a2e
+        aaa2e.C0 = CFrame.Angles(0, math.rad(0), 0)
+
+        a3e = new("Part", char)
+        a3e.Name = "LJaw"
+        a3e.BrickColor = BrickColor.new("Dark stone grey")
+        a3e.Material = "Neon"
+        a3e.Transparency = 0
+        aa3e = new("SpecialMesh", a3e)
+        aa3e.MeshType = "FileMesh"
+        aa3e.Offset = v3(-9.1, 2.01, -0.2)
+        aa3e.Scale = v3(0.07, 0.07, 0.07)
+        aa3e.MeshId = "rbxassetid://2267147917"
+        aaa3e = new("Weld", a3e)
+        aaa3e.Part0 = hed
+        aaa3e.Part1 = a3e
+        aaa3e.C0 = CFrame.Angles(0, math.rad(0), 0)
+        a5e = new("Part", char)
+        a5e.Name = "Inside2"
+        a5e.BrickColor = BrickColor.new("White")
+        a5e.Material = "Neon"
+        a5e.Transparency = 0
+        aa5e = new("SpecialMesh", a5e)
+        aa5e.MeshType = "FileMesh"
+        aa5e.Offset = v3(-7, 3, -0.1)
+        aa5e.Scale = v3(0.1, 0.1, 0.1)
+        aa5e.MeshId = "rbxassetid://2267130588"
+        aaa5e = new("Weld", a5e)
+        aaa5e.Part0 = hed
+        aaa5e.Part1 = a5e
+        aaa5e.C0 = CFrame.Angles(0, math.rad(0), 0)
+
+end
+end)
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(player.Backpack.Main:GetChildren()) do
+er = string.lower(v.Name)
+if string.match(er,'moves') then
+v.Animations.Idle.AnimationId = "rbxassetid://5028878836"-- change specifc animations to whatever you want
+v.Animations.Walk.AnimationId = "rbxassetid://5096023358"
+v.Animations.Run.AnimationId = "rbxassetid://4370518984"
+v.Animations.Block.AnimationId = "rbxassetid://3203734026"
+print('e')
+end
+end
+---------Module------------------
+local module
+local modulelocation
+original = player.Backpack.Main
+clone = player.Backpack.Main:Clone()
+for _,v in pairs(original:GetDescendants()) do--- the 
+if v.Name == 'ModuleScript' then
+module = v
+modulelocation = v.Parent.Name
+end
+end
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == 'ModuleScript' then
+v:Destroy()
+end
+end
+
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == modulelocation then
+module.Parent = v
+
+end
+end
+-------------Gui stuff-----------Just to make the whole thing work bascially
+for _,v in pairs(player.PlayerGui.UI.Ui:GetChildren()) do
+er = string.lower(v.Name)
+if string.match(er,'move') then
+originalm = v
+clonem = v:Clone()
+end
+end
+for _,v in pairs(player.PlayerGui:GetChildren()) do
+er = string.lower(v.Name)
+if string.find(er,'indicator') then
+clonem1 = v:Clone()
+originalm1 = v
+end
+end
+for _,v in pairs(clone:GetDescendants()) do
+if v.Name == 'Extra' then
+eg = v
+end
+end
+----------------
+clonem1.Parent = eg
+clonem.Parent = eg
+originalm:Destroy()
+originalm1:Destroy()
+clone.Parent = player.Backpack
+
+wait()
+original:Destroy()---destroys so you can play the animations
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "c" then 
+				    	if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Sword Enabled" then	 
+local AnimationId = "5776249806"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.01,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "YellowHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(50,10,50)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1,
+            ["Velocity"] = Vector3.new(0, 100, 0),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+game.ReplicatedStorage.Effects.KnifeHitEffect22.BallEffect.Color = Color3.fromRGB(255, 120, 0)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","KnifeHitEffect22",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+game.Players.LocalPlayer.Character.GTFSword3.Color = Color3.fromRGB(255, 120, 0)
+wait(1)
+game.Players.LocalPlayer.Character.GTFSword3.Color = Color3.fromRGB(170, 0, 170)
+end
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "x" then 
+				    	if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Sword Enabled" then	 
+local AnimationId = "5776249806"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = 0.01,
+            ["Type"] = "Normal",
+            ["HitEffect"] = "YellowHitEffect",
+            ["VictimCFrame"] = CFrame.new(Vector3.new(50,10,50)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1,
+            ["Velocity"] = Vector3.new(100, -100, 100),
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = 10
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+game.ReplicatedStorage.Effects.KnifeHitEffect22.BallEffect.Color = Color3.fromRGB(255, 120, 0)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","DeltaExplosion",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+game.Players.LocalPlayer.Character.GTFSword3.Color = Color3.fromRGB(255, 255, 0)
+wait(1)
+game.Players.LocalPlayer.Character.GTFSword3.Color = Color3.fromRGB(170, 0, 170)
+end
+end
+end
+end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "e" then
+		if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Blasters Enabled" then
+		    wait(0.1)
+		   game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text = "Sword Enabled" 
+		end
+	   end
+			end)
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "q" then
+				    		if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Bones Enabled" then
+		    wait(0.1)
+		   game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text = "Sword Enabled" 
+		end
+	   end
+			end)
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CustomSelection.TitleCUS.MouseButton1Click:Connect(function()
+		game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
+wait(1)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
+wait(1)
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
+local v1 = {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Damage", 
+    [3] = math.huge, 
+    [4] = game.Players.LocalPlayer.Character
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Events
+event:FireServer(v1)
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.Humanoid.Health = 1
+    end
+end)
+wait(2)
+--[[
+EXECUTE ON GLITCHTALE CHARA
+---------------------------
+E - Create Strings
+Q - Delete a string
+U - Enable Red Slashes / Fatal Error Strings
+P - Disable Red Slashes / Fatal Error Strings
+G - Sit Toggle
+--------------------------
+Enjoy!!
+--]]
+function Chat(text,color)
+if dead == true then return end
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "Chatted", 
+	[3] = text, 
+	[4] = color
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+end
+Chat("Script made by fatal error! Strings made by king dream And Fatal Error Strings made by exn", Color3.fromRGB(255, 255, 255))
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+if k == "e" then
+local slashes = {}
+local p = game:GetService("Players").LocalPlayer
+local character = p.Character or p.CharacterAdded:Wait()
+local mouse = p:GetMouse()
+local setOrb = false
+character:WaitForChild("Attacks").ChildAdded:Connect(function(child)
+    if child.Name == "BlueString" and #slashes <= 0 then 
+        child:WaitForChild("Hitted"):Destroy()
+       table.insert(slashes,child) 
+    end
+end)
+local speed = 23
+local lradius = 20
+
+local radius = 1300
+local ts = 0
+local rad,cos,sin = math.rad,math.cos,math.sin
+local root = p.Character.HumanoidRootPart
+game:GetService("RunService").RenderStepped:Connect(function()
+    for i,v in pairs(slashes) do 
+        if not v or not v.Parent then 
+            table.remove(slashes,i)
+            return
+        end
+        local y = root.Position.Y
+        local z = root.Position.Z
+        local x = root.Position.X + radiuscos(rad(ts))
+        v.Position = Vector3.new(x,y,root.Position.Z + radiussin(rad(ts)))
+        ts = ts + 155545645645
+    end
+end)
+game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer({getrenv()._G.Pass, "PatienceAttack", "Spawn", Vector3.new(0,0,0)})
+end
+end)
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k) 
+if k == "u" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,25,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "PlaySound",
+        [3] = game:GetService("ReplicatedStorage").Resources.Sounds.Moves.YellowBeam.Charge,
+        [4] = game:GetService("Players").LocalPlayer.Character.Head
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
+local Anim = Instance.new("Animation")
+        Anim.AnimationId = "rbxassetid://4562533193"
+        local k2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+        k2:Play()
+k2:AdjustSpeed(0.75)
+char = game.Players.LocalPlayer.Character
+char.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame*CFrame.new(0, 1, 0)
+playerpos = char.HumanoidRootPart.Position + Vector3.new(0, 0, 0)
+local part = Instance.new("Part")
+part.Name = "Platform"            -- Name the part... hehe
+part.Anchored = true                -- Anchor the part
+part.Parent = game.Workspace        -- Put the part into the Workspace
+part.Shape = Enum.PartType.Block        -- Give the part a ball shape
+part.Transparency = 1
+part.Size = Vector3.new(5, 1, 5)
+part.Position = playerpos + Vector3.new(5, 5, 5)
+stop = false
+
+local player = game.Players.LocalPlayer
+local char = player.Character
+local selfpos = char.RealKnife.Blade.Position
+stop = false
+for yay = 1, 2 do
+spawn(function()
+wait(0.3)
+local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "KnifeProjectileDarkRed", 
+    [3] = "Spawn", 
+    [4] = Vector3.new(0, 1000, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "KnifeProjectileDarkRed", 
+    [3] = "Spawn", 
+    [4] = Vector3.new(0, 1000, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+Event:InvokeServer(A_1)
+local A_1 = 
+            {
+                [1] = getrenv()._G.Pass,
+                [2] = "Chatted", 
+                [3] = "Aura Enabled.", 
+                [4] = Color3.new(1,0,0)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        wait(2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,1,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+end)
+end
+spawn(function()
+wait(1)
+part:Destroy()
+wait(1)
+stop = true
+end)
+game:GetService("ReplicatedStorage").Remotes.UndyneMoves:InvokeServer(unpack(args))
+while stop == false do wait()
+spawn(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Attacks:GetChildren()) do 
+spawn(function()
+v.Name = 'affected'
+for _,e in pairs(v:GetChildren()) do 
+if e.Name == 'Particle' or e.Name == 'Hitted' or e.Name == 'HitBox' then
+e:Destroy()
+end
+end
+v:WaitForChild('BodyVelocity'):Destroy()
+local move = Instance.new('BodyPosition',v)
+move.Name = 'Client'
+move.D = 1000
+move.MaxForce = Vector3.new(1,18,1)*1000000
+move.P = 25000
+wait(1.5)
+move.D = 0
+spawn(function()
+for thing = 1, 1000 do
+selfpos = char.RealKnife.Blade.Position
+move.Position = selfpos
+wait(1)
+end
+end)
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k) 
+if k == "p" then
+    move.D = 1000
+    local Anim = Instance.new("Animation")
+        Anim.AnimationId = "rbxassetid://3765380192"
+        local k2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+        k2:Play()
+
+    wait(0.7)
+v:Destroy()
+local A_1 = 
+            {
+                [1] = getrenv()._G.Pass,
+                [2] = "Chatted", 
+                [3] = "Aura Disabled.", 
+                [4] = Color3.new(1,0,0)
+            }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(A_1)
+        k2:Stop()
+end
+end)
+end)
+end
+end)
+end
+end
+end)
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+if k == "q" then
+    game.Players.LocalPlayer.Character.Attacks.BlueString:Destroy()
+    game.Players.LocalPlayer.Character.Attacks.affected:Destroy()
+end
+end)
+local sitstart = Instance.new("Animation") 
+sitstart.AnimationId = "rbxassetid://7507477136" 
+local sitstartplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitstart)
+local sitloop = Instance.new("Animation") 
+sitloop.AnimationId = "rbxassetid://7507481748" 
+local sitloopplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitloop)
+local sitend = Instance.new("Animation") 
+sitend.AnimationId = "rbxassetid://7507485912" 
+local sitendplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitend) 
+local sitting = false 
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k)
+    if k == "g" then if sitting == false then 
+        sitting = true
+        sitstartplay:Play() 
+        wait(1) 
+        sitloopplay:Play()
+    elseif sitting == true then 
+        sitting = false
+        sitloopplay:Stop() 
+        sitendplay:Play() 
+        end
+    end 
+end)
+local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k) 
+        if k == "n" then 
+            local Anim = Instance.new("Animation")
+            Anim.AnimationId = "rbxassetid://3752218582"
+            local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+            k:Play()
+            k:AdjustSpeed(1)
+             local A_1 = getrenv()._G.Pass
+            local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            local A_3 = 
+                {
+                    ["HitTime"] = 1, 
+                    ["Type"] = "Knockback", 
+                    ["HitEffect"] = "LightHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.SakuyaAttack1,
+                    ["Velocity"] = Vector3.new(-10, -0.1, -0), 
+                    ["CombatInv"] = true,
+                    ["Damage"] = 40
+                }
+            local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+            Event:InvokeServer(A_1, A_2, A_3)
+        end
+    end)
+
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k) 
+        if k == "n" then wait(0.2) 
+            local Anim = Instance.new("Animation")
+            Anim.AnimationId = "rbxassetid://3752218582"
+            local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+            k:Play()
+            k:AdjustSpeed(1)
+             local A_1 = getrenv()._G.Pass
+            local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            local A_3 = 
+                {
+                    ["HitTime"] = 1, 
+                    ["Type"] = "Knockback", 
+                    ["HitEffect"] = "LightHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.SakuyaAttack1,
+                    ["Velocity"] = Vector3.new(10, -0.1, -0), 
+                    ["CombatInv"] = true,
+                    ["Damage"] = 40
+                }
+            local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+            Event:InvokeServer(A_1, A_2, A_3)
+        end
+    end)
+
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k) 
+        if k == "n" then wait(0.3) 
+            local Anim = Instance.new("Animation")
+            Anim.AnimationId = "rbxassetid://3752218582"
+            local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+            k:Play()
+            k:AdjustSpeed(1)
+             local A_1 = getrenv()._G.Pass
+            local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            local A_3 = 
+                {
+                    ["HitTime"] = 1, 
+                    ["Type"] = "Knockback", 
+                    ["HitEffect"] = "LightHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.SakuyaAttack1,
+                    ["Velocity"] = Vector3.new(0, 10, -0), 
+                    ["CombatInv"] = true,
+                    ["Damage"] = 40
+                }
+            local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+            Event:InvokeServer(A_1, A_2, A_3)
+        end
+    end)
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    mouse.KeyDown:Connect(function(k) 
+        if k == "n" then wait(0.4) 
+            local Anim = Instance.new("Animation")
+            Anim.AnimationId = "rbxassetid://3752218582"
+            local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+            k:Play()
+            k:AdjustSpeed(1)
+             local A_1 = getrenv()._G.Pass
+            local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            local A_3 = 
+                {
+                    ["HitTime"] = 1, 
+                    ["Type"] = "Knockback", 
+                    ["HitEffect"] = "LightHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.SakuyaAttack1,
+                    ["Velocity"] = Vector3.new(0, 0, 3), 
+                    ["CombatInv"] = true,
+                    ["Damage"] = 40
+                }
+            local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+            Event:InvokeServer(A_1, A_2, A_3)
+        end
+    end)
+-- CREDITS:
+-- Fatal Error Sans#4931 (Made this script)
+-- King Dream for the Strings
+-- exn from Project GTC for the  red     stuff
+end)
+game.Players.LocalPlayer.PlayerGui.Altered.CharacterSelection.TitleCS.MouseButton1Click:Connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Sans"
+game.Players.LocalPlayer.PlayerGui.Altered:Destroy()
+wait(5)
+game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health:Destroy()
+
+         game.Players.LocalPlayer:WaitForChild("StarterPlaylist")
+game.Players.LocalPlayer.StarterPlaylist["1Megalovania"]:Destroy()
+local s1 = Instance.new("Sound")
+s1.Parent = game.Players.LocalPlayer.StarterPlaylist
+s1.Volume = 2
+s1.Playing = true
+s1.Looped = true
+s1.SoundId = "rbxassetid://6463854800"
+s1.Name = "1LostMemories"
+--attack recolor by meko
+local char = game:GetService("Players").LocalPlayer.Character
+local effects = char.Effects
+local stuff = {"Bone"}
+local colors = {Color3.fromRGB(255, 128, 0)}
+local function check(part)
+    for i = 1, #stuff do
+        if part.Name == stuff[i] then
+            part.Color = colors[i]
+        end
+    end
+end
+effects.DescendantAdded:Connect(check) 
+local char = game:GetService("Players").LocalPlayer.Character
+local beams = char
+local stuff = {"Eye", "Back", "Middle", "CircleEffect", "E", "ExplosionEffect", "BeamSmoke"}
+local colors = {Color3.fromRGB(0, 120, 255), Color3.fromRGB(0, 0, 255), Color3.fromRGB(0, 0, 255), Color3.fromRGB(0, 0, 255), Color3.fromRGB(0, 0, 255), Color3.fromRGB(0, 0, 255), Color3.fromRGB(255, 0, 0)}
+local function check(part)
+    for i = 1, #stuff do
+        if part.Name == stuff[i] then
+            part.Color = colors[i]
+        end
+    end
+end
+beams.DescendantAdded:Connect(check)
+local char = game:GetService("Players").LocalPlayer.Character
+local attacks = char.Attacks
+local stuff = {"Bone"}
+local colors = {Color3.fromRGB(0, 0, 170)}
+local function check(part)
+    for i = 1, #stuff do
+        if part.Name == stuff[i] then
+            part.Color = colors[i]
+        end
+    end
+end
+attacks.DescendantAdded:Connect(check) 
+--scarf
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(game:GetService("ReplicatedStorage").Resources.Character.Accessories.SFChara.Scarf:GetChildren()) do
+if v.Name == 'RainbowScarf' then
+clone1 = v:Clone()
+clone1.Name = 'Scarf'
+clone1.Parent = char
+weld = Instance.new('Weld',clone1)
+weld.Part0 = char['Scarf']
+weld.Part1 = char['Head']
+weld.C1 = CFrame.new(-0,-0.8,-0)*CFrame.Angles(0,3,0)
+clone1.Transparency = 0
+char.Scarf.Color = Color3.new(1, 0, 0)
+char.Scarf.Decal.Texture = ""
+char.Scarf.Mesh.TextureId = ""
+end
+end
+--eye thing idk 
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(game.ReplicatedStorage.Effects.CharaKnifeProjectile:GetChildren()) do
+if v.Name == 'ParticleEmitter' then
+X = v:Clone()
+X.Parent = char.Head
+X.Name = 'X'
+char.Head.X.Speed = NumberRange.new(0, 0)
+char.Head.X.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255))
+char.Head.X.Size = NumberSequence.new(0.3, 0)
+local attachment = Instance.new("Attachment", script.Parent)
+attachment.Parent = char.Head
+attachment.Position = Vector3.new(0.1, 0, 0)
+char.Head.X.Parent = attachment
+for _,v in pairs(game:GetService("ReplicatedStorage").Effects.OverwriteAct.Attachment:GetChildren()) do
+if v.Name == 'Body' then
+x = v:Clone()
+x.Name = 'A'
+x.Parent = char.Head
+x.Enabled = true
+x.Size = NumberSequence.new(0.3, 0)
+x.Speed = NumberRange.new(-25, -25)
+local attachment = Instance.new("Attachment")
+attachment.Parent = char.Head
+attachment.Position = Vector3.new(0.1, 0.2, 0)
+char.Head.A.Parent = attachment
+end
+end
+end
+end
+--slash
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(game:GetService("ReplicatedStorage").Resources.Character.Accessories.SFChara:GetChildren()) do
+if v.Name == 'SlashEffect' then
+clone = v:Clone()
+clone.Parent = char.Torso
+clone.Name = "getting hit"
+end
+end
+end)
+--locals
+local phase1 = true
+local phase2 = false
+local v1 = game:GetService("ReplicatedStorage")
+local v2 = game:GetService("Workspace")
+local v3 = v1.Remotes.Effects
+local v4 = game:GetService("Players")
+local v5 = v4.LocalPlayer
+local v6 = v5.Character
+local v7 = v5.PlayerGui.UI.Ui
+local l__ServerEffects__child = v2.ServerEffects.ServerCooldown
+local v8 = Instance.new("Sound")
+v8.Parent = v5.StarterPlaylist
+v8.SoundId = "rbxassetid://5309259110"
+v8.Name = "2Stormheart"
+v8.Playing = false
+v8.Volume = 0.5
+v8.PlaybackSpeed = 1
+v8.Looped = true
+v8.EmitterSize = 10
+--name loop
+coroutine.resume(coroutine.create(function()
+while phase1 == true do
+    game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    game.Players.LocalPlayer.Character.Head.HealthBar.Frame.BackHealth.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    wait(1)
+    game.Players.LocalPlayer.Character.Head.HealthBar.Frame.BackHealth.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+    wait(1)
+end
+end))
+local v9 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+function f1(hittime, rtype, hiteffect, velocity, damage)
+    local A_1 = getrenv()._G.Pass
+        local A_2 = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+            ["HitTime"] = hittime,
+            ["Type"] = rtype,
+            ["HitEffect"] = hiteffect,
+            ["VictimCFrame"] = CFrame.new(Vector3.new(0,0,0)),
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+            ["Velocity"] = velocity,
+            ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+            ["Damage"] = damage
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+end
+	local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "z" then 
+				    f1(0.9, "Normal", "KnifeHitEffect", Vector3.new(0, 2, 0), 7)
+            local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "GasterBlasters",
+                [3] = "SummonOne",
+                [4] = workspace:FindFirstChild(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Name).Torso.Position
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args))
+				end
+			end)
+				local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "x" then 
+				    f1(1, "Normal", "BurstEffect", Vector3.new(0, 5, 0), 0)
+  local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "Bones",
+                [3] = "AirSpawn",
+                [4] = workspace:FindFirstChild(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Name).Torso.Position
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args))
+        wait(0.5)
+        f1(1, "Normal", "BurstEffect", Vector3.new(0, 5, 0), 0)
+          local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "Bones",
+                [3] = "AirSpawn",
+                [4] = workspace:FindFirstChild(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Name).Torso.Position
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args))
+        wait(0.5)
+        f1(1, "Normal", "BurstEffect", Vector3.new(0, 5, 0), 0)
+          local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "Bones",
+                [3] = "AirSpawn",
+                [4] = workspace:FindFirstChild(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Name).Torso.Position
+            }
+        }
+        game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args))
+        wait(0.5)
+        f1(1, "Normal", "BurstEffect", Vector3.new(30, 5, 30), 0)
+    end
+			end)
+				local mouse = game.Players.LocalPlayer:GetMouse()
+			mouse.KeyDown:Connect(function(k) 
+				if k == "p" then 
+				     if phase2 == false then
+				          if phase1 == true then
+				    phase1 = false
+				    phase2 = true
+				    local char = game:GetService("Players").LocalPlayer.Character
+local attacks2 = char.Attacks
+local effects2 = char.Effects
+local beams2 = char
+local stuff2 = {"Bone", "Eye", "Back", "Middle", "CircleEffect", "E", "ExplosionEffect", "BeamSmoke"}
+local colors2 = {Color3.fromRGB(0, 255, 0), Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 0, 0)}
+local function check(part)
+    for i = 1, #stuff do
+        if part.Name == stuff2[i] then
+            part.Color = colors2[i]
+        end
+    end
+end
+attacks2.DescendantAdded:Connect(check) 
+effects2.DescendantAdded:Connect(check)
+beams2.DescendantAdded:Connect(check)
+s1.Playing = false
+v8.Playing = true
+v6.Head.Attachment:Destroy()
+				    while phase2 == true do
+				            v6.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+    v6.Head.HealthBar.Frame.BackHealth.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+    v6.Scarf.Color = Color3.fromRGB(0, 255, 0)
+    v6.Head.Attachment.A.Color = ColorSequence.new(Color3.fromRGB(255, 0, 0))
+    wait(0.2)
+    v6.Head.HealthBar.Frame.BackHealth.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    v6.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
+    v6.Scarf.Color = Color3.fromRGB(0, 0, 255)
+    v6.Head.Attachment.A.Color = ColorSequence.new(Color3.fromRGB(0, 255, 0))
+    wait(0.2)
+    v6.Head.HealthBar.Frame.BackHealth.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    v6.Head.HealthBar.Frame.PName.TextStrokeColor3 = Color3.fromRGB(0, 0, 255)
+    v6.Scarf.Color = Color3.fromRGB(255, 0, 0)
+    v6.Head.Attachment.A.Color = ColorSequence.new(Color3.fromRGB(0, 0, 255))
+    wait(0.2)
+				    end
+end
+end
+end
+end)
+end)
