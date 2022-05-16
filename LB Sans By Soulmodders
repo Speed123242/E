@@ -1529,7 +1529,3 @@ section1:addButton("Asgore", function()
 					attacking = false
 				end)
 				seriouspunch()
-			end
-		end
-	end)
-end)
