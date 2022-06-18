@@ -1,0 +1,271 @@
+-- thanks you!! --
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Frisk" 
+wait(1)
+local pnamet = game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.PName:Clone()
+pnamet.Parent = game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame
+pnamet.Name = "no"
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.PName:Destroy()
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.StaminaBar:Destroy()
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.Health:Destroy()
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").FriskMoves.Animations.Walk.AnimationId = "rbxassetid://5658603994"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").FriskMoves.Animations.Idle.AnimationId = "rbxassetid://3745884672"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").FriskMoves.Animations.Run.AnimationId = "rbxassetid://6492501335"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").FriskMoves.Animations.Block.AnimationId = "rbxassetid://4088050522"
+wait(.1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.no.Text = "Bloodshed"
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.no.TextColor3 = Color3.fromRGB(255, 0, 0)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.HealthLabel.Text = "Zero"
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.HealthLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+wait(.1)
+game:GetService("Players").LocalPlayer.PlayerScripts.Music:Destroy()
+wait(.1)
+local l = {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Damage", 
+    [3] = math.huge, 
+    [4] = game.Players.LocalPlayer.Character
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Events
+event:FireServer(l)
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+    game.Players.LocalPlayer.Character.Humanoid.Health = 1
+    end
+end)
+wait(9.5)
+game.Players.LocalPlayer.Character:WaitForChild("DarkHead"):Destroy()
+game.Players.LocalPlayer.Character.Head.face:Destroy()
+game.Players.LocalPlayer.Backpack.Main.FriskMoves.ModuleScript.Animations.BasicCombat.Light1.AnimationId = "rbxassetid://4689494450"
+game.Players.LocalPlayer.Backpack.Main.FriskMoves.ModuleScript.Animations.BasicCombat.Light2.AnimationId = "rbxassetid://4689497544"
+game.Players.LocalPlayer.Backpack.Main.FriskMoves.ModuleScript.Animations.BasicCombat.Light3.AnimationId = "rbxassetid://7948521809"
+
+local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://3925938042"
+    local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+    k:Play()
+    k:AdjustSpeed(2)
+
+wait(1)
+local A_1 = 
+{
+    [1] = getrenv()._G.Pass,
+    [2] = "EquipWeapon", 
+    [3] = "GTFriskSword"
+}
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(A_1)
+
+game.Players.LocalPlayer.Chatted:Connect(function(Chat)
+    local quitepro =  {
+              [1] = getrenv()._G.Pass, 
+              [2] = "Chatted", 
+              [3] = ' [ Bloodshed ] *\n' ..Chat, 
+              [4] = Color3.new(1,0,0)
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(quitepro)
+    end)
+
+local char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)   
+
+-- One --
+game:GetService("UserInputService").InputBegan:Connect(function(Input, IsTyping)
+    if IsTyping then return end
+    if Input.KeyCode == Enum.KeyCode.One then
+        local dialogue =  {
+              [1] = getrenv()._G.Pass, 
+              [2] = "Chatted", 
+              [3] = " [ Bloodshed ] *\nSlashes", 
+              [4] = Color3.new(1,0,0)
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(dialogue)
+        local Anim = Instance.new("Animation")
+        Anim.AnimationId = "rbxassetid://5658856843"
+        local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+        k:Play()
+        wait(0.5)
+        local A_1 = getrenv()._G.Pass
+        local A_2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+    ["HitTime"] = 1, --the amount of time the remote is hitting the enemy for (it cant be over one or 0)
+    ["Type"] = "Normal", --the type of thing it is like knockback and normal (Knockback and Normal are the only usable types)
+    ["HitEffect"] = "KnifeHitEffect", --This is the effect of ur hit I'll explain more about this later
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1, --this is the animation of ur enemy when hurt
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
+    ["CameraShake"] = "BigExplosion", --how much ur screen shakes! you can pick from (Bump and BigExplosion I forgot the others)
+    ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0.001, -- this is how much ur enemy is sent flying I changed it so its alot more simple for you (it can go up to 199 max)
+    ["BlockAble"] = false,
+    ["CombatInv"] = true, --always keep this on so u can do stuff
+    ["Damage"] = 10
+}
+                                
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.15)
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.15)
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.15)
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.15)
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.15)
+        Event:InvokeServer(A_1, A_2, A_3)
+wait(0.15)
+local A_1 = getrenv()._G.Pass
+        local A_2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        local A_3 = {
+    ["HitTime"] = 1, --the amount of time the remote is hitting the enemy for (it cant be over one or 0)
+                        ["Type"] = "Knockback", --the type of thing it is like knockback and normal (Knockback and Normal are the only usable types)
+                        ["HitEffect"] = "BladeHitEffect", --This is the effect of ur hit I'll explain more about this later
+                        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1, --this is the animation of ur enemy when hurt
+                        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
+                        ["CameraShake"] = "BigExplosion", --how much ur screen shakes! you can pick from (Bump and BigExplosion I forgot the others)
+                        ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 75 + Vector3.new(0,100,0), -- this is how much ur enemy is sent flying I changed it so its alot more simple for you (it can go up to 199 max)
+                        ["BlockAble"] = false,
+                        ["CombatInv"] = true, --always keep this on so u can do stuff
+                        ["Damage"] = 40
+            
+        }                       
+                                
+        local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+        Event:InvokeServer(A_1, A_2, A_3)
+end
+end)
+-- Two --
+game:GetService("UserInputService").InputBegan:Connect(function(Input, IsTyping)
+    if IsTyping then return end
+    if Input.KeyCode == Enum.KeyCode.Two then
+        local dialogue =  {
+              [1] = getrenv()._G.Pass, 
+              [2] = "Chatted", 
+              [3] = " [ Bloodshed ] *\nTime to die", 
+              [4] = Color3.new(1,0,0)
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.Events
+        Event:FireServer(dialogue)
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "RealKnifeBaragge"
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        local args = {
+            [1] = {
+                [1] = getrenv()._G.Pass,
+                [2] = "RealKnifeSlashes"
+            }           
+        }
+
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+        wait(1)
+        game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+    end
+end)
+
+-- Three --
+game:GetService("UserInputService").InputBegan:Connect(function(Input, IsTyping)
+    if IsTyping then return end
+    if Input.KeyCode == Enum.KeyCode.Three then
+            local Anim = Instance.new("Animation")
+            Anim.AnimationId = "rbxassetid://5776260400"
+            local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+            k:Play()
+            for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+            v:Fire({"Model","RedWind",game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+            end
+            local A_1 = getrenv()._G.Pass
+            local A_2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+            local A_3 = {
+        ["HitTime"] = 1, --the amount of time the remote is hitting the enemy for (it cant be over one or 0)
+        ["Type"] = "Knockback", --the type of thing it is like knockback and normal (Knockback and Normal are the only usable types)
+        ["HitEffect"] = "BladeHitEffect", --This is the effect of ur hit I'll explain more about this later
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback1, --this is the animation of ur enemy when hurt
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
+        ["CameraShake"] = "BigExplosion", --how much ur screen shakes! you can pick from (Bump and BigExplosion I forgot the others)
+        ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 100, -- this is how much ur enemy is sent flying I changed it so its alot more simple for you (it can go up to 199 max)
+        ["BlockAble"] = false,
+        ["CombatInv"] = true, --always keep this on so u can do stuff
+        ["Damage"] = 40,
+    }
+                                    
+            local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+            Event:InvokeServer(A_1, A_2, A_3)
+            Event:InvokeServer(A_1, A_2, A_3)
+            wait(1.5)
+            for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+            v:Fire({"Model","SpearJusticeExplosion",game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame})
+            end
+        end
+        end)
+
+spawn(function()
+while true do
+    local sound_2 = Instance.new('Sound');
+    sound_2.Parent = game.Players.LocalPlayer.Backpack;
+    sound_2.Volume = 1.5;
+    sound_2.Looped = false;
+    sound_2.Name = "Song_2"
+    sound_2.SoundId = getsynasset("Niko1.mp3")
+    sound_2:Play()
+    wait(148)
+    sound_2:Destroy()
+end
+end)
